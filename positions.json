@@ -1,7 +1,57 @@
 {
-  "last_updated": "2026-05-26T00:00:00Z",
+  "last_updated": "2026-05-26",
   "open_positions": [],
   "closed_positions": [],
-  "todays_picks": [],
-  "slack_processed_ts": "0"
+  "todays_picks": [
+    {
+      "ticker": "RKLB",
+      "company": "Rocket Lab Corporation",
+      "sector": "Industrials / Space",
+      "entry_low": 132.00,
+      "entry_high": 138.00,
+      "stop": 122.00,
+      "stop_pct": -9.5,
+      "target": 176.00,
+      "target_pct": 30.4,
+      "rsi_14": 68.7,
+      "perf_20d_pct": 28.7,
+      "next_earnings": "2026-08",
+      "thesis": "All-time high today on new $90M contract; Q1 record $200M revenue +63.5% YoY, $2.2B backlog. RSI 68.7, well above all MAs.",
+      "scan_date": "2026-05-26"
+    },
+    {
+      "ticker": "TXN",
+      "company": "Texas Instruments Inc",
+      "sector": "Technology / Semiconductors",
+      "entry_low": 305.00,
+      "entry_high": 315.00,
+      "stop": 285.00,
+      "stop_pct": -8.1,
+      "target": 400.00,
+      "target_pct": 29.0,
+      "rsi_14": 73.0,
+      "perf_20d_pct": 17.0,
+      "next_earnings": "2026-07-28",
+      "thesis": "New all-time intraday high $315.57. Best-ever Q1: revenue +19% YoY, EPS +23% vs consensus. AI-driven industrial/data-center upcycle. RSI 73, 200-day MA at $198.",
+      "scan_date": "2026-05-26"
+    },
+    {
+      "ticker": "MPC",
+      "company": "Marathon Petroleum Corporation",
+      "sector": "Energy",
+      "entry_low": 250.00,
+      "entry_high": 258.00,
+      "stop": 234.00,
+      "stop_pct": -7.9,
+      "target": 330.00,
+      "target_pct": 29.9,
+      "rsi_14": null,
+      "perf_20d_pct": 16.0,
+      "next_earnings": "2026-08-04",
+      "caution": "Intraday reversal from 52-week high today — wait for confirmed hold above $250-252 before entry",
+      "thesis": "Q1 EPS $1.65 vs $0.75 consensus (+120%). Goldman $291 target. Elevated refining margins from Middle East supply tightness. Up ~16% in 20 days.",
+      "scan_date": "2026-05-26"
+    }
+  ],
+  "slack_processed_ts": "1779805885.291769"
 }
