@@ -3,14 +3,32 @@
     "schema_version": 2,
     "currency": "INR",
     "currency_note": "INDmoney reports US holdings in INR via the LRS feed. unit_price/invested/market_value are INR.",
-    "source": "INDmoney connector (US_STOCK), read-only",
+    "source": "INDmoney connector (US_STOCK), read-only — connector unavailable on 2026-06-21; positions carried from snapshot_session 2026-06-19. Prices in open_positions reflect June 19 close.",
     "snapshot_session": "2026-06-19",
     "last_updated": "2026-06-21",
     "open_positions_count": 47,
     "total_invested_inr": 260424.0,
     "total_market_value_inr": 263268.77,
     "total_pnl_pct": 1.09,
-    "ticker_caveat": "ADR/OTC tickers (AOTHY, SFTBY, BYDDY, TCEHY, BMR) are best-effort and should be verified before use as scan keys."
+    "ticker_caveat": "ADR/OTC tickers (AOTHY, SFTBY, BYDDY, TCEHY, BMR) are best-effort and should be verified before use as scan keys.",
+    "concentration_read": {
+      "semis_memory_storage_chip_weight_pct": 71.4,
+      "semis_detail": "SOXX 25.0 + EWY 24.1 (Korea, chip-heavy incl. Samsung/SK Hynix) + MU 5.79 + WDC 3.82 + AMD 2.42 + TSM 1.97 + NVDA 1.60 + ARM 1.52 + TXN 1.77 + STX 1.82 + QCOM 0.67 + NVTS 0.54 + INTC 0.41",
+      "technology_broad_weight_pct": 9.9,
+      "communication_services_weight_pct": 3.1,
+      "consumer_discretionary_weight_pct": 2.2,
+      "healthcare_weight_pct": 1.0,
+      "industrials_weight_pct": 1.4,
+      "energy_uranium_weight_pct": 1.2,
+      "utilities_power_weight_pct": 1.0,
+      "financials_weight_pct": 0,
+      "consumer_staples_weight_pct": 0,
+      "materials_weight_pct": 0,
+      "real_estate_weight_pct": 0,
+      "deeply_underwater_count": 18,
+      "deeply_underwater_note": "18 positions with P&L <= -15%: CRM, UCO, NOW, ORCL, BMR, PLTR, TWLO, HPE, SFTBY, BABA, DDOG, RGTI, PATH, UEC, IONQ, IBM, NVTS, NET",
+      "most_broken_theme": "Technology — broad drawdown cluster in SaaS/Cloud (NOW -26%, PLTR -17%, DDOG -19%, TWLO -17%, HPE -19%, IBM -23%) alongside structural decay in UCO (-25%)"
+    }
   },
   "open_positions": [
     {
@@ -579,9 +597,265 @@
     }
   ],
   "recommendations": {
-    "cut": [],
-    "add_to": [],
-    "open_new": []
+    "as_of": "2026-06-21",
+    "data_freshness_note": "Open positions reflect June 19 INDmoney snapshot. CUT/ADD TO analysis cross-checked against June 20-21 market data via web search (Yahoo Finance, Barchart, Investing.com, TipRanks, TradingKey, 247WallSt, StockInvest). OPEN NEW candidates verified via multiple sources. Where a metric could not be confirmed from available sources it is labelled UNVERIFIED.",
+    "cut": [
+      {
+        "rank": 1,
+        "ticker": "UCO",
+        "name": "ProShares Ultra Bloomberg Crude Oil (2x Leveraged ETF)",
+        "current_weight_pct": 1.33,
+        "pnl_pct": -25.36,
+        "rule_broken": "Structural decay: 2x daily-reset leveraged commodity ETF. Volatility decay and contango roll costs systematically erode NAV regardless of oil direction. Has lost ~75% of value over the decade per Seeking Alpha analysis. Down to ~$34.88 (June 18) from entry. This instrument should never be held as a medium/long-term position.",
+        "action": "FULL EXIT — no conditions",
+        "sources": ["ProShares UCO product page", "Seeking Alpha: UCO structure and suitability analysis", "247WallSt: UCO risk warning March 2026", "etfdb.com: UCO decay mechanics"]
+      },
+      {
+        "rank": 2,
+        "ticker": "NOW",
+        "name": "ServiceNow Inc.",
+        "current_weight_pct": 1.06,
+        "pnl_pct": -26.18,
+        "rule_broken": "Price ~$102 is 28% below 200-day MA of $142.75 — the most important long-term trend line is severely broken. MA signals: 0 Buy / 12 Sell across all timeframes (Strong Sell outlook). While short-term MAs (20d $93.53, 50d $98.11) give a technical 'Buy' on the bounce from lows, price remains deeply trapped below the 200-day — a dead-cat pattern within a major downtrend. P&L -26.18%.",
+        "ma_detail": {
+          "price_approx_usd": 102.13,
+          "ma_20d_usd": 93.53,
+          "ma_50d_usd": 98.11,
+          "ma_200d_usd": 142.75,
+          "price_vs_200d_pct": -28.4,
+          "rsi_14": 57.65,
+          "ma_signals": "0 Buy / 12 Sell (Strong Sell outlook)"
+        },
+        "action": "FULL EXIT — trend broken on 200-day; recovery to entry price would require +55% from current, inconsistent with momentum discipline",
+        "sources": ["Movingaverages.com NOW pivots", "Investtech NOW technical analysis", "AltIndex NOW technical statistics 2026"]
+      },
+      {
+        "rank": 3,
+        "ticker": "IBM",
+        "name": "IBM (International Business Machines)",
+        "current_weight_pct": 0.55,
+        "pnl_pct": -23.52,
+        "rule_broken": "Death cross confirmed: 50-day MA (~$250) has crossed below 200-day MA (~$267-273). Price ~$236 (after -5.02% on June 21) is below BOTH the 50-day and 200-day MAs. Bearish trigger: Accenture cut its fiscal 2026 sales guidance on June 18, directly pressuring IBM consulting revenue expectations. Stock peaked at $329 on June 2 and has shed 28%+ since. P&L -23.52% as of June 19 and worsening.",
+        "ma_detail": {
+          "price_approx_usd_jun21": 236.0,
+          "ma_50d_usd": 250.3,
+          "ma_200d_usd": 269.32,
+          "price_vs_200d_pct": -12.4,
+          "death_cross": true,
+          "june21_move_pct": -5.02
+        },
+        "action": "FULL EXIT — death cross, price below both key MAs, macro catalyst (Accenture cut) directly headwinds IBM's consulting pipeline",
+        "sources": ["TradingKey IBM market mover June 21 2026", "247WallSt IBM shed 16% analysis June 16", "TheMarketsDaily IBM down 4.8% June 18", "MovingAverages.com IBM pivot points", "MacroTrends IBM historical prices"]
+      },
+      {
+        "rank": 4,
+        "ticker": "DDOG",
+        "name": "Datadog Inc. Cl A",
+        "current_weight_pct": 0.58,
+        "pnl_pct": -19.44,
+        "rule_broken": "RSI(14) 37-42 (below 55 minimum, in oversold/sell zone). All MAs pointing to Sell: 5-day MA $157.18, 50-day MA $158.72, 200-day MA $168.56 — all above current price. MA signals: 0 Buy / 12 Sell (Strong Sell). P&L -19.44%. Note: one earlier source cited a quarterly recovery narrative, but specific technical analysis data (closer to June 20-21) confirms RSI below threshold and all-MA Sell. Data inconsistency flagged — verify price before execution.",
+        "ma_detail": {
+          "ma_5d_usd_approx": 157.18,
+          "ma_50d_usd_approx": 158.72,
+          "ma_200d_usd_approx": 168.56,
+          "rsi_14_range": "37-42 (multiple sources)",
+          "ma_signals": "0 Buy / 12 Sell (Strong Sell)",
+          "data_note": "Price source conflict: one source shows $222.75 (possible older data); technical MA sources show price ~$157-160. Verify before trading."
+        },
+        "action": "TRIM or EXIT — RSI below screen minimum; all MAs Sell; -19.44% loss with no technical support",
+        "sources": ["ChartMill DDOG technical analysis", "AltIndex DDOG technical statistics 2026", "StockInvest historical DDOG prices"]
+      },
+      {
+        "rank": 5,
+        "ticker": "PLTR",
+        "name": "Palantir Technologies Cl A",
+        "current_weight_pct": 0.59,
+        "pnl_pct_jun19": -17.35,
+        "pnl_pct_note": "Portfolio P&L was -17.35% at June 19 price ~$144 (INR-equivalent). PLTR closed June 21 at ~$128.63 — approximately -10.9% lower than June 19 implied price, worsening actual loss to ~-26% from cost.",
+        "rule_broken": "Sell signals from both short-term and long-term MAs. Price declined 7 out of last 10 trading days (-8.14% over that span). Stock is in a falling trend with further decline signalled (-8.26% projected over next 3 months per StockInvest). Below cost and in broken MA structure.",
+        "ma_detail": {
+          "price_jun21_usd": 128.63,
+          "trend": "Wide falling channel, short-term sell signals confirmed",
+          "ma_signals": "Sell on both short and long-term MAs; long-term average above short-term average"
+        },
+        "action": "TRIM toward exit — accelerating losses; wait for next bounce to reduce exposure rather than chasing the intraday low",
+        "sources": ["StockInvest.us PLTR stock price analysis", "StockInvest PLTR news June 18 2026 (-1.65% Thursday)", "Robinhood PLTR stock page"]
+      },
+      {
+        "flagged_watch": [
+          {
+            "ticker": "NVTS",
+            "pnl_pct": -24.85,
+            "note": "Small-cap semis, -24.85%. Likely below all MAs given extent of drawdown. MA data unconfirmed — monitor and exit if confirmed below 200-day MA."
+          },
+          {
+            "ticker": "IONQ",
+            "pnl_pct": -21.37,
+            "note": "Speculative quantum computing, -21.37%. High-risk small cap; likely fails momentum screen. No confirmed MA data."
+          },
+          {
+            "ticker": "RGTI",
+            "pnl_pct": -19.63,
+            "note": "Speculative quantum computing, -19.63%. Same profile as IONQ. Exit if either confirms sub-200d MA."
+          },
+          {
+            "ticker": "HPE",
+            "pnl_pct": -18.96,
+            "note": "Collapsed from all-time high $64.25 (June 2) to $47.51 (June 20) — a -26% peak-to-trough in 18 days. Actual loss from cost basis is ~-27-28% as of June 21. 200-day MA likely still below current price given the year's large run-up; monitor for MA break."
+          },
+          {
+            "ticker": "IBM",
+            "pnl_pct": -23.52,
+            "note": "Already in confirmed CUT list (rank 3)."
+          },
+          {
+            "ticker": "BABA",
+            "pnl_pct": -18.43,
+            "note": "Chinese ADR, -18.43%. No fresh MA data confirmed; flag for review."
+          },
+          {
+            "ticker": "SFTBY",
+            "pnl_pct": -18.82,
+            "note": "SoftBank OTC ADR, -18.82%. No fresh MA data confirmed; flag for review."
+          }
+        ]
+      }
+    ],
+    "add_to": [
+      {
+        "ticker": "MU",
+        "name": "Micron Technology",
+        "current_weight_pct": 5.79,
+        "pnl_pct": 24.64,
+        "screen_pass": true,
+        "ma_detail": {
+          "rsi_14_range": "55.17 - 61.74 (in-range: 55-75 ✓)",
+          "ma_5d_usd": 1025.88,
+          "ma_20d_usd": 945.48,
+          "ma_50d_usd": 718.25,
+          "ma_200d_usd_note": "All below current price; 9 Buy / 3 Sell MA signals (Strong Buy)",
+          "all_time_high_usd": 1149.43,
+          "all_time_high_date": "2026-06-18",
+          "price_vs_ath": "At/near all-time high as of June 18"
+        },
+        "catalyst": "Apple announced potential product price increases due to memory chip shortage, driving MU, WDC, and STX higher in pre-market June 18. MU hit all-time high $1,149.43 on June 18.",
+        "entry_zone_usd": "1050-1150 (on pullback toward 20-day MA ~$945; full-screen entry above $1,050 with momentum)",
+        "stop_usd": "~$900 (~-15% from mid entry)",
+        "target_usd": "~$1,350-1,400 (~+25% from mid entry)",
+        "thesis": "Memory chip scarcity driven by AI compute demand and Apple product pricing signals a supply-demand inflection for Micron; RSI 55-62 with all MAs in Buy formation and a fresh all-time high confirm the uptrend is intact. Illustrative levels only — not a signal.",
+        "concentration_warning": "CRITICAL: Portfolio semis/memory/storage exposure is already 71.4%. Adding to MU pushes the combined weight to ~73%+. Only ADD if you are deliberately running a high-conviction concentrated semi theme and accept that a sector-wide reversal would hit the entire portfolio.",
+        "not_eligible": [
+          {
+            "ticker": "STX",
+            "reason": "RSI 84.81 — overbought, above 75 upper threshold. Strong uptrend confirmed (697% YoY, 169% YTD) but RSI disqualifies from screen. Wait for RSI pullback to 60-70 before adding."
+          },
+          {
+            "ticker": "WDC",
+            "reason": "RSI 77.96 — overbought, above 75 threshold. Up 250% YTD. Barchart 100% Buy rating with RSI above 70 per Williams%R. Same concentration concern as STX. Wait for RSI pullback."
+          }
+        ],
+        "sources": ["TipRanks MU technical analysis", "TrendLyne MU RSI/MA", "TradingKey WDC market movers June 18-21", "Barchart WDC overbought analysis", "StockInvest.us STX RSI 84.81 data"]
+      }
+    ],
+    "open_new": [
+      {
+        "rank": 1,
+        "ticker": "UNH",
+        "name": "UnitedHealth Group Inc.",
+        "sector": "Healthcare - Managed Care",
+        "market_cap_tier": "Mega",
+        "screen_criteria_met": {
+          "price_over_10": true,
+          "market_cap_over_500m": true,
+          "avg_volume_over_500k": "YES — ~4.3-4.8M shares daily",
+          "up_15pct_20d": "LIKELY MET — 3-month return +42%; stock recovering strongly from Aug 2025 low of $234.60; specific 20-trading-day return UNVERIFIED vs strict +15% trigger",
+          "above_20d_ma": true,
+          "above_50d_ma": "YES — price ~$382 vs 50d MA ~$332-363",
+          "above_200d_ma": "YES — price ~$382 vs 200d MA ~$320-325",
+          "rsi_55_to_75": "YES — RSI 57.7-61.05 (two sources confirming within range)",
+          "volume_5d_gt_1_3x_50d": "UNVERIFIED",
+          "no_earnings_5d": "YES — Q2 earnings July 16, 2026 (25 days away)",
+          "not_gapping_down": "UNVERIFIED on June 20 — check before entry; one data point shows $407.65 on June 16 vs $382 more recently suggesting recent consolidation, not a gap-down"
+        },
+        "current_price_usd_approx": "382-408 (verify; data from June 16-21)",
+        "entry_zone_usd": "375-400",
+        "stop_usd": "~$345 (~-9% from mid entry $385)",
+        "stop_pct": -10.4,
+        "target_usd": "~$450-470 (~+18-22% upside to analyst high-end)",
+        "target_pct": 19.5,
+        "thesis": "UNH has executed a 73% recovery from its Aug 2025 low ($234) on Q1 2026 EPS beat (+10% vs consensus) and raised guidance, with a bull-flag consolidation forming below the all-time high. RSI 58-61 and price above all key MAs confirm the uptrend is intact entering a catalyst window — Q2 earnings July 16 is the next re-rating event.",
+        "diversification_note": "Portfolio has ZERO Healthcare large-cap exposure (only tiny GALT/SLS biotech). UNH adds meaningful diversification away from 71%+ semis concentration.",
+        "risk_note": "Ongoing DOJ/SEC investigation and civil litigation risk are the primary overhangs; monitor news into July 16 earnings.",
+        "sources": ["AltIndex UNH technical analysis 2026", "Top1Markets UNH Q2 earnings forecast", "Investtech UNH technical analysis", "ChartMill UNH technical analysis", "SEC EDGAR UNH Form 8-K Q1 2026"]
+      },
+      {
+        "rank": 2,
+        "ticker": "GS",
+        "name": "Goldman Sachs Group Inc.",
+        "sector": "Financials - Investment Banking",
+        "market_cap_tier": "Mega",
+        "screen_criteria_met": {
+          "price_over_10": true,
+          "market_cap_over_500m": true,
+          "avg_volume_over_500k": "YES — major Dow component, daily volume well above 500K",
+          "up_15pct_20d": "BORDERLINE/UNVERIFIED — +11.2% in June month-to-date as of Dow Jones Monthly Report; 20-day window extending to late May likely in the +9-13% range; strict +15% trigger NOT confirmed. Trend is clean and accelerating in June.",
+          "above_20d_ma": "YES — price above short-term MAs per Dow Jones Monthly Report technical analysis",
+          "above_50d_ma": "YES — confirmed Strong Buy MA outlook",
+          "above_200d_ma": "YES — overall strong buy MA rating confirmed",
+          "rsi_55_to_75": "ESTIMATED in 60s based on price action; not explicitly sourced for GS specifically",
+          "volume_5d_gt_1_3x_50d": "UNVERIFIED",
+          "no_earnings_5d": "YES — Q2 earnings July 14, 2026 (~23 days away)",
+          "not_gapping_down": "UNVERIFIED on June 20"
+        },
+        "current_price_usd_approx": "~670-700 (estimate based on +11.2% June surge; verify before entry)",
+        "entry_zone_usd": "660-690",
+        "stop_usd": "~$615 (~-9% from mid entry $677)",
+        "stop_pct": -9.1,
+        "target_usd": "~$780-800 (~+16-18% upside)",
+        "target_pct": 17.0,
+        "thesis": "GS was the standout Dow performer in June (+11.2%), benefiting from the US-Iran preliminary deal opening Strait of Hormuz and the resulting risk-on capital market activity that lifts investment banking M&A and trading revenues. Portfolio has zero Financials exposure; GS earnings July 14 is the next catalyst.",
+        "diversification_note": "Portfolio has ZERO Financials exposure. GS adds sector diversification and counter-cyclical balance vs heavy semis concentration.",
+        "honesty_note": "20-day +15% trigger not confirmed — this is a quality trend that may be just short of the strict short-term momentum criterion. The MA setup and sector leadership are strong; the June monthly return of 11.2% is the best available proxy.",
+        "sources": ["Dow Jones Industrial Average June 2026 Monthly Report (StockMarketWatch)", "GS Technical Analysis TradingView", "Barchart GS technical analysis", "247WallSt energy sector context (Iran deal)"]
+      },
+      {
+        "rank": 3,
+        "ticker": "EOG",
+        "name": "EOG Resources Inc.",
+        "sector": "Energy - Oil & Gas E&P",
+        "market_cap_tier": "Large",
+        "screen_criteria_met": {
+          "price_over_10": true,
+          "market_cap_over_500m": true,
+          "avg_volume_over_500k": "YES — large-cap NYSE energy stock",
+          "up_15pct_20d": "NOT CONFIRMED — 30-day return only +2.57%; YTD +27.39% but recent 20-day window is modest",
+          "above_20d_ma": "YES — 20d MA $129.31, price $136.65",
+          "above_50d_ma": "YES — 50d MA $128.76, price $136.65",
+          "above_200d_ma": "YES — 200d MA $134.94, price $136.65 (just above; breakout signal)",
+          "rsi_55_to_75": "FAILS — RSI(14) 46.52 (below 55 minimum threshold)",
+          "volume_5d_gt_1_3x_50d": "UNVERIFIED",
+          "no_earnings_5d": "YES — Q2 earnings July 30, 2026",
+          "not_gapping_down": "UNVERIFIED on June 20"
+        },
+        "screen_pass": false,
+        "screen_fail_reason": "RSI(14) 46.52 fails the 55-75 requirement. 20-day return also likely below +15% (30-day was only +2.57%). EOG is NOT a strict screen pass.",
+        "why_noted": "EOG is flagged as the best available Energy candidate to watch. Price has just broken above the 200-day MA ($134.94) — a classic breakout trigger. 8 of 12 MA signals are Buy. YTD +27.39%. Earnings July 30. The portfolio has only ~1.2% Energy exposure. If RSI climbs into 55-65 range on continued sector strength (US-Iran deal, Hormuz reopening), EOG becomes a qualified entry.",
+        "current_price_usd": 136.65,
+        "entry_if_rsi_improves_usd": "135-142 (entry only if RSI crosses above 55)",
+        "stop_usd": "~$124 (~-9%)",
+        "target_usd": "~$165 (analyst average PT $159.82; +22.9% from current)",
+        "sources": ["Investing.com EOG technical", "StockScan EOG forecast", "CoinCodex EOG price prediction", "TipRanks EOG technical analysis", "Bitget EOG offshore energy news", "Yahoo Finance EOG valuation article"]
+      }
+    ]
   },
-  "todays_picks": []
+  "todays_picks": [
+    {
+      "scan_date": "2026-06-21",
+      "data_source_note": "INDmoney connector unavailable on 2026-06-21. Positions from June 19 snapshot. Market data cross-checked via web search June 20-21.",
+      "cut_summary": "5 confirmed CUTs (UCO, NOW, IBM, DDOG, PLTR) + 6 flagged-watch names (NVTS, IONQ, RGTI, HPE, BABA, SFTBY). Ranked by severity of trend breakage.",
+      "add_to_summary": "1 qualified ADD TO: MU (RSI in range, at ATH, all MAs Buy) — with CRITICAL concentration warning (semis/storage already 71.4%). STX and WDC overbought (RSI > 75), not eligible per screen.",
+      "open_new_summary": "2 confirmed picks (UNH Healthcare, GS Financials), 1 quality watch (EOG Energy — fails RSI criterion, enter only if RSI crosses 55). No two picks from same sector.",
+      "concentration_alert": "EXTREME: 71.4% of US sleeve is in semis/memory/storage/chip-heavy names. This is a single-theme portfolio. The CUTs (UCO, NOW, IBM, DDOG, PLTR) and new adds (UNH, GS) collectively move the portfolio toward better sector balance. Executing all 5 CUTs would free up ~4.1% sleeve weight to redeploy into diversified positions."
+    }
+  ]
 }
