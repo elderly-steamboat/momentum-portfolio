@@ -4,12 +4,12 @@
     "currency": "INR",
     "currency_note": "INDmoney reports US holdings in INR via the LRS feed. unit_price/invested/market_value are INR.",
     "source": "INDmoney connector (US_STOCK), read-only",
-    "snapshot_session": "2026-06-19",
-    "last_updated": "2026-06-21",
-    "open_positions_count": 47,
-    "total_invested_inr": 260424.0,
-    "total_market_value_inr": 263268.77,
-    "total_pnl_pct": 1.09,
+    "snapshot_session": "2026-06-22",
+    "last_updated": "2026-06-22",
+    "open_positions_count": 46,
+    "total_invested_inr": 253834.43,
+    "total_market_value_inr": 259755.66,
+    "total_pnl_pct": 2.33,
     "ticker_caveat": "ADR/OTC tickers (AOTHY, SFTBY, BYDDY, TCEHY, BMR) are best-effort and should be verified before use as scan keys."
   },
   "open_positions": [
@@ -18,12 +18,12 @@
       "name": "iShares Semiconductor ETF",
       "sector": "ETF - Semiconductors",
       "market_cap_tier": "",
-      "units": 1.09008,
+      "units": 1.090080,
       "invested_inr": 63075.39,
       "market_value_inr": 65815.61,
       "current_price_inr": 60376.87,
       "pnl_pct": 4.34,
-      "weight_pct_us_sleeve": 25.0
+      "weight_pct_us_sleeve": 25.34
     },
     {
       "ticker": "EWY",
@@ -35,7 +35,7 @@
       "market_value_inr": 63460.62,
       "current_price_inr": 20696.86,
       "pnl_pct": 5.33,
-      "weight_pct_us_sleeve": 24.1
+      "weight_pct_us_sleeve": 24.43
     },
     {
       "ticker": "MU",
@@ -47,31 +47,31 @@
       "market_value_inr": 15252.79,
       "current_price_inr": 107071.33,
       "pnl_pct": 24.64,
-      "weight_pct_us_sleeve": 5.79
+      "weight_pct_us_sleeve": 5.87
     },
     {
       "ticker": "WDC",
       "name": "Western Digital",
       "sector": "Technology - Storage",
       "market_cap_tier": "Large",
-      "units": 0.14257,
+      "units": 0.142570,
       "invested_inr": 8472.31,
       "market_value_inr": 10045.31,
       "current_price_inr": 70459.03,
       "pnl_pct": 18.57,
-      "weight_pct_us_sleeve": 3.82
+      "weight_pct_us_sleeve": 3.87
     },
     {
       "ticker": "AMD",
       "name": "Advanced Micro Devices",
       "sector": "Technology - Semis",
       "market_cap_tier": "Mega",
-      "units": 0.1254,
-      "invested_inr": 5648.2,
+      "units": 0.125400,
+      "invested_inr": 5648.20,
       "market_value_inr": 6362.63,
       "current_price_inr": 50738.47,
       "pnl_pct": 12.65,
-      "weight_pct_us_sleeve": 2.42
+      "weight_pct_us_sleeve": 2.45
     },
     {
       "ticker": "TSM",
@@ -83,7 +83,7 @@
       "market_value_inr": 5177.44,
       "current_price_inr": 43633.37,
       "pnl_pct": 10.0,
-      "weight_pct_us_sleeve": 1.97
+      "weight_pct_us_sleeve": 1.99
     },
     {
       "ticker": "QQQ",
@@ -95,7 +95,7 @@
       "market_value_inr": 4917.65,
       "current_price_inr": 69929.34,
       "pnl_pct": 4.48,
-      "weight_pct_us_sleeve": 1.87
+      "weight_pct_us_sleeve": 1.89
     },
     {
       "ticker": "STX",
@@ -107,7 +107,7 @@
       "market_value_inr": 4794.03,
       "current_price_inr": 101051.11,
       "pnl_pct": 27.32,
-      "weight_pct_us_sleeve": 1.82
+      "weight_pct_us_sleeve": 1.85
     },
     {
       "ticker": "VOO",
@@ -119,7 +119,7 @@
       "market_value_inr": 4770.27,
       "current_price_inr": 64971.34,
       "pnl_pct": 1.35,
-      "weight_pct_us_sleeve": 1.81
+      "weight_pct_us_sleeve": 1.84
     },
     {
       "ticker": "AAPL",
@@ -129,9 +129,9 @@
       "units": 0.168241,
       "invested_inr": 4706.84,
       "market_value_inr": 4733.97,
-      "current_price_inr": 28138.1,
+      "current_price_inr": 28138.10,
       "pnl_pct": 0.58,
-      "weight_pct_us_sleeve": 1.8
+      "weight_pct_us_sleeve": 1.82
     },
     {
       "ticker": "TXN",
@@ -143,19 +143,19 @@
       "market_value_inr": 4671.24,
       "current_price_inr": 30484.44,
       "pnl_pct": -0.76,
-      "weight_pct_us_sleeve": 1.77
+      "weight_pct_us_sleeve": 1.80
     },
     {
       "ticker": "GOOGL",
       "name": "Alphabet Inc. Class A",
       "sector": "Communication Services",
       "market_cap_tier": "Mega",
-      "units": 0.12885,
+      "units": 0.128850,
       "invested_inr": 4706.84,
       "market_value_inr": 4477.46,
       "current_price_inr": 34749.39,
       "pnl_pct": -4.87,
-      "weight_pct_us_sleeve": 1.7
+      "weight_pct_us_sleeve": 1.72
     },
     {
       "ticker": "AMZN",
@@ -165,9 +165,9 @@
       "units": 0.187659,
       "invested_inr": 4706.84,
       "market_value_inr": 4330.28,
-      "current_price_inr": 23075.3,
+      "current_price_inr": 23075.30,
       "pnl_pct": -8.0,
-      "weight_pct_us_sleeve": 1.64
+      "weight_pct_us_sleeve": 1.67
     },
     {
       "ticker": "NVDA",
@@ -176,10 +176,10 @@
       "market_cap_tier": "Mega",
       "units": 0.211272,
       "invested_inr": 4706.84,
-      "market_value_inr": 4202.9,
+      "market_value_inr": 4202.90,
       "current_price_inr": 19893.35,
       "pnl_pct": -10.71,
-      "weight_pct_us_sleeve": 1.6
+      "weight_pct_us_sleeve": 1.62
     },
     {
       "ticker": "ARM",
@@ -188,10 +188,10 @@
       "market_cap_tier": "Large",
       "units": 0.096352,
       "invested_inr": 3765.47,
-      "market_value_inr": 3998.0,
+      "market_value_inr": 3998.00,
       "current_price_inr": 41493.81,
       "pnl_pct": 6.18,
-      "weight_pct_us_sleeve": 1.52
+      "weight_pct_us_sleeve": 1.54
     },
     {
       "ticker": "CRM",
@@ -202,20 +202,8 @@
       "invested_inr": 4706.84,
       "market_value_inr": 3845.35,
       "current_price_inr": 14331.07,
-      "pnl_pct": -18.3,
-      "weight_pct_us_sleeve": 1.46
-    },
-    {
-      "ticker": "UCO",
-      "name": "ProShares Ultra Bloomberg Crude Oil",
-      "sector": "Leveraged ETF - Crude Oil (2x)",
-      "market_cap_tier": "Small",
-      "units": 1.015482,
-      "invested_inr": 4706.84,
-      "market_value_inr": 3513.11,
-      "current_price_inr": 3459.55,
-      "pnl_pct": -25.36,
-      "weight_pct_us_sleeve": 1.33
+      "pnl_pct": -18.30,
+      "weight_pct_us_sleeve": 1.48
     },
     {
       "ticker": "NOW",
@@ -227,19 +215,19 @@
       "market_value_inr": 2779.84,
       "current_price_inr": 8973.68,
       "pnl_pct": -26.18,
-      "weight_pct_us_sleeve": 1.06
+      "weight_pct_us_sleeve": 1.07
     },
     {
       "ticker": "TLN",
       "name": "Talen Energy Corp",
       "sector": "Utilities / Power",
       "market_cap_tier": "Mid",
-      "units": 0.06526,
+      "units": 0.065260,
       "invested_inr": 2551.23,
       "market_value_inr": 2688.35,
-      "current_price_inr": 41194.5,
+      "current_price_inr": 41194.50,
       "pnl_pct": 5.37,
-      "weight_pct_us_sleeve": 1.02
+      "weight_pct_us_sleeve": 1.03
     },
     {
       "ticker": "RDDT",
@@ -251,7 +239,7 @@
       "market_value_inr": 1942.12,
       "current_price_inr": 16519.72,
       "pnl_pct": 3.15,
-      "weight_pct_us_sleeve": 0.74
+      "weight_pct_us_sleeve": 0.75
     },
     {
       "ticker": "AOTHY",
@@ -263,19 +251,19 @@
       "market_value_inr": 1908.67,
       "current_price_inr": 1716.08,
       "pnl_pct": 1.38,
-      "weight_pct_us_sleeve": 0.72
+      "weight_pct_us_sleeve": 0.73
     },
     {
       "ticker": "DELL",
       "name": "Dell Technologies",
       "sector": "Technology",
       "market_cap_tier": "Large",
-      "units": 0.0482,
+      "units": 0.048200,
       "invested_inr": 1882.73,
       "market_value_inr": 1863.67,
       "current_price_inr": 38664.99,
       "pnl_pct": -1.01,
-      "weight_pct_us_sleeve": 0.71
+      "weight_pct_us_sleeve": 0.72
     },
     {
       "ticker": "GALT",
@@ -287,7 +275,7 @@
       "market_value_inr": 1867.16,
       "current_price_inr": 266.74,
       "pnl_pct": -6.32,
-      "weight_pct_us_sleeve": 0.71
+      "weight_pct_us_sleeve": 0.72
     },
     {
       "ticker": "MOD",
@@ -299,19 +287,7 @@
       "market_value_inr": 1774.04,
       "current_price_inr": 28077.67,
       "pnl_pct": -5.77,
-      "weight_pct_us_sleeve": 0.67
-    },
-    {
-      "ticker": "QCOM",
-      "name": "QUALCOMM Inc.",
-      "sector": "Technology - Semis",
-      "market_cap_tier": "Large",
-      "units": 0.082194,
-      "invested_inr": 1882.73,
-      "market_value_inr": 1754.79,
-      "current_price_inr": 21349.31,
-      "pnl_pct": -6.8,
-      "weight_pct_us_sleeve": 0.67
+      "weight_pct_us_sleeve": 0.68
     },
     {
       "ticker": "DOCN",
@@ -323,7 +299,19 @@
       "market_value_inr": 1773.06,
       "current_price_inr": 16360.15,
       "pnl_pct": -5.83,
-      "weight_pct_us_sleeve": 0.67
+      "weight_pct_us_sleeve": 0.68
+    },
+    {
+      "ticker": "QCOM",
+      "name": "QUALCOMM Inc.",
+      "sector": "Technology - Semis",
+      "market_cap_tier": "Large",
+      "units": 0.082194,
+      "invested_inr": 1882.73,
+      "market_value_inr": 1754.79,
+      "current_price_inr": 21349.31,
+      "pnl_pct": -6.80,
+      "weight_pct_us_sleeve": 0.68
     },
     {
       "ticker": "TCEHY",
@@ -335,7 +323,7 @@
       "market_value_inr": 1742.09,
       "current_price_inr": 5296.96,
       "pnl_pct": -7.47,
-      "weight_pct_us_sleeve": 0.66
+      "weight_pct_us_sleeve": 0.67
     },
     {
       "ticker": "CRWD",
@@ -347,7 +335,7 @@
       "market_value_inr": 1687.23,
       "current_price_inr": 64664.48,
       "pnl_pct": -10.38,
-      "weight_pct_us_sleeve": 0.64
+      "weight_pct_us_sleeve": 0.65
     },
     {
       "ticker": "URA",
@@ -359,7 +347,7 @@
       "market_value_inr": 1686.74,
       "current_price_inr": 4511.39,
       "pnl_pct": -10.41,
-      "weight_pct_us_sleeve": 0.64
+      "weight_pct_us_sleeve": 0.65
     },
     {
       "ticker": "NET",
@@ -371,7 +359,7 @@
       "market_value_inr": 1600.37,
       "current_price_inr": 21155.74,
       "pnl_pct": -15.0,
-      "weight_pct_us_sleeve": 0.61
+      "weight_pct_us_sleeve": 0.62
     },
     {
       "ticker": "ORCL",
@@ -383,7 +371,7 @@
       "market_value_inr": 1569.44,
       "current_price_inr": 17400.66,
       "pnl_pct": -16.64,
-      "weight_pct_us_sleeve": 0.6
+      "weight_pct_us_sleeve": 0.60
     },
     {
       "ticker": "BMR",
@@ -395,19 +383,7 @@
       "market_value_inr": 1567.37,
       "current_price_inr": 156.74,
       "pnl_pct": -15.31,
-      "weight_pct_us_sleeve": 0.6
-    },
-    {
-      "ticker": "PLTR",
-      "name": "Palantir Technologies Cl A",
-      "sector": "Technology",
-      "market_cap_tier": "Large",
-      "units": 0.128284,
-      "invested_inr": 1882.73,
-      "market_value_inr": 1556.11,
-      "current_price_inr": 12130.14,
-      "pnl_pct": -17.35,
-      "weight_pct_us_sleeve": 0.59
+      "weight_pct_us_sleeve": 0.60
     },
     {
       "ticker": "TWLO",
@@ -419,7 +395,31 @@
       "market_value_inr": 1564.72,
       "current_price_inr": 17578.17,
       "pnl_pct": -16.89,
-      "weight_pct_us_sleeve": 0.59
+      "weight_pct_us_sleeve": 0.60
+    },
+    {
+      "ticker": "PLTR",
+      "name": "Palantir Technologies Cl A",
+      "sector": "Technology",
+      "market_cap_tier": "Large",
+      "units": 0.128284,
+      "invested_inr": 1882.73,
+      "market_value_inr": 1556.11,
+      "current_price_inr": 12130.14,
+      "pnl_pct": -17.35,
+      "weight_pct_us_sleeve": 0.60
+    },
+    {
+      "ticker": "DDOG",
+      "name": "Datadog Inc. Cl A",
+      "sector": "Technology",
+      "market_cap_tier": "Large",
+      "units": 0.072033,
+      "invested_inr": 1882.73,
+      "market_value_inr": 1516.70,
+      "current_price_inr": 21055.66,
+      "pnl_pct": -19.44,
+      "weight_pct_us_sleeve": 0.58
     },
     {
       "ticker": "HPE",
@@ -431,7 +431,7 @@
       "market_value_inr": 1525.77,
       "current_price_inr": 4476.45,
       "pnl_pct": -18.96,
-      "weight_pct_us_sleeve": 0.58
+      "weight_pct_us_sleeve": 0.59
     },
     {
       "ticker": "SFTBY",
@@ -443,7 +443,7 @@
       "market_value_inr": 1528.32,
       "current_price_inr": 2210.37,
       "pnl_pct": -18.82,
-      "weight_pct_us_sleeve": 0.58
+      "weight_pct_us_sleeve": 0.59
     },
     {
       "ticker": "BABA",
@@ -455,19 +455,7 @@
       "market_value_inr": 1535.68,
       "current_price_inr": 10112.38,
       "pnl_pct": -18.43,
-      "weight_pct_us_sleeve": 0.58
-    },
-    {
-      "ticker": "DDOG",
-      "name": "Datadog Inc. Cl A",
-      "sector": "Technology",
-      "market_cap_tier": "Large",
-      "units": 0.072033,
-      "invested_inr": 1882.73,
-      "market_value_inr": 1516.7,
-      "current_price_inr": 21055.66,
-      "pnl_pct": -19.44,
-      "weight_pct_us_sleeve": 0.58
+      "weight_pct_us_sleeve": 0.59
     },
     {
       "ticker": "RGTI",
@@ -479,6 +467,18 @@
       "market_value_inr": 1513.22,
       "current_price_inr": 2016.81,
       "pnl_pct": -19.63,
+      "weight_pct_us_sleeve": 0.58
+    },
+    {
+      "ticker": "IONQ",
+      "name": "IonQ Inc.",
+      "sector": "Technology - Quantum",
+      "market_cap_tier": "Small",
+      "units": 0.277245,
+      "invested_inr": 1882.73,
+      "market_value_inr": 1480.33,
+      "current_price_inr": 5339.45,
+      "pnl_pct": -21.37,
       "weight_pct_us_sleeve": 0.57
     },
     {
@@ -491,7 +491,7 @@
       "market_value_inr": 1497.96,
       "current_price_inr": 969.69,
       "pnl_pct": -20.44,
-      "weight_pct_us_sleeve": 0.57
+      "weight_pct_us_sleeve": 0.58
     },
     {
       "ticker": "UEC",
@@ -502,19 +502,7 @@
       "invested_inr": 1882.73,
       "market_value_inr": 1464.67,
       "current_price_inr": 1133.98,
-      "pnl_pct": -22.2,
-      "weight_pct_us_sleeve": 0.56
-    },
-    {
-      "ticker": "IONQ",
-      "name": "IonQ Inc.",
-      "sector": "Technology - Quantum",
-      "market_cap_tier": "Small",
-      "units": 0.277245,
-      "invested_inr": 1882.73,
-      "market_value_inr": 1480.33,
-      "current_price_inr": 5339.45,
-      "pnl_pct": -21.37,
+      "pnl_pct": -22.20,
       "weight_pct_us_sleeve": 0.56
     },
     {
@@ -551,7 +539,7 @@
       "market_value_inr": 1084.78,
       "current_price_inr": 12651.34,
       "pnl_pct": 15.23,
-      "weight_pct_us_sleeve": 0.41
+      "weight_pct_us_sleeve": 0.42
     },
     {
       "ticker": "BYDDY",
