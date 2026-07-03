@@ -5,12 +5,27 @@
     "currency_note": "INDmoney reports US holdings in INR via the LRS feed. unit_price/invested/market_value are INR.",
     "source": "INDmoney connector (US_STOCK), read-only",
     "snapshot_session": "2026-06-19",
-    "last_updated": "2026-06-21",
+    "last_updated": "2026-07-03",
+    "holdings_staleness_warning": "INDmoney connector was authenticated but NOT enabledInChat for this session. Holdings reflect the 2026-06-21 snapshot — prices and P&L percentages are STALE (12 days old). Enable the connector in chat settings before next run to get live data. Recommendations in this file are based on today's market scan (2026-07-03) applied to the stale position list.",
     "open_positions_count": 47,
     "total_invested_inr": 260424.0,
     "total_market_value_inr": 263268.77,
     "total_pnl_pct": 1.09,
-    "ticker_caveat": "ADR/OTC tickers (AOTHY, SFTBY, BYDDY, TCEHY, BMR) are best-effort and should be verified before use as scan keys."
+    "ticker_caveat": "ADR/OTC tickers (AOTHY, SFTBY, BYDDY, TCEHY, BMR) are best-effort and should be verified before use as scan keys.",
+    "concentration_read_2026_07_03": {
+      "semis_memory_storage_chip_weight_pct": 71.5,
+      "breakdown": {
+        "SOXX_chip_etf": 25.0,
+        "EWY_korea_chip_etf": 24.1,
+        "individual_semis_MU_AMD_TSM_TXN_NVDA_ARM_QCOM_NVTS_INTC": 22.0,
+        "storage_STX_WDC": 5.64
+      },
+      "deeply_underwater_count": 18,
+      "deeply_underwater_tickers": ["UCO","NOW","IBM","NVTS","UEC","PATH","IONQ","DDOG","RGTI","HPE","SFTBY","BABA","CRM","PLTR","TWLO","ORCL","BMR","NET"],
+      "most_broken_sector": "General Technology (individual names — CRM, NOW, ORCL, PLTR, TWLO, HPE, DDOG, PATH all below key MAs)",
+      "sectors_absent_or_minimal": ["Financials (0%)", "Consumer Staples (0%)", "Materials (0%)", "Real Estate (0%)", "Healthcare meaningful (only tiny speculative biotech)"],
+      "note": "~71.5% in semis/memory/storage is extreme concentration. The CUT actions below free capital; OPEN NEW picks target absent sectors."
+    }
   },
   "open_positions": [
     {
@@ -107,7 +122,8 @@
       "market_value_inr": 4794.03,
       "current_price_inr": 101051.11,
       "pnl_pct": 27.32,
-      "weight_pct_us_sleeve": 1.82
+      "weight_pct_us_sleeve": 1.82,
+      "scan_note_2026_07_03": "STX fell -10.4% on July 2 (broad profit-taking after ~250% YTD run). Stale P&L of +27.32% is likely reversed to ~-12% vs cost. Do NOT add until trend confirmation; RSI bounce-reading of 73 reflects single-day recovery, not sustained trend."
     },
     {
       "ticker": "VOO",
@@ -579,9 +595,344 @@
     }
   ],
   "recommendations": {
-    "cut": [],
-    "add_to": [],
-    "open_new": []
+    "scan_date": "2026-07-03",
+    "data_sources": ["WebSearch via gurufocus.com, investing.com, tradingkey.com, chartmill.com, financhill.com, stockinvest.us, marketbeat.com, altindex.com, barchart.com"],
+    "cut": [
+      {
+        "rank": 1,
+        "ticker": "UCO",
+        "name": "ProShares Ultra Bloomberg Crude Oil (2x)",
+        "weight_pct": 1.33,
+        "pnl_pct_at_snapshot": -25.36,
+        "rule_broken": "Structurally decaying leveraged commodity ETF — automatic CUT per discipline. Also: down -17.09% in last 10 days, in a falling trend; 52-week range $18.12-$52.94, current ~$32.",
+        "action": "full_exit",
+        "data_confidence": "HIGH — auto-rule applies regardless of price"
+      },
+      {
+        "rank": 2,
+        "ticker": "ORCL",
+        "name": "Oracle Corp",
+        "weight_pct": 0.60,
+        "pnl_pct_at_snapshot": -16.64,
+        "estimated_current_pnl_pct": "approx -35 to -40% (price fell -24.34% in 10 days from already-underwater level)",
+        "rule_broken": "Below ALL moving averages: 8d SMA $154.45, 20d SMA $182.59, 50d SMA $187.19, 200d SMA $200.69. Current price $142.50. Down 9 of last 10 days. Worst week on Wall Street in 25 years due to AI-spending concerns and rising debt.",
+        "action": "full_exit",
+        "data_confidence": "HIGH — multiple sources confirm breakdown"
+      },
+      {
+        "rank": 3,
+        "ticker": "PLTR",
+        "name": "Palantir Technologies Cl A",
+        "weight_pct": 0.59,
+        "pnl_pct_at_snapshot": -17.35,
+        "rule_broken": "Below 20d SMA ($130.14), 50d SMA ($135.92), 200d SMA ($158.59). Current price $115.70. RSI 34.51 — broken trend, not just a dip. No MAs showing buy signals.",
+        "action": "full_exit",
+        "data_confidence": "HIGH — confirmed MA breakdown"
+      },
+      {
+        "rank": 4,
+        "ticker": "CRM",
+        "name": "Salesforce Inc.",
+        "weight_pct": 1.46,
+        "pnl_pct_at_snapshot": -18.30,
+        "rule_broken": "Below 200d SMA ($212.83 vs price $182.14). -34.54% over past year. Price well below cost basis and in established downtrend.",
+        "action": "full_exit",
+        "data_confidence": "HIGH — 200d MA breach confirmed"
+      },
+      {
+        "rank": 5,
+        "ticker": "TWLO",
+        "name": "Twilio Inc.",
+        "weight_pct": 0.59,
+        "pnl_pct_at_snapshot": -16.89,
+        "rule_broken": "Sell signals from both short-term and long-term MAs (long-term MA above short-term MA — established downtrend). Price well below cost.",
+        "action": "full_exit",
+        "data_confidence": "MEDIUM — directional confirmed, exact MA values not sourced"
+      },
+      {
+        "rank": 6,
+        "ticker": "NOW",
+        "name": "ServiceNow Inc.",
+        "weight_pct": 1.06,
+        "pnl_pct_at_snapshot": -26.18,
+        "rule_broken": "Below 200d SMA ($133.66 vs price $106.32). Down 16.71% over last 30 days. Recent +18.77% bounce in 7 days appears to be short-covering on Guggenheim upgrade to Buy/$125 — not trend reversal (RSI 73.74 on the bounce = overbought). Trend remains broken long-term.",
+        "action": "trim_or_exit",
+        "nuance": "Guggenheim upgrade and $125 PT are upside risk if held. If you want to stay in, hard stop at $95 (below 30d base). Otherwise exit into this bounce.",
+        "data_confidence": "HIGH — 200d MA breach confirmed; bounce nature assessed"
+      },
+      {
+        "rank": 7,
+        "ticker": "IBM",
+        "name": "IBM",
+        "weight_pct": 0.55,
+        "pnl_pct_at_snapshot": -23.52,
+        "rule_broken": "Large P&L loss; current price data insufficient for MA confirmation. Verify on broker: if price is below 200d SMA, exit per discipline.",
+        "action": "verify_then_exit_if_below_200d_ma",
+        "data_confidence": "LOW — price vs MA unconfirmed; flag for manual check"
+      },
+      {
+        "rank": 8,
+        "ticker": "HPE",
+        "name": "Hewlett Packard Enterprise",
+        "weight_pct": 0.58,
+        "pnl_pct_at_snapshot": -18.96,
+        "rule_broken": "Large P&L loss; current price data insufficient for MA confirmation. Verify on broker.",
+        "action": "verify_then_exit_if_below_200d_ma",
+        "data_confidence": "LOW — flag for manual check"
+      },
+      {
+        "rank": 9,
+        "ticker": "BABA",
+        "name": "Alibaba Group ADS",
+        "weight_pct": 0.58,
+        "pnl_pct_at_snapshot": -18.43,
+        "rule_broken": "Large P&L loss; ADR with geopolitical risk overlay. Verify MA status on broker.",
+        "action": "verify_then_exit_if_below_200d_ma",
+        "data_confidence": "LOW — flag for manual check"
+      },
+      {
+        "rank": 10,
+        "ticker": "SFTBY",
+        "name": "Softbank Group ADR",
+        "weight_pct": 0.58,
+        "pnl_pct_at_snapshot": -18.82,
+        "rule_broken": "OTC ADR, large P&L loss, verify MA status on broker.",
+        "action": "verify_then_exit_if_below_200d_ma",
+        "data_confidence": "LOW — flag for manual check"
+      },
+      {
+        "rank": 11,
+        "ticker": "DDOG",
+        "name": "Datadog Inc. Cl A",
+        "weight_pct": 0.58,
+        "pnl_pct_at_snapshot": -19.44,
+        "rule_broken": "Previously confirmed RSI 37.2 / Strong Sell technicals (June 2026 scan). P&L -19.44%.",
+        "action": "full_exit",
+        "data_confidence": "MEDIUM — prior scan confirmed bearish technicals; current MA not re-verified"
+      },
+      {
+        "rank": 12,
+        "ticker": "PATH",
+        "name": "UiPath Inc.",
+        "weight_pct": 0.57,
+        "pnl_pct_at_snapshot": -20.44,
+        "rule_broken": "P&L -20.44%, no technical recovery signals found. Verify broker chart.",
+        "action": "verify_then_exit_if_below_200d_ma",
+        "data_confidence": "LOW — flag for manual check"
+      },
+      {
+        "rank": 13,
+        "ticker": "IONQ",
+        "name": "IonQ Inc.",
+        "weight_pct": 0.56,
+        "pnl_pct_at_snapshot": -21.37,
+        "rule_broken": "Speculative quantum computing position at -21.37% loss. No structural catalyst.",
+        "action": "full_exit",
+        "data_confidence": "MEDIUM"
+      },
+      {
+        "rank": 14,
+        "ticker": "RGTI",
+        "name": "Rigetti Computing",
+        "weight_pct": 0.57,
+        "pnl_pct_at_snapshot": -19.63,
+        "rule_broken": "Speculative quantum computing position at -19.63% loss. No structural catalyst.",
+        "action": "full_exit",
+        "data_confidence": "MEDIUM"
+      },
+      {
+        "rank": 15,
+        "ticker": "NVTS",
+        "name": "Navitas Semiconductor",
+        "weight_pct": 0.54,
+        "pnl_pct_at_snapshot": -24.85,
+        "rule_broken": "Small-cap semi at -24.85%. Search result indicated NVTS is above 200d MA — verify before acting; if confirmed below 20d/50d MA, trim.",
+        "action": "verify_then_exit_if_below_20d_50d_ma",
+        "data_confidence": "LOW — conflicting signals; manual check required"
+      },
+      {
+        "rank": 16,
+        "ticker": "NET",
+        "name": "Cloudflare Inc. Cl A",
+        "weight_pct": 0.61,
+        "pnl_pct_at_snapshot": -15.0,
+        "rule_broken": "At the -15% P&L threshold. Verify MA status on broker — if below 200d MA, exit.",
+        "action": "verify_then_exit_if_below_200d_ma",
+        "data_confidence": "LOW — flag for manual check"
+      },
+      {
+        "rank": 17,
+        "ticker": "BMR",
+        "name": "Beamr Imaging",
+        "weight_pct": 0.60,
+        "pnl_pct_at_snapshot": -15.31,
+        "rule_broken": "Micro-cap at -15.31%. OTC-like liquidity risk. No momentum profile.",
+        "action": "full_exit",
+        "data_confidence": "LOW — no current data sourced"
+      }
+    ],
+    "add_to": [
+      {
+        "ticker": "AMD",
+        "name": "Advanced Micro Devices",
+        "current_weight_pct": 2.42,
+        "pnl_pct_at_snapshot": 12.65,
+        "why_it_passes": "RSI(14) ~65 (within 55-75 range). Above 5d SMA ($534.49), 50d SMA ($488.80), and 200d SMA ($465.34) — all MAs on buy signals (Strong Buy). Clean uptrend in a sector (AI-era demand for data center GPUs/CPUs) with structural tailwinds.",
+        "entry_zone_usd": "$530-$545",
+        "stop_usd": "$490",
+        "stop_pct_risk": -9,
+        "target_usd": "$640",
+        "target_pct_upside": 18,
+        "levels_label": "illustrative — not trading signals",
+        "concentration_warning": "STRONG CAUTION: The portfolio is already ~71.5% in semis/chip/storage (SOXX 25% + EWY 24.1% + individual names). Adding AMD deepens an already extreme concentration. Recommend executing CUT actions first to reduce semis weight before adding. Only add if you have high conviction on a sustained semis rally AND have freed up capital from exiting underwater names.",
+        "data_confidence": "MEDIUM-HIGH — RSI range and MA position confirmed from multiple sources; exact 20-day return not verified"
+      }
+    ],
+    "open_new": [
+      {
+        "rank": 1,
+        "ticker": "LLY",
+        "name": "Eli Lilly and Company",
+        "sector": "Healthcare - Pharma / GLP-1",
+        "why_absent_from_portfolio": "Portfolio has zero meaningful healthcare exposure (only two micro-cap biotechs GALT/SLS totalling 1%)",
+        "current_price_usd": 1210.18,
+        "52wk_range_usd": "623.78 - 1238.00",
+        "rsi_14": "61-65 (sources range 61.11 to 64.52; confirmed within 55-75 screen range)",
+        "ma_status": "Strong Buy — 12 Buy / 0 Sell signals across all MAs (MA5 through MA200); price above all MAs",
+        "perf_20d_pct": "~+23-25% (from est. ~$964 June 4 start to $1,210 July 3; June forecast confirmed +19.4% in month of June alone; stock hit 52-week high $1,238 on June 26)",
+        "volume_note": "Large-cap ($1.15T market cap). Avg daily volume well above 500k. Specific 5-day vs 50-day ratio not sourced — cannot confirm 1.3x criterion exactly.",
+        "earnings_next": "August 5, 2026 (confirmed) — well beyond 5-trading-day window",
+        "gap_down_today": "No — rose 3.06% on July 2",
+        "criteria_met": {
+          "price_over_10": true,
+          "market_cap_over_500m": true,
+          "avg_volume_over_500k": true,
+          "up_15pct_20d": "YES — ~+23-25% estimated over 20 trading days; cleanly above 15% threshold",
+          "above_all_mas": true,
+          "rsi_55_to_75": true,
+          "volume_5d_gt_1_3x_50d": "UNVERIFIED — cannot confirm exact ratio from available data",
+          "no_earnings_5d": true,
+          "not_gapping_down": true
+        },
+        "entry_zone_usd": "$1,180-$1,215",
+        "stop_usd": "$1,080",
+        "stop_pct_risk": -10,
+        "target_usd": "$1,340",
+        "target_pct_upside": 13,
+        "levels_label": "illustrative — not trading signals",
+        "thesis": "Eli Lilly's GLP-1/tirzepatide franchise (Zepbound/Mounjaro) delivered 56% revenue growth in Q1 2026 with guidance raised by $2B; the new Medicare GLP-1 Bridge program launching July 1 expands addressable market to Medicare patients at $50/month co-pay, removing the largest access barrier. RSI ~63, +23% in 20 days, above all MAs, near 52-week high — the trend has accelerating fundamentals behind it.",
+        "data_confidence": "HIGH for fundamentals and RSI/MA technicals; MEDIUM for exact 20-day return and volume ratio"
+      },
+      {
+        "rank": 2,
+        "ticker": "JPM",
+        "name": "JPMorgan Chase & Co.",
+        "sector": "Financials - Banking",
+        "why_absent_from_portfolio": "Financials sector is completely absent from this portfolio",
+        "current_price_usd": 334.80,
+        "52wk_range_usd": "279.10 - 343.45",
+        "rsi_14": 59.62,
+        "ma_status": "Bullish — 10d MA crossed above 50d MA on June 11 (golden cross), MACD above 0. Strong Buy signals.",
+        "perf_20d_pct": "~+13-15% estimated (stock was ~$295-$305 in early June; rose to ATH $343.45 on June 25; current $334.80). May fall just short of the 15% trigger — flagged as borderline.",
+        "volume_note": "Volume July 3: 8.42M vs avg 11.32M — below average today but pre-holiday (July 4 weekend). Specific 5-day ratio not confirmed.",
+        "earnings_next": "July 14, 2026 (6 trading days from July 3 — passes the 5-trading-day no-earnings rule)",
+        "gap_down_today": "No — price $334.80 within normal range",
+        "criteria_met": {
+          "price_over_10": true,
+          "market_cap_over_500m": true,
+          "avg_volume_over_500k": true,
+          "up_15pct_20d": "BORDERLINE — estimated ~13-15%; cannot confirm exactly 15%+",
+          "above_all_mas": true,
+          "rsi_55_to_75": true,
+          "volume_5d_gt_1_3x_50d": "UNVERIFIED",
+          "no_earnings_5d": true,
+          "not_gapping_down": true
+        },
+        "entry_zone_usd": "$329-$340",
+        "stop_usd": "$314",
+        "stop_pct_risk": -7,
+        "target_usd": "$375",
+        "target_pct_upside": 12,
+        "levels_label": "illustrative — not trading signals",
+        "analyst_consensus_pt": "$344.71 (only ~3% above current — weak upside to consensus; high-end PTs in $380-$400 range drive the target)",
+        "earnings_catalyst": "Q2 earnings July 14 — a beat and guidance raise could be the catalyst. JPM has consistently beaten estimates in 2025-2026.",
+        "thesis": "JPMorgan is in a clean breakout, hitting all-time high $343.45 on June 25 driven by deregulatory tailwinds (stress test results, capital release) and trading revenue growth in the elevated-volatility environment. RSI 59.6 and a bullish MA crossover (10d > 50d on June 11) flag this as early-to-mid-cycle strength, not a chase — Q2 earnings on July 14 are the next catalyst.",
+        "data_confidence": "MEDIUM-HIGH — RSI and MA signals confirmed; 20-day return borderline at threshold"
+      },
+      {
+        "rank": 3,
+        "ticker": "GE",
+        "name": "GE Aerospace",
+        "sector": "Industrials - Aerospace & Defense",
+        "why_absent_from_portfolio": "Industrials sector nearly absent (only small-cap AOTHY and MOD totalling ~1.4%)",
+        "current_price_usd": 376.69,
+        "52wk_range_usd": "243.34 - 382.97",
+        "rsi_14": "UNCERTAIN — readings range from 55 (June 11, GuruFocus) to 72.81 (near June 25 ATH, TradersUnion). Current estimate 58-65 after pullback from ATH, but cannot confirm. If RSI is confirmed below 55, this pick does not pass the screen.",
+        "ma_status": "Strong Buy — price above 50d SMA and 200d SMA; up 22% YTD; stock is 1.3% below 52-week high ($382.97)",
+        "perf_20d_pct": "~+17-22% estimated (from ~$305 May 22 to $376.69 today; well above 15% threshold)",
+        "volume_note": "Avg daily volume 8.36M — well above 500k. 5-day vs 50-day ratio not sourced.",
+        "earnings_next": "July 16, 2026 (9 trading days — passes 5-trading-day rule)",
+        "gap_down_today": "No — price July 2 was $374.94, July 3 opened slightly higher",
+        "criteria_met": {
+          "price_over_10": true,
+          "market_cap_over_500m": true,
+          "avg_volume_over_500k": true,
+          "up_15pct_20d": "YES — ~+17-22% estimated; above threshold",
+          "above_all_mas": true,
+          "rsi_55_to_75": "UNCERTAIN — conflicting readings; verify on your broker before entry",
+          "volume_5d_gt_1_3x_50d": "UNVERIFIED",
+          "no_earnings_5d": true,
+          "not_gapping_down": true
+        },
+        "entry_zone_usd": "$370-$382",
+        "stop_usd": "$350",
+        "stop_pct_risk": -7,
+        "target_usd": "$420",
+        "target_pct_upside": 12,
+        "levels_label": "illustrative — not trading signals",
+        "earnings_catalyst": "Q2 earnings July 16 — Q1 beat was $1.86 EPS vs $1.60 est; Defense & Propulsion orders +67% YoY. A repeat beat could push above analyst consensus PT cluster ($356-$380) toward high-end $425.",
+        "thesis": "GE Aerospace is benefiting from a commercial aviation supercycle (AI-era air travel demand, engine maintenance backlog) and a defense uplift (DPT segment orders +67% Q1). The stock is within 1.3% of its 52-week high with a Q2 earnings catalyst on July 16 — another beat could drive a breakout above the $383 ATH. Up 22% YTD vs S&P +9.7%. RSI needs verification before entry.",
+        "data_confidence": "MEDIUM — price/MA/return confirmed; RSI reading uncertain; verify before entry"
+      }
+    ]
   },
-  "todays_picks": []
+  "todays_picks": [
+    {
+      "ticker": "LLY",
+      "scan_date": "2026-07-03",
+      "entry_low_usd": 1180.0,
+      "entry_high_usd": 1215.0,
+      "stop_usd": 1080.0,
+      "stop_pct": -10.0,
+      "target_usd": 1340.0,
+      "target_pct": 13.0,
+      "rsi_14": 63.0,
+      "sector": "Healthcare - Pharma / GLP-1"
+    },
+    {
+      "ticker": "JPM",
+      "scan_date": "2026-07-03",
+      "entry_low_usd": 329.0,
+      "entry_high_usd": 340.0,
+      "stop_usd": 314.0,
+      "stop_pct": -7.0,
+      "target_usd": 375.0,
+      "target_pct": 12.0,
+      "rsi_14": 59.62,
+      "sector": "Financials - Banking"
+    },
+    {
+      "ticker": "GE",
+      "scan_date": "2026-07-03",
+      "entry_low_usd": 370.0,
+      "entry_high_usd": 382.0,
+      "stop_usd": 350.0,
+      "stop_pct": -7.0,
+      "target_usd": 420.0,
+      "target_pct": 12.0,
+      "rsi_14": null,
+      "rsi_caveat": "RSI reading uncertain (55-73 range from different sources) — verify on broker before entry",
+      "sector": "Industrials - Aerospace & Defense"
+    }
+  ]
 }
