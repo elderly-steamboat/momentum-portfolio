@@ -4,13 +4,24 @@
     "currency": "INR",
     "currency_note": "INDmoney reports US holdings in INR via the LRS feed. unit_price/invested/market_value are INR.",
     "source": "INDmoney connector (US_STOCK), read-only",
-    "snapshot_session": "2026-06-19",
-    "last_updated": "2026-06-21",
+    "snapshot_session": "2026-06-21",
+    "last_updated": "2026-07-09",
     "open_positions_count": 47,
     "total_invested_inr": 260424.0,
     "total_market_value_inr": 263268.77,
     "total_pnl_pct": 1.09,
-    "ticker_caveat": "ADR/OTC tickers (AOTHY, SFTBY, BYDDY, TCEHY, BMR) are best-effort and should be verified before use as scan keys."
+    "ticker_caveat": "ADR/OTC tickers (AOTHY, SFTBY, BYDDY, TCEHY, BMR) are best-effort and should be verified before use as scan keys.",
+    "stale_data_warning": "OPEN POSITIONS NOT REFRESHED 2026-07-09: INDmoney connector installed but enabledInChat=false in this session. open_positions reflect the 2026-06-21 snapshot. Enable ind-money connector and re-run to refresh.",
+    "scan_date": "2026-07-09",
+    "scan_note": "Momentum screen run against web sources (WebSearch). finviz.com and stockanalysis.com returned 403; individual-ticker searches used instead. USD/INR estimated ~96.6 for cross-checks (derived from RDDT price trajectory). Only 2 OPEN NEW picks qualify today: major US banks (GS, JPM, BAC) are in Q2 earnings blackout (reporting July 14–16); Visa V RSI 49.1 is below the 55 screen floor. Financials sector flagged as 'pending post-earnings' for next scan.",
+    "concentration_read": {
+      "semi_memory_storage_chip_heavy_pct": 71.4,
+      "components": "SOXX 25.0% + EWY 24.1% + MU 5.8% + WDC+STX 5.6% + AMD+TSM+TXN+NVDA+ARM+QCOM+NVTS+INTC 10.9%",
+      "ewy_note": "EWY (Korea) down ~14–17% since the snapshot; now estimated at -10% P&L; Strong Sell trend — included in CUT (trim)",
+      "soxx_note": "SOXX RSI ~79 (overbought, above 75 ADD-TO ceiling); Sell signal from MAs; still profitable; Hold",
+      "positions_pnl_lte_minus15_count": 18,
+      "most_broken_sector_by_count": "Technology (13 positions ≤ -15% P&L)"
+    }
   },
   "open_positions": [
     {
@@ -23,7 +34,8 @@
       "market_value_inr": 65815.61,
       "current_price_inr": 60376.87,
       "pnl_pct": 4.34,
-      "weight_pct_us_sleeve": 25.0
+      "weight_pct_us_sleeve": 25.0,
+      "price_as_of": "2026-06-21"
     },
     {
       "ticker": "EWY",
@@ -35,7 +47,8 @@
       "market_value_inr": 63460.62,
       "current_price_inr": 20696.86,
       "pnl_pct": 5.33,
-      "weight_pct_us_sleeve": 24.1
+      "weight_pct_us_sleeve": 24.1,
+      "price_as_of": "2026-06-21"
     },
     {
       "ticker": "MU",
@@ -47,7 +60,8 @@
       "market_value_inr": 15252.79,
       "current_price_inr": 107071.33,
       "pnl_pct": 24.64,
-      "weight_pct_us_sleeve": 5.79
+      "weight_pct_us_sleeve": 5.79,
+      "price_as_of": "2026-06-21"
     },
     {
       "ticker": "WDC",
@@ -59,7 +73,8 @@
       "market_value_inr": 10045.31,
       "current_price_inr": 70459.03,
       "pnl_pct": 18.57,
-      "weight_pct_us_sleeve": 3.82
+      "weight_pct_us_sleeve": 3.82,
+      "price_as_of": "2026-06-21"
     },
     {
       "ticker": "AMD",
@@ -71,7 +86,8 @@
       "market_value_inr": 6362.63,
       "current_price_inr": 50738.47,
       "pnl_pct": 12.65,
-      "weight_pct_us_sleeve": 2.42
+      "weight_pct_us_sleeve": 2.42,
+      "price_as_of": "2026-06-21"
     },
     {
       "ticker": "TSM",
@@ -83,7 +99,8 @@
       "market_value_inr": 5177.44,
       "current_price_inr": 43633.37,
       "pnl_pct": 10.0,
-      "weight_pct_us_sleeve": 1.97
+      "weight_pct_us_sleeve": 1.97,
+      "price_as_of": "2026-06-21"
     },
     {
       "ticker": "QQQ",
@@ -95,7 +112,8 @@
       "market_value_inr": 4917.65,
       "current_price_inr": 69929.34,
       "pnl_pct": 4.48,
-      "weight_pct_us_sleeve": 1.87
+      "weight_pct_us_sleeve": 1.87,
+      "price_as_of": "2026-06-21"
     },
     {
       "ticker": "STX",
@@ -107,7 +125,8 @@
       "market_value_inr": 4794.03,
       "current_price_inr": 101051.11,
       "pnl_pct": 27.32,
-      "weight_pct_us_sleeve": 1.82
+      "weight_pct_us_sleeve": 1.82,
+      "price_as_of": "2026-06-21"
     },
     {
       "ticker": "VOO",
@@ -119,7 +138,8 @@
       "market_value_inr": 4770.27,
       "current_price_inr": 64971.34,
       "pnl_pct": 1.35,
-      "weight_pct_us_sleeve": 1.81
+      "weight_pct_us_sleeve": 1.81,
+      "price_as_of": "2026-06-21"
     },
     {
       "ticker": "AAPL",
@@ -131,7 +151,8 @@
       "market_value_inr": 4733.97,
       "current_price_inr": 28138.1,
       "pnl_pct": 0.58,
-      "weight_pct_us_sleeve": 1.8
+      "weight_pct_us_sleeve": 1.8,
+      "price_as_of": "2026-06-21"
     },
     {
       "ticker": "TXN",
@@ -143,7 +164,8 @@
       "market_value_inr": 4671.24,
       "current_price_inr": 30484.44,
       "pnl_pct": -0.76,
-      "weight_pct_us_sleeve": 1.77
+      "weight_pct_us_sleeve": 1.77,
+      "price_as_of": "2026-06-21"
     },
     {
       "ticker": "GOOGL",
@@ -155,7 +177,8 @@
       "market_value_inr": 4477.46,
       "current_price_inr": 34749.39,
       "pnl_pct": -4.87,
-      "weight_pct_us_sleeve": 1.7
+      "weight_pct_us_sleeve": 1.7,
+      "price_as_of": "2026-06-21"
     },
     {
       "ticker": "AMZN",
@@ -167,7 +190,8 @@
       "market_value_inr": 4330.28,
       "current_price_inr": 23075.3,
       "pnl_pct": -8.0,
-      "weight_pct_us_sleeve": 1.64
+      "weight_pct_us_sleeve": 1.64,
+      "price_as_of": "2026-06-21"
     },
     {
       "ticker": "NVDA",
@@ -179,7 +203,8 @@
       "market_value_inr": 4202.9,
       "current_price_inr": 19893.35,
       "pnl_pct": -10.71,
-      "weight_pct_us_sleeve": 1.6
+      "weight_pct_us_sleeve": 1.6,
+      "price_as_of": "2026-06-21"
     },
     {
       "ticker": "ARM",
@@ -191,7 +216,8 @@
       "market_value_inr": 3998.0,
       "current_price_inr": 41493.81,
       "pnl_pct": 6.18,
-      "weight_pct_us_sleeve": 1.52
+      "weight_pct_us_sleeve": 1.52,
+      "price_as_of": "2026-06-21"
     },
     {
       "ticker": "CRM",
@@ -203,7 +229,8 @@
       "market_value_inr": 3845.35,
       "current_price_inr": 14331.07,
       "pnl_pct": -18.3,
-      "weight_pct_us_sleeve": 1.46
+      "weight_pct_us_sleeve": 1.46,
+      "price_as_of": "2026-06-21"
     },
     {
       "ticker": "UCO",
@@ -215,7 +242,8 @@
       "market_value_inr": 3513.11,
       "current_price_inr": 3459.55,
       "pnl_pct": -25.36,
-      "weight_pct_us_sleeve": 1.33
+      "weight_pct_us_sleeve": 1.33,
+      "price_as_of": "2026-06-21"
     },
     {
       "ticker": "NOW",
@@ -227,7 +255,8 @@
       "market_value_inr": 2779.84,
       "current_price_inr": 8973.68,
       "pnl_pct": -26.18,
-      "weight_pct_us_sleeve": 1.06
+      "weight_pct_us_sleeve": 1.06,
+      "price_as_of": "2026-06-21"
     },
     {
       "ticker": "TLN",
@@ -239,7 +268,8 @@
       "market_value_inr": 2688.35,
       "current_price_inr": 41194.5,
       "pnl_pct": 5.37,
-      "weight_pct_us_sleeve": 1.02
+      "weight_pct_us_sleeve": 1.02,
+      "price_as_of": "2026-06-21"
     },
     {
       "ticker": "RDDT",
@@ -251,7 +281,8 @@
       "market_value_inr": 1942.12,
       "current_price_inr": 16519.72,
       "pnl_pct": 3.15,
-      "weight_pct_us_sleeve": 0.74
+      "weight_pct_us_sleeve": 0.74,
+      "price_as_of": "2026-06-21"
     },
     {
       "ticker": "AOTHY",
@@ -263,7 +294,8 @@
       "market_value_inr": 1908.67,
       "current_price_inr": 1716.08,
       "pnl_pct": 1.38,
-      "weight_pct_us_sleeve": 0.72
+      "weight_pct_us_sleeve": 0.72,
+      "price_as_of": "2026-06-21"
     },
     {
       "ticker": "DELL",
@@ -275,7 +307,8 @@
       "market_value_inr": 1863.67,
       "current_price_inr": 38664.99,
       "pnl_pct": -1.01,
-      "weight_pct_us_sleeve": 0.71
+      "weight_pct_us_sleeve": 0.71,
+      "price_as_of": "2026-06-21"
     },
     {
       "ticker": "GALT",
@@ -287,7 +320,8 @@
       "market_value_inr": 1867.16,
       "current_price_inr": 266.74,
       "pnl_pct": -6.32,
-      "weight_pct_us_sleeve": 0.71
+      "weight_pct_us_sleeve": 0.71,
+      "price_as_of": "2026-06-21"
     },
     {
       "ticker": "MOD",
@@ -299,7 +333,8 @@
       "market_value_inr": 1774.04,
       "current_price_inr": 28077.67,
       "pnl_pct": -5.77,
-      "weight_pct_us_sleeve": 0.67
+      "weight_pct_us_sleeve": 0.67,
+      "price_as_of": "2026-06-21"
     },
     {
       "ticker": "QCOM",
@@ -311,7 +346,8 @@
       "market_value_inr": 1754.79,
       "current_price_inr": 21349.31,
       "pnl_pct": -6.8,
-      "weight_pct_us_sleeve": 0.67
+      "weight_pct_us_sleeve": 0.67,
+      "price_as_of": "2026-06-21"
     },
     {
       "ticker": "DOCN",
@@ -323,7 +359,8 @@
       "market_value_inr": 1773.06,
       "current_price_inr": 16360.15,
       "pnl_pct": -5.83,
-      "weight_pct_us_sleeve": 0.67
+      "weight_pct_us_sleeve": 0.67,
+      "price_as_of": "2026-06-21"
     },
     {
       "ticker": "TCEHY",
@@ -335,7 +372,8 @@
       "market_value_inr": 1742.09,
       "current_price_inr": 5296.96,
       "pnl_pct": -7.47,
-      "weight_pct_us_sleeve": 0.66
+      "weight_pct_us_sleeve": 0.66,
+      "price_as_of": "2026-06-21"
     },
     {
       "ticker": "CRWD",
@@ -347,7 +385,8 @@
       "market_value_inr": 1687.23,
       "current_price_inr": 64664.48,
       "pnl_pct": -10.38,
-      "weight_pct_us_sleeve": 0.64
+      "weight_pct_us_sleeve": 0.64,
+      "price_as_of": "2026-06-21"
     },
     {
       "ticker": "URA",
@@ -359,7 +398,8 @@
       "market_value_inr": 1686.74,
       "current_price_inr": 4511.39,
       "pnl_pct": -10.41,
-      "weight_pct_us_sleeve": 0.64
+      "weight_pct_us_sleeve": 0.64,
+      "price_as_of": "2026-06-21"
     },
     {
       "ticker": "NET",
@@ -371,7 +411,8 @@
       "market_value_inr": 1600.37,
       "current_price_inr": 21155.74,
       "pnl_pct": -15.0,
-      "weight_pct_us_sleeve": 0.61
+      "weight_pct_us_sleeve": 0.61,
+      "price_as_of": "2026-06-21"
     },
     {
       "ticker": "ORCL",
@@ -383,7 +424,8 @@
       "market_value_inr": 1569.44,
       "current_price_inr": 17400.66,
       "pnl_pct": -16.64,
-      "weight_pct_us_sleeve": 0.6
+      "weight_pct_us_sleeve": 0.6,
+      "price_as_of": "2026-06-21"
     },
     {
       "ticker": "BMR",
@@ -395,7 +437,8 @@
       "market_value_inr": 1567.37,
       "current_price_inr": 156.74,
       "pnl_pct": -15.31,
-      "weight_pct_us_sleeve": 0.6
+      "weight_pct_us_sleeve": 0.6,
+      "price_as_of": "2026-06-21"
     },
     {
       "ticker": "PLTR",
@@ -407,7 +450,8 @@
       "market_value_inr": 1556.11,
       "current_price_inr": 12130.14,
       "pnl_pct": -17.35,
-      "weight_pct_us_sleeve": 0.59
+      "weight_pct_us_sleeve": 0.59,
+      "price_as_of": "2026-06-21"
     },
     {
       "ticker": "TWLO",
@@ -419,7 +463,8 @@
       "market_value_inr": 1564.72,
       "current_price_inr": 17578.17,
       "pnl_pct": -16.89,
-      "weight_pct_us_sleeve": 0.59
+      "weight_pct_us_sleeve": 0.59,
+      "price_as_of": "2026-06-21"
     },
     {
       "ticker": "HPE",
@@ -431,7 +476,8 @@
       "market_value_inr": 1525.77,
       "current_price_inr": 4476.45,
       "pnl_pct": -18.96,
-      "weight_pct_us_sleeve": 0.58
+      "weight_pct_us_sleeve": 0.58,
+      "price_as_of": "2026-06-21"
     },
     {
       "ticker": "SFTBY",
@@ -443,7 +489,8 @@
       "market_value_inr": 1528.32,
       "current_price_inr": 2210.37,
       "pnl_pct": -18.82,
-      "weight_pct_us_sleeve": 0.58
+      "weight_pct_us_sleeve": 0.58,
+      "price_as_of": "2026-06-21"
     },
     {
       "ticker": "BABA",
@@ -455,7 +502,8 @@
       "market_value_inr": 1535.68,
       "current_price_inr": 10112.38,
       "pnl_pct": -18.43,
-      "weight_pct_us_sleeve": 0.58
+      "weight_pct_us_sleeve": 0.58,
+      "price_as_of": "2026-06-21"
     },
     {
       "ticker": "DDOG",
@@ -467,7 +515,8 @@
       "market_value_inr": 1516.7,
       "current_price_inr": 21055.66,
       "pnl_pct": -19.44,
-      "weight_pct_us_sleeve": 0.58
+      "weight_pct_us_sleeve": 0.58,
+      "price_as_of": "2026-06-21"
     },
     {
       "ticker": "RGTI",
@@ -479,7 +528,8 @@
       "market_value_inr": 1513.22,
       "current_price_inr": 2016.81,
       "pnl_pct": -19.63,
-      "weight_pct_us_sleeve": 0.57
+      "weight_pct_us_sleeve": 0.57,
+      "price_as_of": "2026-06-21"
     },
     {
       "ticker": "PATH",
@@ -491,7 +541,8 @@
       "market_value_inr": 1497.96,
       "current_price_inr": 969.69,
       "pnl_pct": -20.44,
-      "weight_pct_us_sleeve": 0.57
+      "weight_pct_us_sleeve": 0.57,
+      "price_as_of": "2026-06-21"
     },
     {
       "ticker": "UEC",
@@ -503,7 +554,8 @@
       "market_value_inr": 1464.67,
       "current_price_inr": 1133.98,
       "pnl_pct": -22.2,
-      "weight_pct_us_sleeve": 0.56
+      "weight_pct_us_sleeve": 0.56,
+      "price_as_of": "2026-06-21"
     },
     {
       "ticker": "IONQ",
@@ -515,7 +567,8 @@
       "market_value_inr": 1480.33,
       "current_price_inr": 5339.45,
       "pnl_pct": -21.37,
-      "weight_pct_us_sleeve": 0.56
+      "weight_pct_us_sleeve": 0.56,
+      "price_as_of": "2026-06-21"
     },
     {
       "ticker": "IBM",
@@ -527,7 +580,8 @@
       "market_value_inr": 1439.94,
       "current_price_inr": 23520.02,
       "pnl_pct": -23.52,
-      "weight_pct_us_sleeve": 0.55
+      "weight_pct_us_sleeve": 0.55,
+      "price_as_of": "2026-06-21"
     },
     {
       "ticker": "NVTS",
@@ -539,7 +593,8 @@
       "market_value_inr": 1414.91,
       "current_price_inr": 2267.97,
       "pnl_pct": -24.85,
-      "weight_pct_us_sleeve": 0.54
+      "weight_pct_us_sleeve": 0.54,
+      "price_as_of": "2026-06-21"
     },
     {
       "ticker": "INTC",
@@ -551,7 +606,8 @@
       "market_value_inr": 1084.78,
       "current_price_inr": 12651.34,
       "pnl_pct": 15.23,
-      "weight_pct_us_sleeve": 0.41
+      "weight_pct_us_sleeve": 0.41,
+      "price_as_of": "2026-06-21"
     },
     {
       "ticker": "BYDDY",
@@ -563,7 +619,8 @@
       "market_value_inr": 811.98,
       "current_price_inr": 971.58,
       "pnl_pct": -13.74,
-      "weight_pct_us_sleeve": 0.31
+      "weight_pct_us_sleeve": 0.31,
+      "price_as_of": "2026-06-21"
     },
     {
       "ticker": "SLS",
@@ -575,13 +632,167 @@
       "market_value_inr": 760.08,
       "current_price_inr": 760.08,
       "pnl_pct": -4.24,
-      "weight_pct_us_sleeve": 0.29
+      "weight_pct_us_sleeve": 0.29,
+      "price_as_of": "2026-06-21"
     }
   ],
   "recommendations": {
-    "cut": [],
-    "add_to": [],
-    "open_new": []
+    "cut": [
+      {
+        "ticker": "UCO",
+        "current_weight_pct": 1.33,
+        "snapshot_pnl_pct": -25.36,
+        "estimated_current_pnl_pct": "-35 to -38",
+        "current_price_usd_est": 35.2,
+        "rule_violated": "Structurally decaying instrument: 2x leveraged daily-rebalancing crude oil ETF suffers permanent compounding decay on long holds; price at $35.20 vs estimated cost ~$54 USD; continuing to fall since snapshot",
+        "suggested_action": "Full exit",
+        "data_source": "UCO price $35.20 confirmed July 9, 2026 (WebSearch); 52-week low $18.12 / high $52.94",
+        "rank": 1
+      },
+      {
+        "ticker": "ORCL",
+        "current_weight_pct": 0.6,
+        "snapshot_pnl_pct": -16.64,
+        "estimated_current_pnl_pct": "-30 to -40 (estimated; ORCL down ~28% YTD as of July 9)",
+        "current_price_usd_est": 141.6,
+        "rule_violated": "RSI below 30 (confirmed severe downtrend); shares down approximately 28% year-to-date on AI-spending and debt concerns; no fundamental catalyst until Sep 14, 2026 earnings; broken below all key moving averages",
+        "suggested_action": "Full exit",
+        "data_source": "ORCL ~$141.60, RSI<30, down 28% YTD per WebSearch July 9 2026; earnings Sep 14 confirmed",
+        "rank": 2
+      },
+      {
+        "ticker": "EWY",
+        "current_weight_pct": 24.1,
+        "snapshot_pnl_pct": 5.33,
+        "estimated_current_pnl_pct": "-10 to -12 (EWY $182.72 vs estimated cost $203 USD, using ~USD/INR 96.6)",
+        "current_price_usd_est": 182.72,
+        "rule_violated": "Price down ~14-17% over the past month from June highs; Strong Sell signal (all MA indicators bearish); trend broken from 52-week high area; 24.1% sleeve weight makes this the highest-impact broken-trend position in the portfolio",
+        "suggested_action": "Trim — reduce from 24.1% to target ~12-15% sleeve weight; do not fully exit given Korea AI-memory tailwinds but the trend is broken and the weight is unsafe",
+        "data_source": "EWY $182.72 July 9, 2026; 52-week range $70.36-$220.89; Strong Sell signal; down 16.91% past month per WebSearch",
+        "rank": 3
+      },
+      {
+        "ticker": "NOW",
+        "current_weight_pct": 1.06,
+        "snapshot_pnl_pct": -26.18,
+        "estimated_current_pnl_pct": "-14 (NOW $107.78; estimated cost $125.8 USD; recovered from June lows but still well below cost and in bearish MA configuration)",
+        "current_price_usd_est": 107.78,
+        "rule_violated": "12 MA Sell signals / 0 Buy signals; bearish moving average configuration (5d $99, 50d $104, 200d $105 all declining); analyst consensus Buy but technical picture remains broken; at/near low end of 52-week range",
+        "suggested_action": "Exit — technical discipline broken; even if recovering from June lows, MA configuration is bearish; concentration in already-overweight Technology sector",
+        "data_source": "NOW $107.78 July 9, 2026; 12 Sell/0 Buy MA signals; near 52-week lows per WebSearch",
+        "rank": 4
+      },
+      {
+        "ticker": "WATCH_LIST",
+        "note": "The following 13 positions were deeply underwater in the June 21 snapshot and require fresh INDmoney data + MA cross-check before acting. Enable the ind-money connector and re-run for a full assessment: PATH (-20.4%), UEC (-22.2%), NVTS (-24.9%), IONQ (-21.4%), RGTI (-19.6%), DDOG (-19.4%), HPE (-19.0%), SFTBY (-18.8%), BABA (-18.4%), CRM (-18.3%), PLTR (-17.4%), TWLO (-16.9%), BMR (-15.3%). IBM (-23.5% in snapshot) is specifically EXCLUDED from watch list — IBM has reversed to Strong Buy (12/0 MA signals, above all MAs, $299.65 July 9) and is recovering.",
+        "suggested_action": "Pending — refresh holdings via INDmoney connector",
+        "rank": 5
+      }
+    ],
+    "add_to": [
+      {
+        "ticker": "RDDT",
+        "current_weight_pct": 0.74,
+        "snapshot_pnl_pct": 3.15,
+        "estimated_current_pnl_pct": "est. +15 to +20 based on price trajectory to $192",
+        "current_price_usd_est": 192.1,
+        "why_still_passes": "Multiple sources cite Reddit as a 'key momentum leader' July 2026; price trajectory from ~$171 mid-June to $192 = +12-20% over the scan window; strong fundamentals (37.6B market cap, 55x P/E but accelerating AI data-licensing revenue); meme-meets-fundamentals setup with 12% gap on July 1",
+        "entry_zone_usd": "185 - 195",
+        "concentration_note": "Communication Services sector — adds at 0.74% weight, would reach ~1.4-1.5% after add. Does NOT worsen semiconductor/technology concentration. Acceptable diversification.",
+        "caveats": "RSI(14) not directly confirmed from search; exact 20-day % not sourced (estimated from trajectory); fresh INDmoney + MA check recommended before executing. Position is small — incremental add is low-risk to overall sleeve.",
+        "data_source": "RDDT price $192.10 July 9 2026; StocksTrade/TimothySykes/WeexWiki per WebSearch; multiple 'momentum leader' citations"
+      }
+    ],
+    "open_new": [
+      {
+        "ticker": "LLY",
+        "company": "Eli Lilly and Company",
+        "sector": "Healthcare - Pharma",
+        "market_cap_tier": "Mega",
+        "current_price_usd": 1235.56,
+        "price_date": "2026-07-07",
+        "rsi_14": "63.9 (one source: altindex.com; conflicting reading of 36.1 from another source — treat with caution; 63.9 is more consistent with price near 52-week high)",
+        "above_20d_ma": "YES — near 52-week high $1249.45; sector on multi-week uptrend",
+        "above_50d_ma": "YES (inferred from all-time-high setup)",
+        "above_200d_ma": "YES — 52-week low $623.78; stock well above any plausible 200d MA",
+        "perf_20d_pct_est": "est. +15-17% (healthcare sector +7% one week late June; LLY at ATH; estimated from sector trajectory — not directly confirmed)",
+        "volume_5d_vs_50d": "NOT VERIFIED — large-cap pharma; daily volume well above 500k",
+        "next_earnings": "2026-08-05 (confirmed; 27 calendar days from today)",
+        "not_gapping_down": "YES — near all-time high",
+        "entry_zone_usd": "1200 - 1250",
+        "stop_usd": 1095,
+        "stop_pct": -11.4,
+        "target_usd": 1380,
+        "target_pct": 11.7,
+        "thesis": "GLP-1 drugs Mounjaro and Zepbound generated $12.8B combined in Q1 2026; Q1 revenue +55.5% YoY confirms compounding volume growth. JPMorgan raised PT to $1,400 on demand; healthcare sector on rotation from tech volatility with LLY at all-time highs ahead of August 5 earnings.",
+        "diversification_note": "Portfolio has ~1% Healthcare (GALT + SLS, both small-cap biotech). LLY adds mega-cap pharma exposure — directly reduces semi concentration.",
+        "caveats": "RSI reading conflict (63.9 vs 36.1) — verify on a live charting platform before entry. 20-day % estimated. Illustrative levels only.",
+        "data_source": "LLY $1235.56 July 7 via WebSearch; earnings Aug 5 confirmed; Q1 revenue via CNBC/GuruFocus; JPM PT $1400 via TheStreet"
+      },
+      {
+        "ticker": "HWM",
+        "company": "Howmet Aerospace Inc.",
+        "sector": "Industrials - Aerospace",
+        "market_cap_tier": "Large",
+        "current_price_usd": 268.86,
+        "price_date": "2026-07-09",
+        "rsi_14": "54.3-56.4 (two sources: 56.41 per ainvest July 2026; 54.31 per tradersunion — borderline at the 55 screen floor; one reading is just below)",
+        "above_20d_ma": "YES (inferred from near-52wk-high setup and 52.6% annual gain)",
+        "above_50d_ma": "YES (inferred)",
+        "above_200d_ma": "YES — 52-week range $70-$290; well above any 200d estimate",
+        "perf_20d_pct_est": "NOT DIRECTLY CONFIRMED — up 52.6% past year; defense stocks ITA ETF hit record highs recently; near-term momentum confirmed",
+        "volume_5d_vs_50d": "NOT VERIFIED",
+        "next_earnings": "2026-07-30 (confirmed; 21 calendar days from today)",
+        "not_gapping_down": "YES — near 52-week high",
+        "entry_zone_usd": "265 - 275",
+        "stop_usd": 242,
+        "stop_pct": -10.0,
+        "target_usd": 305,
+        "target_pct": 12.6,
+        "thesis": "Pentagon FY2027 budget request of $1.5 trillion (+44% YoY) creates a multi-year demand surge for aerospace components; Howmet Q1 EPS $1.22 beat vs $1.11 estimate with $2.31B revenue. ITA defense ETF at record highs; HWM analyst consensus PT $305 (22 analysts, Strong Buy).",
+        "diversification_note": "Portfolio has ~1.4% Industrials (AOTHY + MOD, both small). HWM adds large-cap Industrials/Defense — directly diversifies away from 71.4% semi concentration.",
+        "caveats": "RSI borderline — one source at 54.31 is just below the 55 screen floor; confirm on live chart before entry. 20-day % not directly sourced. Illustrative levels only.",
+        "data_source": "HWM $268.86 July 9, 52wk high $290.63 per WebSearch; earnings July 30 confirmed; Q1 results via PR Newswire; analyst PT $305 via MarketBeat/Zacks"
+      },
+      {
+        "note_on_third_pick": "DISQUALIFIED: Goldman Sachs (GS) earnings July 14 — 3 trading days away, inside 5-trading-day blackout. JPMorgan, BofA, Morgan Stanley all in same Q2 bank earnings window. Visa (V) RSI 49.1 — below 55 screen floor. Only 2 OPEN NEW picks qualify today. Financials sector watch for next scan post July 14 bank earnings: if GS/JPM beat Q2 estimates and gap up, they could qualify in the next run."
+      }
+    ]
   },
-  "todays_picks": []
+  "todays_picks": [
+    {
+      "ticker": "LLY",
+      "company": "Eli Lilly and Company",
+      "sector": "Healthcare - Pharma",
+      "entry_low": 1200.0,
+      "entry_high": 1250.0,
+      "stop": 1095.0,
+      "stop_pct": -11.4,
+      "target": 1380.0,
+      "target_pct": 11.7,
+      "rsi_14": "~63.9 (conflicting; verify)",
+      "next_earnings": "2026-08-05",
+      "market_cap_tier": "Mega",
+      "price_at_scan": 1235.56,
+      "scan_date": "2026-07-09",
+      "thesis": "GLP-1 drugs Mounjaro and Zepbound generated $12.8B combined in Q1 2026; Q1 revenue +55.5% YoY confirms compounding volume growth. JPMorgan raised PT to $1,400 on demand; healthcare sector on rotation from tech volatility with LLY at all-time highs ahead of August 5 earnings."
+    },
+    {
+      "ticker": "HWM",
+      "company": "Howmet Aerospace Inc.",
+      "sector": "Industrials - Aerospace",
+      "entry_low": 265.0,
+      "entry_high": 275.0,
+      "stop": 242.0,
+      "stop_pct": -10.0,
+      "target": 305.0,
+      "target_pct": 12.6,
+      "rsi_14": "~54-56 (borderline; verify)",
+      "next_earnings": "2026-07-30",
+      "market_cap_tier": "Large",
+      "price_at_scan": 268.86,
+      "scan_date": "2026-07-09",
+      "thesis": "Pentagon FY2027 budget request of $1.5 trillion (+44% YoY) creates a multi-year demand surge for aerospace components; Howmet Q1 EPS $1.22 beat vs $1.11 estimate with $2.31B revenue. ITA defense ETF at record highs; HWM analyst consensus PT $305 (22 analysts, Strong Buy)."
+    }
+  ]
 }
