@@ -579,9 +579,133 @@
     }
   ],
   "recommendations": {
-    "cut": [],
+    "scan_date": "2026-07-14",
+    "holdings_data_source": "STALE-2026-06-21 (INDmoney connector not enabled in chat; open_positions unchanged)",
+    "cut": [
+      {
+        "ticker": "UCO",
+        "rule_broken": "Structurally decaying leveraged/inverse commodity ETF (2x crude oil, daily rebalancing decay)",
+        "stale_weight_pct": 1.33,
+        "stale_pnl_pct": -25.36,
+        "est_current_pnl_pct": -18.8,
+        "est_current_price_usd": 34.67,
+        "action": "full_exit",
+        "note": "Rule violation by instrument type; applies regardless of price"
+      },
+      {
+        "ticker": "NOW",
+        "rule_broken": "Trend structurally broken: 46.6% below 52-week high ($207), well below 200-day MA (~$160+); no longer passes momentum screen",
+        "stale_weight_pct": 1.06,
+        "stale_pnl_pct": -26.18,
+        "est_current_pnl_pct": -1.0,
+        "est_current_price_usd": 111.0,
+        "action": "exit_near_cost",
+        "note": "Guggenheim upgrade July 1 bounced stock ~$99→$111; clean exit at breakeven rather than holding broken trend. Guggenheim target $125 (+12.6% more) does not justify re-entering a broken chart."
+      },
+      {
+        "ticker": "IBM",
+        "rule_broken": "Price well below cost (~-23.5% stale), structural competitive decay vs AI-native platforms, likely below all MAs",
+        "stale_weight_pct": 0.55,
+        "stale_pnl_pct": -23.52,
+        "action": "full_exit",
+        "note": "Verify current price before executing; no July 14 price confirmed in this scan"
+      },
+      {
+        "ticker": "IONQ",
+        "rule_broken": "Pre-revenue quantum computing speculation; price well below cost, below all MAs, no screen path",
+        "stale_weight_pct": 0.56,
+        "stale_pnl_pct": -21.37,
+        "action": "full_exit"
+      },
+      {
+        "ticker": "RGTI",
+        "rule_broken": "Pre-revenue quantum computing speculation; price well below cost, below all MAs, no screen path",
+        "stale_weight_pct": 0.57,
+        "stale_pnl_pct": -19.63,
+        "action": "full_exit"
+      },
+      {
+        "ticker": "UEC",
+        "rule_broken": "Price well below cost (-22.2% stale); uranium sector in decline (URA also -10.4%); small-cap miner with broken trend",
+        "stale_weight_pct": 0.56,
+        "stale_pnl_pct": -22.2,
+        "action": "full_exit"
+      },
+      {
+        "ticker": "NVTS",
+        "rule_broken": "Small-cap semi; -24.85% stale, well below cost and MAs; broad semi sector distributing",
+        "stale_weight_pct": 0.54,
+        "stale_pnl_pct": -24.85,
+        "action": "full_exit"
+      },
+      {
+        "ticker": "PATH",
+        "rule_broken": "Below $10 minimum price screen threshold (~$8.93 stale); -20.44% below cost; broken trend",
+        "stale_weight_pct": 0.57,
+        "stale_pnl_pct": -20.44,
+        "action": "full_exit"
+      }
+    ],
     "add_to": [],
-    "open_new": []
+    "add_to_note": "No holdings pass all ADD TO criteria this week: MU confirmed below all EMAs (EMA20 ~$1,004, EMA50 ~$984, EMA200 ~$995); STX earnings July 16 (within 5 trading days); SOXX Strong Sell signal (MACD negative since June 24); EWY in weekly pullback. Chip complex already ~71% of sleeve — no ADD TO warranted.",
+    "open_new": [
+      {
+        "ticker": "LLY",
+        "name": "Eli Lilly and Company",
+        "sector": "Healthcare",
+        "est_current_price_usd": 1188.0,
+        "entry_zone_usd": "1165-1210",
+        "stop_illustrative_usd": 1095,
+        "stop_pct_illustrative": -7.8,
+        "target_illustrative_usd": 1400,
+        "target_pct_illustrative": 17.6,
+        "screen_checks": {
+          "price_above_10": true,
+          "market_cap_above_500m": true,
+          "avg_volume_above_500k": true,
+          "above_20_50_200_ema": true,
+          "rsi_55_75": "61-69 (confirmed)",
+          "20d_return_above_15pct": "UNCONFIRMED — approx 13-17% depending on exact June 16 price; may miss strict trigger",
+          "volume_5d_vs_50d": "not confirmed from sources",
+          "no_earnings_5_days": true,
+          "no_gap_down_today": "not confirmed"
+        },
+        "thesis": "GLP-1/obesity drug franchise (Mounjaro, Zepbound, pipeline) driving +55.5% YoY revenue growth; FY2026 guidance raised to $82-85B. Stock above all key EMAs after constructive ATH pullback from $1,235. Healthcare sector was #1 July 2026 performer (+28% avg). JPMorgan analyst target $1,400.",
+        "earnings_date": "2026-08-05",
+        "portfolio_rationale": "Adds Healthcare; sleeve currently 1% HC"
+      },
+      {
+        "ticker": "RTX",
+        "name": "RTX Corporation (Raytheon / Pratt & Whitney)",
+        "sector": "Aerospace & Defense",
+        "est_current_price_usd": 195.93,
+        "entry_zone_usd": "188-198",
+        "stop_illustrative_usd": 180,
+        "stop_pct_illustrative": -6.8,
+        "target_illustrative_usd": 215,
+        "target_pct_illustrative": 12.5,
+        "screen_checks": {
+          "price_above_10": true,
+          "market_cap_above_500m": true,
+          "avg_volume_above_500k": true,
+          "above_20_50_200_ema": "UNCONFIRMED — MACD buy signal and 7/10 days rising suggest uptrend; cannot confirm all 3 MAs from sources",
+          "rsi_55_75": "UNCONFIRMED",
+          "20d_return_above_15pct": "UNCONFIRMED — +5.01% over past 2 weeks; may not reach 15% in 20 days for large-cap defense",
+          "volume_5d_vs_50d": "not confirmed",
+          "no_earnings_5_days": true,
+          "no_gap_down_today": "not confirmed"
+        },
+        "thesis": "Iran geopolitical conflict and elevated global defense budgets drive multi-year backlog growth for RTX missile and engine divisions. 3-month MACD buy signal on constructive pullback from July 6 pivot top. Consensus analyst target $215.14 (+9.8%). Note: +30% in 4-8 weeks is unrealistic for this steady large-cap; this is a trend-continuation hold, not a fast-momentum play.",
+        "earnings_date": "2026-07-23",
+        "portfolio_rationale": "Adds Defense/Aerospace; sleeve currently 0% defense"
+      }
+    ],
+    "open_new_note": "Only 2 of 3 slots filled. Third slot blocked: major banks report earnings July 15-17 (within 5 days); V and MA confirmed below 200-day MAs; ROK (Rockwell, Industrials) is a strong watch candidate but shares GICS Industrials sector with RTX. Recommend reviewing ROK post-July 23 once RTX earnings clear."
   },
-  "todays_picks": []
+  "todays_picks": [
+    { "ticker": "LLY", "action": "open_new", "sector": "Healthcare" },
+    { "ticker": "RTX", "action": "open_new", "sector": "Defense" },
+    { "ticker": "UCO", "action": "cut_full_exit", "reason": "leveraged_etf_structural_decay" },
+    { "ticker": "NOW", "action": "cut_exit_near_cost", "reason": "trend_broken_above_all_mas" }
+  ]
 }
