@@ -5,12 +5,35 @@
     "currency_note": "INDmoney reports US holdings in INR via the LRS feed. unit_price/invested/market_value are INR.",
     "source": "INDmoney connector (US_STOCK), read-only",
     "snapshot_session": "2026-06-19",
-    "last_updated": "2026-06-21",
+    "last_updated": "2026-07-24",
+    "holdings_as_of": "2026-06-21",
+    "holdings_staleness_warning": "INDmoney connector was connected at org level but NOT enabled in this chat session (enabledInChat:false). Holdings reflect the June-21 snapshot — 33 days old. All CUT/ADD-TO signals based on snapshot P&L and structural rules only; MA/RSI not verified due to financial data sources being blocked at the egress proxy.",
     "open_positions_count": 47,
     "total_invested_inr": 260424.0,
     "total_market_value_inr": 263268.77,
     "total_pnl_pct": 1.09,
-    "ticker_caveat": "ADR/OTC tickers (AOTHY, SFTBY, BYDDY, TCEHY, BMR) are best-effort and should be verified before use as scan keys."
+    "ticker_caveat": "ADR/OTC tickers (AOTHY, SFTBY, BYDDY, TCEHY, BMR) are best-effort and should be verified before use as scan keys.",
+    "concentration_read": {
+      "semis_memory_storage_ewt_combined_pct": 71.4,
+      "breakdown": {
+        "SOXX_semiconductor_etf": 25.0,
+        "EWY_korea_chip_heavy": 24.1,
+        "MU_memory": 5.79,
+        "WDC_storage": 3.82,
+        "AMD_semis": 2.42,
+        "TSM_semis": 1.97,
+        "TXN_semis": 1.77,
+        "ARM_semis": 1.52,
+        "STX_storage": 1.82,
+        "NVDA_semis": 1.60,
+        "QCOM_semis": 0.67,
+        "NVTS_semis": 0.54,
+        "INTC_semis": 0.41
+      },
+      "deeply_underwater_count": 17,
+      "deeply_underwater_threshold_pct": -15.0,
+      "most_broken_sector": "Technology (broad) — 11 names with P&L ≤ −15%"
+    }
   },
   "open_positions": [
     {
@@ -579,9 +602,207 @@
     }
   ],
   "recommendations": {
-    "cut": [],
-    "add_to": [],
-    "open_new": []
+    "data_caveat": "All signals below are based on the June-21 snapshot only. MA/RSI not verified — live financial data sources (finviz, Yahoo Finance, stockanalysis, barchart, Alpha Vantage) were all blocked at the egress proxy on 2026-07-24. Treat as qualitative flags, not confirmed technical signals. Verify prices and MAs before acting.",
+    "cut": [
+      {
+        "ticker": "UCO",
+        "weight_pct": 1.33,
+        "pnl_pct_snapshot": -25.36,
+        "rule_broken": "Structurally decaying instrument — ProShares 2x Leveraged Crude Oil ETF. Leveraged/inverse commodity ETFs suffer daily-rebalancing decay and are explicitly named in the CUT criteria. Also at a 25%+ loss.",
+        "suggested_action": "Full exit",
+        "rank": 1,
+        "ma_verified": false
+      },
+      {
+        "ticker": "NOW",
+        "weight_pct": 1.06,
+        "pnl_pct_snapshot": -26.18,
+        "rule_broken": "Most deeply underwater named position. Down 26% from cost. At June-21 snapshot price, very likely below all MAs given the magnitude — MA position not verified due to data block.",
+        "suggested_action": "Full exit or trim to near zero",
+        "rank": 2,
+        "ma_verified": false
+      },
+      {
+        "ticker": "NVTS",
+        "weight_pct": 0.54,
+        "pnl_pct_snapshot": -24.85,
+        "rule_broken": "Down 25% from cost. Small-cap semi with negative trend momentum. Also adds to the already-extreme 71.4% semiconductor concentration.",
+        "suggested_action": "Full exit",
+        "rank": 3,
+        "ma_verified": false
+      },
+      {
+        "ticker": "IBM",
+        "weight_pct": 0.55,
+        "pnl_pct_snapshot": -23.52,
+        "rule_broken": "Down 23.5% from cost. Mature/legacy tech — does not fit a momentum screen. Position small enough that full exit is clean.",
+        "suggested_action": "Full exit",
+        "rank": 4,
+        "ma_verified": false
+      },
+      {
+        "ticker": "UEC",
+        "weight_pct": 0.56,
+        "pnl_pct_snapshot": -22.2,
+        "rule_broken": "Down 22% from cost. Uranium equity; uranium theme has been in a prolonged downtrend. Pair with URA (also −10.4%) — combined uranium exposure 1.2% both losing.",
+        "suggested_action": "Full exit",
+        "rank": 5,
+        "ma_verified": false
+      },
+      {
+        "ticker": "IONQ",
+        "weight_pct": 0.56,
+        "pnl_pct_snapshot": -21.37,
+        "rule_broken": "Down 21% from cost. Speculative quantum-computing name; no revenue momentum screen possible.",
+        "suggested_action": "Full exit",
+        "rank": 6,
+        "ma_verified": false
+      },
+      {
+        "ticker": "PATH",
+        "weight_pct": 0.57,
+        "pnl_pct_snapshot": -20.44,
+        "rule_broken": "Down 20% from cost. RPA/automation software; broken price trend from cost basis.",
+        "suggested_action": "Full exit",
+        "rank": 7,
+        "ma_verified": false
+      },
+      {
+        "ticker": "RGTI",
+        "weight_pct": 0.57,
+        "pnl_pct_snapshot": -19.63,
+        "rule_broken": "Down 20% from cost. Speculative quantum; sub-$5 micro-cap, extreme volatility, no screen pass possible.",
+        "suggested_action": "Full exit",
+        "rank": 8,
+        "ma_verified": false
+      },
+      {
+        "ticker": "DDOG",
+        "weight_pct": 0.58,
+        "pnl_pct_snapshot": -19.44,
+        "rule_broken": "Down 19% from cost. Observability/DevOps software; broken from cost.",
+        "suggested_action": "Trim",
+        "rank": 9,
+        "ma_verified": false
+      },
+      {
+        "ticker": "HPE",
+        "weight_pct": 0.58,
+        "pnl_pct_snapshot": -18.96,
+        "rule_broken": "Down 19% from cost. Legacy infrastructure hardware; does not pass a momentum screen.",
+        "suggested_action": "Full exit",
+        "rank": 10,
+        "ma_verified": false
+      },
+      {
+        "ticker": "SFTBY",
+        "weight_pct": 0.58,
+        "pnl_pct_snapshot": -18.82,
+        "rule_broken": "Down 19% from cost. OTC ADR holding co; low liquidity, broken from cost.",
+        "suggested_action": "Full exit",
+        "rank": 11,
+        "ma_verified": false
+      },
+      {
+        "ticker": "BABA",
+        "weight_pct": 0.58,
+        "pnl_pct_snapshot": -18.43,
+        "rule_broken": "Down 18% from cost. Chinese ADR; regulatory/geopolitical risk + broken trend.",
+        "suggested_action": "Full exit",
+        "rank": 12,
+        "ma_verified": false
+      },
+      {
+        "ticker": "CRM",
+        "weight_pct": 1.46,
+        "pnl_pct_snapshot": -18.3,
+        "rule_broken": "Down 18% from cost. Largest named-position loss after NOW. SaaS growth has slowed; likely below all MAs given scope of decline.",
+        "suggested_action": "Trim 50-75%",
+        "rank": 13,
+        "ma_verified": false
+      },
+      {
+        "ticker": "PLTR",
+        "weight_pct": 0.59,
+        "pnl_pct_snapshot": -17.35,
+        "rule_broken": "Down 17% from cost. AI-gov-data name but broken from snapshot price.",
+        "suggested_action": "Trim",
+        "rank": 14,
+        "ma_verified": false
+      },
+      {
+        "ticker": "TWLO",
+        "weight_pct": 0.59,
+        "pnl_pct_snapshot": -16.89,
+        "rule_broken": "Down 17% from cost. Communications API; no momentum. Broken from cost.",
+        "suggested_action": "Full exit",
+        "rank": 15,
+        "ma_verified": false
+      },
+      {
+        "ticker": "ORCL",
+        "weight_pct": 0.60,
+        "pnl_pct_snapshot": -16.64,
+        "rule_broken": "Down 17% from cost. Cloud/DB legacy; trend broken from cost basis.",
+        "suggested_action": "Trim or exit",
+        "rank": 16,
+        "ma_verified": false
+      },
+      {
+        "ticker": "BMR",
+        "weight_pct": 0.60,
+        "pnl_pct_snapshot": -15.31,
+        "rule_broken": "Down 15% from cost. Micro-cap (<$50M mkt cap), OTC-traded, highly speculative imaging tech. Does not pass size/liquidity filter ($500M+ market cap screen).",
+        "suggested_action": "Full exit",
+        "rank": 17,
+        "ma_verified": false
+      },
+      {
+        "ticker": "NET",
+        "weight_pct": 0.61,
+        "pnl_pct_snapshot": -15.0,
+        "rule_broken": "Down 15% from cost (at the threshold). Network security/CDN; borderline — include for awareness.",
+        "suggested_action": "Watch, trim if trend deteriorates",
+        "rank": 18,
+        "ma_verified": false
+      }
+    ],
+    "add_to": [
+      {
+        "ticker": "STX",
+        "weight_pct": 1.82,
+        "pnl_pct_snapshot": 27.32,
+        "thesis": "Seagate is the portfolio's strongest single-name performer at +27%. Storage demand for AI training data continues; HDD capacity drives are benefiting. Has room to grow from a small base (1.82% weight).",
+        "concentration_note": "CAUTION — would add to Technology-Storage which sits within the already-extreme 71.4% semi/storage sleeve. Only add if the broader allocation imbalance is acceptable.",
+        "entry_zone_illustrative": "Verify current price; entry near recent highs with tight stop",
+        "ma_verified": false
+      },
+      {
+        "ticker": "MU",
+        "weight_pct": 5.79,
+        "pnl_pct_snapshot": 24.64,
+        "thesis": "Micron is up 25% — one of the portfolio's strongest single stocks. Memory cycle recovery driven by AI/HBM demand. Already the portfolio's 3rd-largest name.",
+        "concentration_note": "STRONG CAUTION — adding MU further deepens the 71.4% semis sleeve. Only consider if you are intentionally running a semi-concentrated strategy.",
+        "entry_zone_illustrative": "Verify current price; add on dips toward MA support",
+        "ma_verified": false
+      },
+      {
+        "ticker": "TLN",
+        "weight_pct": 1.02,
+        "pnl_pct_snapshot": 5.37,
+        "thesis": "Talen Energy is the portfolio's only Utilities/Power name and is profitable. Power demand from AI data centers creates a multi-year tailwind for independent power producers. Adding here actually diversifies away from the semiconductor concentration.",
+        "concentration_note": "BENEFICIAL for diversification — Utilities/Power is currently just 1.02% of the sleeve. This is one of the few ADD TO ideas that does NOT worsen concentration.",
+        "entry_zone_illustrative": "Verify current price; add on any pullback toward 50-day MA",
+        "ma_verified": false
+      }
+    ],
+    "open_new": [
+      {
+        "status": "SCREEN COULD NOT BE RUN",
+        "reason": "All financial data sources required for the momentum screen (finviz.com, stockanalysis.com, Yahoo Finance, barchart.com, Alpha Vantage) were blocked at the egress proxy on 2026-07-24. Cannot verify 20-day +15% return, MA positioning, RSI(14), or volume surge for any candidate. No OPEN NEW picks are offered for this cycle.",
+        "action_needed": "Unlock financial data access at the egress proxy level, OR enable a financial data MCP connector, then re-run the scan."
+      }
+    ]
   },
   "todays_picks": []
 }
