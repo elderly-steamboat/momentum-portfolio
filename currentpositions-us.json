@@ -5,12 +5,14 @@
     "currency_note": "INDmoney reports US holdings in INR via the LRS feed. unit_price/invested/market_value are INR.",
     "source": "INDmoney connector (US_STOCK), read-only",
     "snapshot_session": "2026-06-19",
-    "last_updated": "2026-06-21",
+    "last_updated": "2026-07-28",
     "open_positions_count": 47,
     "total_invested_inr": 260424.0,
     "total_market_value_inr": 263268.77,
     "total_pnl_pct": 1.09,
-    "ticker_caveat": "ADR/OTC tickers (AOTHY, SFTBY, BYDDY, TCEHY, BMR) are best-effort and should be verified before use as scan keys."
+    "ticker_caveat": "ADR/OTC tickers (AOTHY, SFTBY, BYDDY, TCEHY, BMR) are best-effort and should be verified before use as scan keys.",
+    "scan_note": "INDmoney connector not enabled in this chat session (enabledInChat: false). Holdings and P&L figures are STALE as of 2026-06-21 (37 days). Market scan and recommendations are based on live web research as of 2026-07-28.",
+    "exchange_rate_note": "INR prices not refreshed; holdings P&L is indicative only."
   },
   "open_positions": [
     {
@@ -579,9 +581,134 @@
     }
   ],
   "recommendations": {
-    "cut": [],
+    "as_of": "2026-07-28",
+    "data_caveat": "Holdings data stale (Jun 21). CUT/ADD TO based on Jun-21 P&L + live market research. OPEN NEW from live research.",
+    "cut": [
+      {
+        "ticker": "UCO",
+        "name": "ProShares Ultra Bloomberg Crude Oil (2\u00d7)",
+        "weight_pct": 1.33,
+        "pnl_pct_as_of_jun21": -25.36,
+        "rule_broken": "Structural: leveraged/inverse commodity ETF (daily-reset decay); not a valid momentum position",
+        "action": "FULL EXIT",
+        "trend_note": "Up ~33% in July to ~$43.93 but still ~25% below cost basis; decay is structural regardless of monthly bounce. Exit while UCO has partially recovered.",
+        "rank": 1
+      },
+      {
+        "ticker": "NOW",
+        "name": "ServiceNow Inc.",
+        "weight_pct": 1.06,
+        "pnl_pct_as_of_jun21": -26.18,
+        "rule_broken": "Price below MA20-EMA ($103.55), MA50 ($103.91) & MA200 ($127.57); \u221250.4% over 12 months; technical score 13/100 (Sell)",
+        "action": "FULL EXIT",
+        "trend_note": "Trading ~$95\u2212108 today; all moving averages sloping down. 52-week range $81\u2212$201. Most broken trend in the book.",
+        "rank": 2
+      },
+      {
+        "ticker": "NVTS",
+        "name": "Navitas Semiconductor",
+        "weight_pct": 0.54,
+        "pnl_pct_as_of_jun21": -24.85,
+        "rule_broken": "Small-cap semi at \u221224.9% P&L; sector under additional pressure today (CXMT IPO rattling all semi names); likely below all MAs",
+        "action": "FULL EXIT",
+        "trend_note": "Speculative GaN semi play with thin liquidity. No recovery catalyst visible amid Chinese chip competition narrative.",
+        "rank": 3
+      },
+      {
+        "ticker": "IBM",
+        "name": "IBM",
+        "weight_pct": 0.55,
+        "pnl_pct_as_of_jun21": -23.52,
+        "rule_broken": "Deep loss, no momentum; enterprise IT laggard; MA/RSI status unconfirmed but trend has been weak YTD",
+        "action": "TRIM or EXIT",
+        "trend_note": "Cannot confirm exact MA position from available sources \u2014 verify before acting. Fundamental trend: AI-native competition displacing legacy IBM workloads.",
+        "rank": 4
+      },
+      {
+        "ticker": "UEC",
+        "name": "Uranium Energy Corp",
+        "weight_pct": 0.56,
+        "pnl_pct_as_of_jun21": -22.2,
+        "rule_broken": "Uranium junior at \u221222.2% P&L; sector in bearish phase; small cap with low revenue base",
+        "action": "TRIM",
+        "trend_note": "Also holds URA ETF (\u221210.4%) providing overlapping uranium exposure. Portfolio has two uranium legs both underwater.",
+        "rank": 5
+      },
+      {
+        "ticker": "IONQ",
+        "name": "IonQ Inc.",
+        "weight_pct": 0.56,
+        "pnl_pct_as_of_jun21": -21.37,
+        "rule_broken": "Speculative micro-cap quantum computing; no near-term revenue catalyst; \u221221.4% P&L",
+        "action": "TRIM",
+        "trend_note": "Also holds RGTI (\u221219.6%): two quantum micro-caps both underwater. Consolidate to one or exit both.",
+        "rank": 6
+      },
+      {
+        "ticker": "RGTI",
+        "name": "Rigetti Computing",
+        "weight_pct": 0.57,
+        "pnl_pct_as_of_jun21": -19.63,
+        "rule_broken": "Speculative micro-cap quantum computing; no near-term catalyst; \u221219.6% P&L",
+        "action": "TRIM",
+        "trend_note": "Pair with IONQ above; consider exiting one or both.",
+        "rank": 7
+      },
+      {
+        "ticker": "PATH",
+        "name": "UiPath Inc.",
+        "weight_pct": 0.57,
+        "pnl_pct_as_of_jun21": -20.44,
+        "rule_broken": "\u221220.4% P&L; automation software losing share to AI-native agents; broken uptrend",
+        "action": "TRIM",
+        "trend_note": "AI agent platforms are commoditising UiPath's RPA moat; no clear technical base forming.",
+        "rank": 8
+      }
+    ],
+    "add_to_note": "EMPTY today \u2014 CXMT China memory IPO selloff (July 27-28) pushed MU (RSI 45.6), WDC (\u22127.6% today), STX (\u22127.2%) all below ADD TO threshold. Watch WDC and STX for stabilisation above 20-day MAs.",
     "add_to": [],
-    "open_new": []
+    "open_new": [
+      {
+        "ticker": "PNC",
+        "name": "PNC Financial Services Group",
+        "sector": "Financials \u2014 Regional Banking",
+        "why_now": "At all-time high ($256.07), well above 200-day SMA ($219.86, ~+16%), Q2 2026 beat (EPS $4.85 vs est, Rev $6.66B above est) with raised guidance; +32.8% YoY; +8% last 30 days. Financials is 0% of portfolio.",
+        "entry_zone_usd": "248\u2013252",
+        "stop_usd": "~242 (~4% risk, illustrative)",
+        "target_usd": "~268\u2013275 (~10% upside, UBS PT $263, illustrative)",
+        "thesis": "PNC is executing a classic earnings-driven breakout: Q2 beat + raised guidance pushed stock to ATH with expanding lending margins and record fee revenue. Fills a complete Financials gap in a tech/semi-heavy portfolio.",
+        "caveats": "Cannot confirm exact RSI(14) or 20-day +15% return from available sources; monitor for overbought pullback given ATH proximity. No earnings in next 5 days (just reported).",
+        "screen_status": "Partial \u2014 confirmed above 200-day SMA, near ATH, strong volume post-earnings. RSI and 20-day return NOT confirmed from available data sources."
+      },
+      {
+        "ticker": "GE",
+        "name": "GE Aerospace",
+        "sector": "Industrials \u2014 Aerospace & Defense",
+        "why_now": "Q2 2026 reported July 16: revenue +21% YoY, EPS +22% YoY, FCF +43%, raised full-year guidance. Post-earnings runway 12 days in with commercial aviation and defense demand compounding. Industrials is nearly absent (only MOD 0.67%).",
+        "entry_zone_usd": "~current price (unconfirmed) \u2014 check chart for post-earnings breakout level",
+        "stop_usd": "~5\u20137% below entry (illustrative; verify support at post-earnings base)",
+        "target_usd": "~12\u201315% above entry (illustrative, based on earnings momentum)",
+        "thesis": "GE Aerospace is the rare name showing earnings beats AND raised guidance in 2026; the backlog in commercial jet engines + defense contracts is multi-year. No other pure aerospace/defense name in portfolio.",
+        "caveats": "Current price NOT confirmed \u2014 must verify RSI, MA status, and exact 20-day gain before entry. No upcoming earnings within 5 days.",
+        "screen_status": "Partial \u2014 strong fundamentals, no upcoming earnings risk, in Industrials gap. Technical metrics (RSI, MAs, 20-day) NOT confirmed from available data."
+      },
+      {
+        "ticker": "CNC",
+        "name": "Centene Corporation",
+        "sector": "Healthcare \u2014 Managed Care",
+        "why_now": "RSI(14) = 67 (CONFIRMED, within 55\u201375 range). +66% YTD. Quant rating 4.94. Q2 2026 earnings REPORTED TODAY pre-market (July 28). Q1 saw +14% post-earnings surge. Healthcare is effectively 0% meaningful weight (only GALT 0.71% + SLS 0.29%, both micro-cap biotech).",
+        "entry_zone_usd": "POST-EARNINGS CONFIRMATION REQUIRED \u2014 check today's price action",
+        "stop_usd": "Below today's post-earnings low (illustrative)",
+        "target_usd": "Analyst consensus $58.71+ (illustrative)",
+        "thesis": "Centene is the largest US Medicaid managed care plan showing exceptional turnaround momentum (+66% YTD). If today's Q2 2026 earnings beat and stock holds gains, momentum setup intact with RSI firmly in bullish range.",
+        "caveats": "WAIT before entry: earnings were THIS MORNING and post-earnings reaction is not yet confirmed. If stock gaps down materially, SKIP. Entry valid only on sustained post-earnings strength above ~$55.",
+        "screen_status": "RSI 67 CONFIRMED. 20-day gain and MA position consistent with +66% YTD but not independently verified for the 20-day window."
+      }
+    ]
   },
-  "todays_picks": []
+  "todays_picks": [
+    "PNC",
+    "GE",
+    "CNC_WAIT"
+  ]
 }
