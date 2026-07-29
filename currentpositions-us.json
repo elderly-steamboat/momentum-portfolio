@@ -5,12 +5,22 @@
     "currency_note": "INDmoney reports US holdings in INR via the LRS feed. unit_price/invested/market_value are INR.",
     "source": "INDmoney connector (US_STOCK), read-only",
     "snapshot_session": "2026-06-19",
-    "last_updated": "2026-06-21",
+    "last_updated": "2026-07-29",
+    "scan_date": "2026-07-29",
     "open_positions_count": 47,
     "total_invested_inr": 260424.0,
     "total_market_value_inr": 263268.77,
     "total_pnl_pct": 1.09,
-    "ticker_caveat": "ADR/OTC tickers (AOTHY, SFTBY, BYDDY, TCEHY, BMR) are best-effort and should be verified before use as scan keys."
+    "positions_staleness_warning": "INDmoney connector was not enabled in the 2026-07-29 scan session (connected at org level but enabledInChat: false). open_positions and market values are from the 2026-06-21 snapshot and are 38 days stale. P&L estimates in recommendations are directional only — verify before trading.",
+    "ticker_caveat": "ADR/OTC tickers (AOTHY, SFTBY, BYDDY, TCEHY, BMR) are best-effort and should be verified before use as scan keys.",
+    "concentration_read_2026_07_29": {
+      "semi_memory_storage_weight_pct": 70.8,
+      "components": "SOXX 25.0 + EWY 24.1 + MU 5.79 + WDC 3.82 + STX 1.82 + AMD 2.42 + TSM 1.97 + ARM 1.52 + TXN 1.77 + QCOM 0.67 + NVTS 0.54 + INTC 0.41",
+      "deeply_underwater_count": 18,
+      "deeply_underwater_note": "P&L <= -15% as of 2026-06-21 snapshot: CRM, UCO, NOW, ORCL, BMR, PLTR, TWLO, HPE, SFTBY, BABA, DDOG, RGTI, PATH, UEC, IONQ, IBM, NVTS, NET",
+      "absent_sectors": ["Financials", "Consumer Staples", "Materials", "Real Estate"],
+      "most_broken_sector": "Software / Cloud (NOW -26%, CRM -18%, PLTR -17%, DDOG -19%, IBM -24% then additional -25% crash July 14)"
+    }
   },
   "open_positions": [
     {
@@ -579,9 +589,255 @@
     }
   ],
   "recommendations": {
-    "cut": [],
-    "add_to": [],
-    "open_new": []
+    "scan_note": "Holdings data from 2026-06-21 snapshot (38 days stale; INDmoney connector not enabled). P&L estimates are directional — refresh live before trading. Market data cross-checked via web search against public sources (24/7 Wall St., investing.com, MarketBeat, Yahoo Finance, QuantLake). Finviz and Yahoo Finance screeners returned 403 in this environment; individual ticker WebSearch used instead. All levels are illustrative, not trade signals.",
+    "cut": [
+      {
+        "ticker": "UCO",
+        "name": "ProShares Ultra Bloomberg Crude Oil",
+        "weight_pct": 1.33,
+        "pnl_pct_jun21": -25.36,
+        "pnl_est_jul29": "~-30% (UCO $37.63 July 28 vs invested cost ~$50+ INR equivalent; 52-wk range $18.12-$52.94)",
+        "rule_broken": "Structural decay: 2x leveraged crude oil ETF. Daily rebalancing erodes value in non-trending markets; not a suitable position instrument. P&L -25%+ confirms decay. Rule: structurally decaying leveraged/inverse commodity ETFs must be exited.",
+        "action": "FULL EXIT — highest priority",
+        "rank": 1
+      },
+      {
+        "ticker": "IBM",
+        "name": "International Business Machines",
+        "weight_pct": 0.55,
+        "pnl_pct_jun21": -23.52,
+        "pnl_est_jul29": "~-40% est (IBM crashed -25% on July 14 on Q2 revenue warning; closed $212.67 July 29, down 28.1% YTD; tested Fibonacci support $213.61; worst single-day drop in company history)",
+        "rule_broken": "Fundamental breakdown: Q2 revenue $17.2B missed $17.86B estimate (-3.7%); CEO confirmed enterprise clients redirected capex from IBM software/infrastructure to hardware (servers, memory). Stock below all MAs at $212.67 vs June cost ~$353 USD equivalent.",
+        "action": "FULL EXIT",
+        "rank": 2
+      },
+      {
+        "ticker": "NOW",
+        "name": "ServiceNow Inc.",
+        "weight_pct": 1.06,
+        "pnl_pct_jun21": -26.18,
+        "pnl_est_jul29": "~-21% est (NOW $112 July 29, bounced +8% July 27 on AI rotation; 52-wk range $81.24-$201.15; still -44% off 52-wk high; cost ~$143 USD est)",
+        "rule_broken": "Broken trend: at $112 vs 52-wk high $201.15, -44% off peak. Earnings July 22: revenue +24% but AI disruption concerns persist — stock 'still struggling.' Likely below 200d MA at $112 (52-wk low $81.24 implies MA ~$130-$150 range). July 27 bounce is a counter-signal.",
+        "action": "WATCH — if bounce sustains above $115 for 3+ days, reassess. If NOW closes below $105 on two consecutive sessions, FULL EXIT.",
+        "rank": 3,
+        "counter_signal": "July 27 AI-rotation bounce +8%; Q2 revenue +24%; Now Assist $1.5B ARR trajectory. Bullish thesis exists but position is deeply underwater and trend is not confirmed repaired."
+      },
+      {
+        "ticker": "PATH",
+        "name": "UiPath Inc.",
+        "weight_pct": 0.57,
+        "pnl_pct_jun21": -20.44,
+        "pnl_est_jul29": "unverified (search unavailable for this ticker; directional: broken trend, no catalyst)",
+        "rule_broken": "Broken trend: RPA/automation software facing AI-agent substitution (same narrative as NOW). P&L -20%+, below 20/50/200d MAs likely. No visible catalyst.",
+        "action": "FULL EXIT",
+        "rank": 4
+      },
+      {
+        "ticker": "NVTS",
+        "name": "Navitas Semiconductor",
+        "weight_pct": 0.54,
+        "pnl_pct_jun21": -24.85,
+        "pnl_est_jul29": "unverified (small-cap semi, directional: continued pressure from memory supply-glut narrative)",
+        "rule_broken": "Broken trend: small-cap semi with no visible catalyst. P&L -24.85%, price well below cost AND likely below 20/50/200d MAs.",
+        "action": "FULL EXIT",
+        "rank": 5
+      },
+      {
+        "ticker": "UEC",
+        "name": "Uranium Energy Corp",
+        "weight_pct": 0.56,
+        "pnl_pct_jun21": -22.2,
+        "pnl_est_jul29": "unverified (uranium equities showing no momentum catalyst)",
+        "rule_broken": "Broken trend: uranium equity below 200d MA (implied by -22% loss with no upside catalyst). Uranium spot prices not in momentum phase.",
+        "action": "TRIM — can retain partial position if uranium thesis still held; full exit if no thesis",
+        "rank": 6
+      },
+      {
+        "ticker": "IONQ",
+        "name": "IonQ Inc.",
+        "weight_pct": 0.56,
+        "pnl_pct_jun21": -21.37,
+        "pnl_est_jul29": "unverified (speculative quantum computing, no near-term catalyst confirmed)",
+        "rule_broken": "Exceeds -15% loss discipline; speculative pre-revenue quantum; broken trend",
+        "action": "TRIM",
+        "rank": 7
+      },
+      {
+        "ticker": "RGTI",
+        "name": "Rigetti Computing",
+        "weight_pct": 0.57,
+        "pnl_pct_jun21": -19.63,
+        "pnl_est_jul29": "unverified (speculative quantum, small cap)",
+        "rule_broken": "Exceeds -15% loss discipline; speculative pre-revenue quantum; broken trend",
+        "action": "TRIM",
+        "rank": 8
+      }
+    ],
+    "watch_list_borderline_cuts": [
+      {
+        "ticker": "WDC",
+        "note": "Was +18.57% in June; mid-July prices show significant decline (search: WDC ~$589 July 9 vs $810 equivalent in June). Likely near or below cost now. IBM capex-shift is a tailwind (clients buying storage). Monitor: if WDC falls below its 200d MA and stays below cost for 2+ weeks, escalate to full CUT."
+      },
+      {
+        "ticker": "PLTR",
+        "note": "Was -17.35% in June; current ~$122.92 (July 28, 52-wk $106.37-$207.52). P&L now ~-27% est vs cost ~$169 USD. Counter-signal: mgmt raised 2026 revenue guidance to $7.6B (+71% YoY); RSI 61.59 on 4H chart. Fundamental improvement but price broken. Monitor guidance execution."
+      },
+      {
+        "ticker": "HPE",
+        "note": "Was -18.96%; HPE $48.19 (latest). IBM's Q2 warning explicitly cited enterprise clients shifting capex TO hardware (HPE's core market). May be bottoming. Borderline — do not exit yet; watch for HPE to reclaim 200d MA."
+      },
+      {
+        "ticker": "CRM",
+        "note": "Was -18.3% in June; bounced +7% July 27 to ~$177 vs cost ~$202. P&L now ~-12%. Agentforce ARR $1.2B (+205% YoY), Q1 FY27 EPS beat +24%. Improving trend — may exit CUT watch list if $177 holds and RSI rises above 55."
+      }
+    ],
+    "add_to": [
+      {
+        "ticker": "MU",
+        "name": "Micron Technology",
+        "current_weight_pct": 5.79,
+        "pnl_pct_jun21": 24.64,
+        "pnl_est_jul29": "~+4% est (MU mid-July ~$1,008-$1,061 USD range vs cost ~$987 USD est; record DRAM pricing July 17 is fundamental tailwind)",
+        "thesis_for_add": "IBM's Q2 warning explicitly named memory/server hardware as the beneficiary of enterprise capex re-routing. 'Record DRAM Pricing' (July 17, 2026). IBM clients shifting spend directly benefits MU. Memory selloff mid-July partially reversed by July 9. Long-term AI DRAM demand intact.",
+        "screen_status": "CONDITIONAL — memory supply-glut fears caused volatile action in July. Must confirm: price above 20/50/200d MAs AND RSI 55-75 before adding. Do NOT add if below SMA50.",
+        "entry_zone_usd": "~$1,000-$1,050",
+        "stop_usd": "~$880 (~-12%)",
+        "target_usd": "~$1,280 (~+25%)",
+        "concentration_warning": "CRITICAL: Adding MU deepens the 70.8% semi/memory/storage concentration. Only add if you have accepted this concentration as a deliberate sector bet. Consider whether reducing SOXX or EWY first makes more structural sense before adding single-name semi exposure.",
+        "levels_note": "Illustrative levels only, not trade signals"
+      }
+    ],
+    "open_new": [
+      {
+        "ticker": "GS",
+        "name": "Goldman Sachs Group Inc.",
+        "sector": "Financials",
+        "portfolio_sector_exposure": "0% — absent",
+        "market_cap_tier": "Mega",
+        "current_price_usd_est": "~$1,098-$1,140 (ATH $1,152 on July 15; July 22 close $1,098; surged +9% post-earnings to $1,140)",
+        "rsi_14": 65.53,
+        "rsi_source": "mlq.ai/investing.com technical analysis; 65.53 on daily, in range 55-75",
+        "ma_status": "Above 200d MA; 11 buy signals / 0 sell signals on full MA suite (MA5 to MA200); Strong Buy",
+        "perf_30d_pct": "+15.25% confirmed (June 16 $1,090.67 baseline)",
+        "perf_20d_note": "Estimated +10-14% over 20 trading days (stock was already at $1,090 mid-June; strict 20-day +15% trigger likely borderline or not met). Flagging: quality trend that may miss the short-term 20-day bar.",
+        "catalyst": "5th consecutive earnings beat. Q2 2026: EPS $20.98 vs $14.54 estimated (+44% beat), revenue +39.5% to $20.34B, Equity Underwriting +130%, SpaceX IPO fees, AI-driven dealmaking boom. Morgan Stanley, Goldman, Citi all up 20%+ YTD.",
+        "volume_note": "Elevated post-earnings. Specific 5-day vs 50-day ratio not sourced — flagged as unverified on this criterion.",
+        "earnings_next_5d": "NO (just reported)",
+        "gapping_down": "No evidence of gap-down; stock stable post-ATH",
+        "entry_zone_usd": "$1,090-$1,110",
+        "stop_usd": "$1,000 (~-9%)",
+        "target_usd": "$1,280 (~+17%)",
+        "thesis": "Record Q2 driven by AI dealmaking, SpaceX IPO fee windfall, and Equity Underwriting +130% — GS is the clearest beneficiary of the AI-era IPO/M&A supercycle. RSI 65, Strong Buy (11/0 MA signals), above 200d MA; adds Financials exposure absent from the 47-position portfolio.",
+        "levels_note": "Illustrative levels only, not trade signals",
+        "rank": 1
+      },
+      {
+        "ticker": "UNH",
+        "name": "UnitedHealth Group Inc.",
+        "sector": "Healthcare",
+        "portfolio_sector_exposure": "~1% in speculative biotech (GALT, SLS) — no managed-care exposure",
+        "market_cap_tier": "Mega",
+        "current_price_usd_est": "~$436 (July 22, 2026; July 29 not independently verified)",
+        "rsi_14": 62.3,
+        "rsi_source": "journalarta.com / altindex.com: RSI 62.3 as of July 22, 2026",
+        "ma_status": "Above SMA20 ($422.70) and SMA50 ($405.30); uptrend confirmed. 200d MA not independently sourced but price trend is upward.",
+        "perf_20d_note": "Not confirmed at +15% — recovery from regulatory/downtrend phase rather than fresh breakout. Quality trend pick that likely misses the strict 20-day short-term trigger.",
+        "catalyst": "BofA upgrade to Buy, PT $450; softer medical cost/utilization trends; Medicare Advantage payment hike (Trump admin); Healthcare sector leads all sectors at 13.2% momentum. Managed-care recovery narrative gaining traction.",
+        "volume_note": "Not specifically sourced",
+        "earnings_next_5d": "Not confirmed — check before entry",
+        "gapping_down": "No evidence of gap-down on available data",
+        "entry_zone_usd": "$430-$455",
+        "stop_usd": "$400 (~-8%, below SMA50 $405)",
+        "target_usd": "$530 (~+20%, above BofA PT of $450)",
+        "thesis": "Healthcare leads sector momentum at 13.2%; BofA Buy upgrade with $450 PT reflects softening medical cost trends and Medicare Advantage tailwinds. RSI 62.3, above SMA20/50, managed-care sub-sector repricing. Adds Healthcare managed-care exposure absent from a portfolio with only speculative biotech.",
+        "honest_caveat": "Strict 20-day +15% trigger NOT confirmed. Earlier headlines noted 'Downtrend Amid Regulatory Scrutiny' before recovery. This is a quality trend pick (RSI, MA alignment, sector momentum) that likely fails the short-term 20-day bar. Monitor for close below $405 (SMA50).",
+        "levels_note": "Illustrative levels only, not trade signals",
+        "rank": 2
+      },
+      {
+        "ticker": null,
+        "name": "Third OPEN NEW — not identified",
+        "note": "Could not identify a clean third pick from absent sectors (Consumer Staples, Materials, Real Estate) with verifiable screen data (Finviz and YF screeners blocked; targeted searches for those sectors returned insufficient technical detail). Suggest investigating: WMT or COST (Consumer Staples — steady uptrend likely but 20-day +15% bar unlikely to be met by large-caps), GLD (Gold ETF — macro hedge for tariff/geopolitical uncertainty, 0% in portfolio), VST or NRG (Utilities/Power — AI data center power demand, same theme as TLN already held). Two picks posted per instructions: 'if fewer than 3 open-new candidates qualify, post fewer with an honest note.'",
+        "rank": 3
+      }
+    ]
   },
-  "todays_picks": []
+  "todays_picks": [
+    {
+      "ticker": "GS",
+      "company": "Goldman Sachs Group Inc.",
+      "sector": "Financials",
+      "entry_low_usd": 1090,
+      "entry_high_usd": 1110,
+      "stop_usd": 1000,
+      "stop_pct": -9.0,
+      "target_usd": 1280,
+      "target_pct": 17.0,
+      "rsi_14": 65.53,
+      "rsi_source": "mlq.ai / investing.com: RSI 65.53 daily as of post-earnings analysis July 2026",
+      "perf_20d_note": "30-day confirmed +15.25%; 20-day estimated +10-14% (borderline on strict trigger — stock was already at $1,090 mid-June)",
+      "next_earnings": "Just reported (July 14, 2026)",
+      "ma_note": "Strong Buy: 11 buy / 0 sell MA signals; above 200d MA",
+      "catalyst": "5th straight earnings beat; EPS $20.98 vs $14.54 (+44%); Equity Underwriting +130%; SpaceX IPO fees; AI dealmaking boom",
+      "thesis": "Record Q2 driven by AI-era IPO and M&A supercycle; GS is the clearest beneficiary of AI dealmaking revival. RSI 65, Strong Buy MA signals, +15%+ in 30 days — adds Financials exposure absent from the portfolio.",
+      "scan_date": "2026-07-29",
+      "sources": [
+        "fxleaders.com: GS broke above $1,100 on AI dealmaking boom, record earnings",
+        "mlq.ai: RSI 65.53 daily; 11 buy signals, 0 sell; Strong Buy",
+        "247wallst.com/CNBC: Q2 EPS $20.98 vs $14.54 expected (+44%); Equity Underwriting +130%; revenue +39.5%",
+        "financecharts.com: ATH $1,152.07 on July 15, 2026; June 16 close $1,090.67 (30-day return +15.25%)"
+      ],
+      "criteria_met": {
+        "price_over_10": true,
+        "market_cap_over_500m": true,
+        "avg_volume_over_500k": true,
+        "up_15pct_20d": "BORDERLINE — 30-day confirmed +15.25%; 20-day estimated +10-14%, strict trigger likely not met. Quality trend flag.",
+        "above_20d_ma": true,
+        "above_50d_ma": true,
+        "above_200d_ma": true,
+        "rsi_55_to_75": "YES — 65.53",
+        "volume_5d_gt_1_3x_50d": "UNVERIFIED — elevated post-earnings but ratio not sourced",
+        "no_earnings_5d": true,
+        "not_gapping_down": "YES — no gap-down evidence"
+      }
+    },
+    {
+      "ticker": "UNH",
+      "company": "UnitedHealth Group Inc.",
+      "sector": "Healthcare - Managed Care",
+      "entry_low_usd": 430,
+      "entry_high_usd": 455,
+      "stop_usd": 400,
+      "stop_pct": -8.0,
+      "target_usd": 530,
+      "target_pct": 20.0,
+      "rsi_14": 62.3,
+      "rsi_source": "journalarta.com / altindex.com: RSI 62.3 as of July 22, 2026",
+      "perf_20d_note": "Not confirmed at +15% — recovery from prior downtrend. Quality trend miss on strict short-term bar.",
+      "next_earnings": "Verify before entry — not confirmed as safe window",
+      "ma_note": "Above SMA20 $422.70 and SMA50 $405.30; uptrend. 200d MA not sourced.",
+      "catalyst": "BofA Buy upgrade PT $450; softer medical cost trends; Medicare Advantage rate hike (Trump admin); Healthcare sector leads at 13.2% sector momentum",
+      "thesis": "Healthcare managed-care re-rating on softening medical costs + Medicare Advantage tailwind; sector momentum leader at 13.2%. RSI 62, above key MAs, BofA PT $450. Adds Healthcare managed-care to a portfolio with only speculative biotech.",
+      "scan_date": "2026-07-29",
+      "sources": [
+        "journalarta.com: UNH $436.35 July 22, RSI 62.3, above SMA20 $422.70 and SMA50 $405.30",
+        "247wallst.com/Yahoo Finance: Humana +6%, UNH +5%, Cigna +4% on softer medical cost trends",
+        "Benzinga: UNH, Humana, CVS soar; BofA analyst Kevin Fischbeck Buy upgrade, PT $450",
+        "quantlake.com: Healthcare sector leads all sectors at 13.2% momentum"
+      ],
+      "criteria_met": {
+        "price_over_10": true,
+        "market_cap_over_500m": true,
+        "avg_volume_over_500k": true,
+        "up_15pct_20d": "NOT CONFIRMED — quality trend pick; strict 20-day +15% bar likely not met (recovery from prior downtrend)",
+        "above_20d_ma": true,
+        "above_50d_ma": true,
+        "above_200d_ma": "NOT SOURCED",
+        "rsi_55_to_75": "YES — 62.3",
+        "volume_5d_gt_1_3x_50d": "NOT SOURCED",
+        "no_earnings_5d": "UNVERIFIED — check before entry",
+        "not_gapping_down": "YES — no gap-down evidence"
+      }
+    }
+  ]
 }
