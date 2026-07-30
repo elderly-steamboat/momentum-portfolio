@@ -3,14 +3,33 @@
     "schema_version": 2,
     "currency": "INR",
     "currency_note": "INDmoney reports US holdings in INR via the LRS feed. unit_price/invested/market_value are INR.",
-    "source": "INDmoney connector (US_STOCK), read-only",
+    "source": "currentpositions-us.json snapshot 2026-06-21 — INDmoney connector installed at org level but NOT enabled in this session (enabledInChat: false); live refresh skipped per protocol",
+    "connector_status": "ind-money: connected at org level, enabledInChat: false — tools not loaded. Live holdings unavailable. All open_positions data reflects the 2026-06-21 snapshot (39 days stale as of 2026-07-30). P&L, weights, and prices are STALE — verify actuals in INDmoney before acting on any recommendation.",
     "snapshot_session": "2026-06-19",
-    "last_updated": "2026-06-21",
+    "last_updated": "2026-07-30",
     "open_positions_count": 47,
     "total_invested_inr": 260424.0,
     "total_market_value_inr": 263268.77,
     "total_pnl_pct": 1.09,
-    "ticker_caveat": "ADR/OTC tickers (AOTHY, SFTBY, BYDDY, TCEHY, BMR) are best-effort and should be verified before use as scan keys."
+    "snapshot_caveat": "total_market_value_inr and total_pnl_pct reflect the 2026-06-21 snapshot. Estimated current portfolio value is materially lower: chip/semi crash in July 2026 (MU −28% from Jun highs, WDC −35%+ from snapshot, STX pulled back from highs). Refresh with live connector before relying on these aggregate figures.",
+    "ticker_caveat": "ADR/OTC tickers (AOTHY, SFTBY, BYDDY, TCEHY, BMR) are best-effort and should be verified before use as scan keys.",
+    "concentration_read_2026_07_30": {
+      "as_of_snapshot": "2026-06-21",
+      "semis_memory_storage_combined_weight_pct": 71.4,
+      "breakdown": "SOXX (25.0%) + EWY Korea/chip-heavy (24.1%) + MU memory (5.79%) + WDC+STX storage (5.64%) + AMD+TSM+TXN+NVDA+ARM individual semis (9.88%) + QCOM+NVTS+INTC (1.62%) = 71.43%",
+      "soxx_ewy_chip_etf_combined_pct": 49.1,
+      "deeply_underwater_count": 18,
+      "deeply_underwater_names_pnl_le_neg15pct": [
+        "NOW (−26.2%)", "UCO (−25.4%)", "IBM (−23.5%)", "NVTS (−24.9%)",
+        "UEC (−22.2%)", "IONQ (−21.4%)", "PATH (−20.4%)", "DDOG (−19.4%)",
+        "RGTI (−19.6%)", "HPE (−19.0%)", "SFTBY (−18.8%)", "CRM (−18.3%)",
+        "BABA (−18.4%)", "PLTR (−17.4%)", "TWLO (−16.9%)", "ORCL (−16.6%)",
+        "BMR (−15.3%)", "NET (−15.0%)"
+      ],
+      "note_on_mu": "MU was +24.6% at snapshot but stock crashed ~28% in July 2026 ($1,145 Jun 29 → $820 Jul 28 USD). Estimated current P&L from cost basis: −17%. P&L is NOT reflected in the snapshot figures above.",
+      "sectors_absent_from_portfolio": ["Financials", "Insurance", "Industrials (major)", "Consumer Staples", "Materials", "Real Estate", "Healthcare (large-cap)"],
+      "most_broken_sector": "Technology — Semis/Memory (MU trend fully broken; NVDA −10.7%, AMD +12.6% snapshot but weakening, NVTS −24.9%)"
+    }
   },
   "open_positions": [
     {
@@ -579,9 +598,155 @@
     }
   ],
   "recommendations": {
-    "cut": [],
-    "add_to": [],
-    "open_new": []
+    "scan_date": "2026-07-30",
+    "data_sources": [
+      "WebSearch via TradingKey, CryptoNomist, GuruFocus, StockInvest, Financhill, Altindex, Investtech, FXLeaders, Traders Union — individual ticker queries",
+      "Finviz and Yahoo Finance direct fetch returned 403 Forbidden in this remote environment",
+      "All candidates cross-checked against at least 2 sources"
+    ],
+    "cut": [
+      {
+        "rank": 1,
+        "ticker": "UCO",
+        "name": "ProShares Ultra Bloomberg Crude Oil",
+        "snapshot_weight_pct": 1.33,
+        "snapshot_pnl_pct": -25.36,
+        "latest_price_usd_approx": 37.63,
+        "data_date": "2026-07-28",
+        "rule_broken": "Structural decay — 2x leveraged daily-reset commodity ETF. Daily rebalancing compounding creates guaranteed long-run NAV erosion independent of crude direction. This type of instrument must not be held as a position. Rule: 'structurally decaying instruments held as positions (e.g. leveraged/inverse commodity ETFs)'.",
+        "action": "Full exit",
+        "sources": ["proshares.com/our-etfs/leveraged-and-inverse/uco", "investing.com/etfs/proshares-ultra-dj-ubs-crude-oil (price $37.63 Jul 28)"]
+      },
+      {
+        "rank": 2,
+        "ticker": "NOW",
+        "name": "ServiceNow Inc.",
+        "snapshot_weight_pct": 1.06,
+        "snapshot_pnl_pct": -26.18,
+        "estimated_current_pnl_pct_from_cost": -33.2,
+        "latest_price_usd_approx": 95.46,
+        "data_date": "2026-07-22",
+        "rule_broken": "Broken trend — RSI(14) 26.7 (deeply oversold, zero recovery), 0 Buy / 12 Sell MA signals, price ~$95 trading 30% below EMA-200 (~$125). Q2 earnings beat (+4.65% EPS, +24% revenue YoY) did not prevent the collapse — market pricing structural deceleration. No MA support on any timeframe. Rule: 'price well below cost AND below the 20/50/200-day MAs'.",
+        "action": "Full exit",
+        "sources": ["cryptonomist.ch/2026/07/23 (RSI 26.7, 30% below EMA200)", "altindex.com/ticker/now/technical-analysis (RSI 26.749, 0/12 sell)"]
+      },
+      {
+        "rank": 3,
+        "ticker": "MU",
+        "name": "Micron Technology",
+        "snapshot_weight_pct": 5.79,
+        "snapshot_pnl_pct": 24.64,
+        "estimated_current_pnl_pct_from_cost": -17.0,
+        "latest_price_usd_approx": 820.53,
+        "data_date": "2026-07-28",
+        "rule_broken": "Trend broken — RSI(14) 40.29, price $820.53 below 20-day SMA ($947.96) and 50-day SMA ($958.21). 3 Buy / 9 Sell signals. Stock crashed 28.4% from $1,145 (Jun 29) to $820 (Jul 28) on Anthropic-related AI chip supply concerns and memory pricing softness. Portfolio P&L flipped from +24.6% at Jun-21 snapshot to est. −17% at current price. Rules violated: 'price well below cost AND below the 20/50/200-day MAs'; 'broken trend'.",
+        "note": "This was the portfolio's largest gainer at snapshot (+24.6%). The July 2026 chip unwind turned it into a loss. The 200-day SMA (~$508 per search) is still below the price, so the very long-term trend line holds — but the discipline rule triggers on the 20/50-day break.",
+        "action": "Full exit — P&L flipped negative; trend is broken across short- and medium-term MAs",
+        "sources": ["tradingkey.com MU July 2026 analysis (price $820.53, SMA-20 $947.96, SMA-50 $958.21, RSI 40.29)", "financhill.com/stock-price-chart/mu-technical-analysis (3 buy/9 sell signals)"]
+      },
+      {
+        "rank": 4,
+        "ticker": "UEC",
+        "name": "Uranium Energy Corp",
+        "snapshot_weight_pct": 0.56,
+        "snapshot_pnl_pct": -22.2,
+        "latest_price_usd_approx": 9.68,
+        "data_date": "2026-07-22",
+        "rule_broken": "Broken trend — RSI(14) 36.7–39.0 (bearish zone), MACD bearish, ADX 14.7 (ranging/failing trend, score −8). Active sell signal from Jun 18 pivot top; stock −24.7% from that pivot with 'no entry while downtrend persists' signal. Down >26% YTD. No near-term nuclear catalyst evident.",
+        "action": "Full exit",
+        "sources": ["gurufocus.com/term/rsi-14/UEC (RSI 42.56 → declining)", "marketshost.com/news/articles/top-uranium-nuclear-102837 (RSI 36.7, MACD bearish, ADX 14.7, score -8, AVOID)"]
+      }
+    ],
+    "add_to": [
+      {
+        "ticker": "DDOG",
+        "name": "Datadog Inc. Cl A",
+        "snapshot_weight_pct": 0.58,
+        "snapshot_pnl_pct": -19.44,
+        "estimated_current_pnl_pct_from_cost": -12.1,
+        "estimated_current_price_usd": 264.0,
+        "data_date": "2026-07-28",
+        "why_still_passes": "RSI(14) 62.16 (55–75 range ✓); 12 Buy / 0 Sell MA signals; price ~$264 well above 200-day MA ~$169 (57% above); +99% YTD; trading near 52-week high of $278.70. P&L recovering: −19.4% at snapshot → est. −12.1% today as stock has risen ~9% since Jun 21.",
+        "screen_criteria": {
+          "price_over_10": "PASS ($264)",
+          "market_cap_over_500m": "PASS (large-cap, ~$80B+)",
+          "rsi_55_to_75": "PASS — 62.16",
+          "above_200d_ma": "PASS — $264 vs ~$169 200d MA",
+          "near_highs": "PASS — $264 vs $278.70 52-week high (within 5.5%)",
+          "buy_signals": "PASS — 12/0",
+          "volume_elevated": "UNVERIFIED explicitly — CEO share sales at $244-264 July indicate liquidity; flagged",
+          "up_15pct_20d": "UNVERIFIED explicitly — confirmed +99% YTD strong trend but 20-day window not sourced separately"
+        },
+        "entry_zone_usd": "$256–268",
+        "stop_usd": "$240",
+        "stop_pct": -9,
+        "target_usd": "$300–315",
+        "target_pct_upside": 15,
+        "thesis": "Datadog's AI observability platform is capturing enterprise budget as organizations instrument AI workloads; net revenue retention >120% and RPO acceleration confirm durable growth. RSI 62, 12/0 buy signals, and +99% YTD with price near the $278.70 52-week high confirm a sustained uptrend. The portfolio's existing 0.58% position at cost ~$308/share is recovering — adding here improves the average and increases exposure to a secular AI infrastructure winner.",
+        "concentration_note": "Adds to Technology sector. However, DDOG is AI software/observability/monitoring — fundamentally distinct from the chip-heavy 71.4% core concentration. Does not deepen semiconductor/memory exposure.",
+        "sources": ["coincentral.com Datadog near 52-week high Jul 2026 (DDOG ~$244-278 range, 52W high $278.70)", "tradingkey.com DDOG forecast Jul 2026 (RSI 62.16, 12/0 Strong Buy, 200d MA $169, +99% YTD)"]
+      }
+    ],
+    "open_new": [
+      {
+        "ticker": "GS",
+        "company": "The Goldman Sachs Group, Inc.",
+        "sector": "Financials",
+        "market_cap_tier": "Mega",
+        "entry_zone_usd": "$965–1,000",
+        "stop_usd": "$915",
+        "stop_pct": -7,
+        "target_usd": "$1,100",
+        "target_pct_upside": 12,
+        "thesis": "Record Q2 2026 EPS $20.98 (+48% vs $14.12 est; $6.44/share beat), revenue $20.34B (+39.5% YoY) driven by 53% surge in Global Banking & Markets from AI-driven M&A and equity underwriting boom; 23.5% annualised ROE. The post-earnings pullback from $1,152 ATH (Jul 15) to $980 (Jul 29) compresses RSI to 59.74 and creates a better entry into a structurally stronger business. Q3 earnings not until Oct 13 — ~11 weeks runway.",
+        "screen_verification": {
+          "price_over_10": "PASS ($980)",
+          "market_cap_over_500m": "PASS (mega-cap)",
+          "avg_volume_500k": "PASS (major NYSE stock)",
+          "rsi_55_to_75": "PASS — RSI 59.74 (Jul 29, confirmed)",
+          "no_earnings_5d": "PASS — Q3 Oct 13, 2026",
+          "above_200d_ma": "LIKELY PASS — strong 2026 trend; 200d SMA not explicitly sourced for Jul 29",
+          "above_20d_ma": "UNCERTAIN / POSSIBLE FAIL — stock fell from $1,152 peak to $980; 20-day average estimated ~$1,050+; price likely below 20-day SMA — FLAGGED",
+          "up_15pct_20d": "BORDERLINE — ~+15% estimated from early-June ~$850 base to current $980; exact 20-day window not confirmed",
+          "volume_5d_gt_1_3x_50d": "UNVERIFIED",
+          "not_gapping_down": "PASS — Jul 29 was a −3.93% intraday move, not a gap-down"
+        },
+        "honest_caveat": "GS does NOT cleanly pass the strict short-term screen (20-day +15% trigger, above-20d-SMA test) after the post-earnings spike ($1,152) and two-week retreat to $980. This is a high-quality pullback into strong fundamentals in a sector the portfolio is 0% exposed to, not a textbook breakout. Labelled accordingly — verify current technical setup before entry.",
+        "sector_fit": "Financials — completely absent from portfolio (0% weight). Strong diversification benefit away from 71.4% chip concentration.",
+        "sources": [
+          "goldmansachs.com/pressroom/press-releases/2026/2026-07-14-q2-results (EPS $20.98, rev $20.34B, ROE 23.5%)",
+          "fxleaders.com/news/2026/07/15 (GS surges 9% to $1,140, record earnings)",
+          "tradingkey.com/news GS Jul 29 (price $980.75, RSI 59.74, −3.93% on day)"
+        ],
+        "data_verified": "2026-07-29"
+      }
+    ],
+    "open_new_note": "Only 1 of 3 target OPEN NEW slots filled. Reasons for thin list: (1) Earnings wall: VLO reports Jul 30 (today), MPC Aug 4, ANET Aug 4, BKNG Aug 4 — all eliminated by 'no earnings within 5 trading days' criterion despite strong technicals (MPC RSI 68, ANET RSI 67 +15.2% in 30d, BKNG RSI 60). (2) LLY fails RSI criterion (36.1 — oversold). (3) GS is the cleanest available Financials candidate but has caveated screen status. Post-Aug 4 watchlist: MPC (energy, RSI 68), ANET (networking, RSI 67, new highs), BKNG (consumer, RSI 60) — revisit if results are positive and technicals reset cleanly.",
+    "additional_watch_no_current_data": {
+      "note": "The following holdings have deeply negative snapshot P&L but current technical data was not explicitly sourced. Recommend checking current RSI and MA status in INDmoney or a charting platform before cutting — trends may have shifted since Jun 21.",
+      "names": [
+        {"ticker": "IBM", "snapshot_pnl_pct": -23.52, "concern": "Large-cap mature tech, deep loss, broad tech weakness in July 2026"},
+        {"ticker": "NVTS", "snapshot_pnl_pct": -24.85, "concern": "Small-cap semi, deep loss, chip sector unwind July 2026"},
+        {"ticker": "IONQ", "snapshot_pnl_pct": -21.37, "concern": "Speculative quantum computing, deep loss"},
+        {"ticker": "RGTI", "snapshot_pnl_pct": -19.63, "concern": "Speculative quantum computing, deep loss"},
+        {"ticker": "HPE", "snapshot_pnl_pct": -18.96, "concern": "Commodity IT hardware, deep loss"},
+        {"ticker": "PLTR", "snapshot_pnl_pct": -17.35, "concern": "RSI 33.5 Jul 27 per search — below 55, MACD turned negative Jul 23"},
+        {"ticker": "PATH", "snapshot_pnl_pct": -20.44, "concern": "RSI 59 per search (partial recovery) but BELOW 200-day MA — does not pass screen; monitor"},
+        {"ticker": "SFTBY", "snapshot_pnl_pct": -18.82, "concern": "ADR, illiquid, deep loss"}
+      ]
+    }
   },
-  "todays_picks": []
+  "todays_picks": [
+    {
+      "scan_date": "2026-07-30",
+      "connector_note": "INDmoney connector not enabled in session. All position/P&L data is stale from 2026-06-21 snapshot (39 days old). Verify actuals in INDmoney before trading.",
+      "market_context": "July 2026 momentum unwind in semis/chips (MU −28%, WDC −35% from snapshot). 'Great rotation' into financials continuing. August 4 earnings wave (MPC, ANET, BKNG, AMAT) constrains new momentum picks this week.",
+      "summary": {
+        "cuts": 4,
+        "add_tos": 1,
+        "open_news": 1,
+        "open_news_note": "1 of 3 slots filled — Aug 4 earnings wall eliminated top energy/tech candidates"
+      }
+    }
+  ]
 }
