@@ -579,9 +579,215 @@
     }
   ],
   "recommendations": {
-    "cut": [],
-    "add_to": [],
-    "open_new": []
+    "positions_note": "open_positions are STALE (snapshot 2026-06-19, last_updated 2026-06-21). INDmoney connector was authenticated but not enabled in the 2026-08-03 session. Recommendations below use June holdings as the base, supplemented by August 2026 web-sourced price/event data where noted.",
+    "recommendations_date": "2026-08-03",
+    "cut": [
+      {
+        "ticker": "UCO",
+        "weight_pct_june": 1.33,
+        "pnl_pct_june": -25.36,
+        "rule_broken": "Structurally decaying 2x leveraged crude oil ETF — daily-reset compounding creates permanent drag over any multi-day holding period. Crude oil below Jun-2025 peaks (~$66 Feb 2026 vs $75.89 Jun-2025). Not a valid position for swing strategy.",
+        "action": "FULL EXIT",
+        "data_quality": "June P&L; crude price from Feb 2026 web source"
+      },
+      {
+        "ticker": "IBM",
+        "weight_pct_june": 0.55,
+        "pnl_pct_june": -23.52,
+        "rule_broken": "Pre-announced Q2 software-demand collapse Jul 14 2026; stock fell ~25% (worst day since 1987 per web sources). Estimated actual P&L now ~-43% from cost. Broken trend with confirmed fundamental deterioration.",
+        "action": "FULL EXIT",
+        "data_quality": "June base + July 2026 web confirmation"
+      },
+      {
+        "ticker": "NVTS",
+        "weight_pct_june": 0.54,
+        "pnl_pct_june": -24.85,
+        "rule_broken": "Small-cap semi at steep loss, below all MAs, no positive catalyst found. No longer passes screen.",
+        "action": "FULL EXIT",
+        "data_quality": "June P&L; August price not verified"
+      },
+      {
+        "ticker": "IONQ",
+        "weight_pct_june": 0.56,
+        "pnl_pct_june": -21.37,
+        "rule_broken": "Speculative quantum-computing name, small-cap, deeply below cost, no screen passage.",
+        "action": "FULL EXIT",
+        "data_quality": "June P&L"
+      },
+      {
+        "ticker": "PATH",
+        "weight_pct_june": 0.57,
+        "pnl_pct_june": -20.44,
+        "rule_broken": "UiPath enterprise automation, -20% from cost, broken downtrend, no positive catalyst found.",
+        "action": "FULL EXIT",
+        "data_quality": "June P&L; August price not verified"
+      },
+      {
+        "ticker": "RGTI",
+        "weight_pct_june": 0.57,
+        "pnl_pct_june": -19.63,
+        "rule_broken": "Rigetti Computing speculative quantum name, -20% from cost, broken trend.",
+        "action": "FULL EXIT",
+        "data_quality": "June P&L"
+      },
+      {
+        "ticker": "UEC",
+        "weight_pct_june": 0.56,
+        "pnl_pct_june": -22.20,
+        "rule_broken": "Uranium Energy Corp, -22% from cost, uranium spot price under pressure, small-cap broken downtrend.",
+        "action": "FULL EXIT",
+        "data_quality": "June P&L"
+      },
+      {
+        "ticker": "HPE",
+        "weight_pct_june": 0.58,
+        "pnl_pct_june": -18.96,
+        "rule_broken": "Hewlett Packard Enterprise, -19%, hardware commodity business, no momentum catalyst.",
+        "action": "FULL EXIT",
+        "data_quality": "June P&L"
+      },
+      {
+        "ticker": "SFTBY",
+        "weight_pct_june": 0.58,
+        "pnl_pct_june": -18.82,
+        "rule_broken": "SoftBank OTC ADR holding company, -19%, illiquid structure not suited to momentum strategy.",
+        "action": "FULL EXIT",
+        "data_quality": "June P&L"
+      },
+      {
+        "ticker": "BMR",
+        "weight_pct_june": 0.60,
+        "pnl_pct_june": -15.31,
+        "rule_broken": "Beamr Imaging OTC micro-cap, -15%, speculative holding not suited to momentum discipline.",
+        "action": "FULL EXIT",
+        "data_quality": "June P&L"
+      },
+      {
+        "ticker": "NOW",
+        "weight_pct_june": 1.06,
+        "pnl_pct_june": -26.18,
+        "rule_broken": "ServiceNow deeply below cost (-26%); post-earnings recovery noted (Jul 22 earnings: recovered +2% vs pre-report) but trend not yet confirmed reversed at this loss level.",
+        "action": "TRIM — reduce position; revisit if price reclaims 50-day MA with volume",
+        "data_quality": "June P&L + July 2026 web earnings note"
+      },
+      {
+        "ticker": "CRM",
+        "weight_pct_june": 1.46,
+        "pnl_pct_june": -18.30,
+        "rule_broken": "Salesforce -18% from cost; analysts maintain Buy but no technical confirmation of trend reversal. Larger position (1.46%) sitting at loss with broken trend.",
+        "action": "TRIM to half; revisit on confirmed breakout above 50-day MA",
+        "data_quality": "June P&L"
+      }
+    ],
+    "monitor_closely": [
+      {
+        "ticker": "PLTR",
+        "weight_pct_june": 0.59,
+        "pnl_pct_june": -17.35,
+        "note": "Earnings TODAY Aug 3 2026. Options pricing 15% move. Down ~30% per web sources since portfolio entry. Current price ~$122-128. EXIT if earnings disappoint or if price remains below 50-day MA post-report.",
+        "data_quality": "June P&L + August 2026 web pre-earnings data"
+      },
+      {
+        "ticker": "WDC",
+        "weight_pct_june": 3.82,
+        "pnl_pct_june": 18.57,
+        "note": "Was +19% in June; August web data shows current price ~$505 vs June price ~$839 INR-equivalent. Estimated P&L now ~-29% from cost. Earnings Aug 5 (2 days). Supply-glut narrative. TRIM or review post-earnings.",
+        "data_quality": "June P&L; August price from web, estimate only"
+      },
+      {
+        "ticker": "STX",
+        "weight_pct_june": 1.82,
+        "pnl_pct_june": 27.32,
+        "note": "Was +27% in June; web data shows ~$824 on Aug 3 vs June price ~$1,203 INR-equivalent. Still marginally positive from original cost (~$707) but trend broken by supply-glut selloff. Monitor — exit if cost basis approached.",
+        "data_quality": "June P&L; August price from web"
+      }
+    ],
+    "add_to": [
+      {
+        "note": "No existing holding confirmed passing the full momentum screen in August 2026. The portfolio's three largest winners (STX, WDC, MU) have all experienced significant August declines on memory/storage supply-glut concerns. NVDA shows RSI 41 and bearish MACD per web sources. Without live prices for ARM, TLN, AMD, TSM, the remaining smaller positions cannot be verified against screen criteria. Revisit ADD TO once INDmoney connector is re-enabled and live prices can be cross-checked.",
+        "candidates_to_recheck": ["ARM", "TLN", "AMD", "TSM"]
+      }
+    ],
+    "open_new": [
+      {
+        "ticker": "ABBV",
+        "name": "AbbVie Inc.",
+        "sector": "Healthcare",
+        "portfolio_sector_weight": "0% — Healthcare completely absent from sleeve",
+        "entry_zone_usd": "250-260",
+        "stop_usd": "235",
+        "stop_pct_approx": 8.5,
+        "target_usd": "300",
+        "target_pct_approx": 16.0,
+        "thesis": "Hit all-time high $263.30 on Jul 29 after Q2 beat (+22% adj EPS YoY, guidance raised $300M to $67.6B). GLP-1-adjacent neuroscience pipeline (Skyrizi, Rinvoq) drives durable above-market growth independent of the memory/chip cycle. Healthcare adds meaningful diversification away from 71% semi concentration.",
+        "screen_check": {
+          "price_above_10": true,
+          "market_cap_above_500m": true,
+          "volume_above_500k": true,
+          "above_all_MAs": "LIKELY — at all-time high Jul 29; cannot confirm exactly",
+          "RSI_55_to_75": "CANNOT CONFIRM — verify before entry",
+          "20d_return_above_15pct": "CANNOT CONFIRM — verify before entry",
+          "5d_vol_above_1p3x_50d": "CANNOT CONFIRM",
+          "no_earnings_within_5d": true,
+          "not_gapping_down": true
+        },
+        "data_sources": ["MarketBeat Aug 2026 price data", "Stockanalysis.com ABBV Q2 results"]
+      },
+      {
+        "ticker": "V",
+        "name": "Visa Inc.",
+        "sector": "Financials - Payments",
+        "portfolio_sector_weight": "0% — Financials/Payments completely absent",
+        "entry_zone_usd": "360-372",
+        "stop_usd": "340",
+        "stop_pct_approx": 6.0,
+        "target_usd": "415",
+        "target_pct_approx": 14.0,
+        "thesis": "Trading 2% below 52-week high ($373.97) after Q3 FY2026 beat: revenue +14% YoY to $11.6B, EPS +11%. Payments network has zero correlation to storage/chip supply glut — adds true diversification. COF-Discover merger shifting card volume away from Visa adds modest headwind but Visa's scale and international penetration sustain growth.",
+        "screen_check": {
+          "price_above_10": true,
+          "market_cap_above_500m": true,
+          "volume_above_500k": true,
+          "above_all_MAs": "LIKELY — 2% below 52-week high",
+          "RSI_55_to_75": "CANNOT CONFIRM — verify before entry",
+          "20d_return_above_15pct": "CANNOT CONFIRM — verify before entry",
+          "5d_vol_above_1p3x_50d": "CANNOT CONFIRM",
+          "no_earnings_within_5d": true,
+          "not_gapping_down": true
+        },
+        "data_sources": ["Robinhood/public.com V Aug 2026 quote", "Yahoo Finance Q3 results"]
+      },
+      {
+        "ticker": "COST",
+        "name": "Costco Wholesale Corporation",
+        "sector": "Consumer Staples",
+        "portfolio_sector_weight": "0% — Consumer Staples completely absent",
+        "entry_zone_usd": "940-960",
+        "stop_usd": "890",
+        "stop_pct_approx": 7.0,
+        "target_usd": "1080",
+        "target_pct_approx": 14.0,
+        "thesis": "Near all-time highs with June net sales +10.6% YoY and digital sales +20.9%; Buy consensus with $1,077 analyst target. Membership-fee recurring revenue provides defensive quality anchor — countercyclical insulation if AI-capex concerns accelerate the tech rotation already visible in the portfolio's chip/storage names.",
+        "screen_check": {
+          "price_above_10": true,
+          "market_cap_above_500m": true,
+          "volume_above_500k": true,
+          "above_all_MAs": "LIKELY — near all-time high",
+          "RSI_55_to_75": "CANNOT CONFIRM — verify before entry",
+          "20d_return_above_15pct": "CANNOT CONFIRM — YTD +16% confirmed but 20-day specific return unknown",
+          "5d_vol_above_1p3x_50d": "CANNOT CONFIRM",
+          "no_earnings_within_5d": true,
+          "not_gapping_down": true
+        },
+        "data_sources": ["LongForecast COST Aug 2026 data", "Multiple analyst estimates"]
+      }
+    ]
   },
-  "todays_picks": []
+  "todays_picks": [
+    {
+      "date": "2026-08-03",
+      "tickers": ["ABBV", "V", "COST"],
+      "note": "OPEN NEW candidates only. No ADD TO confirmed due to stale holdings data and storage/chip sector deterioration. See recommendations.cut for 12 CUT flags."
+    }
+  ]
 }
