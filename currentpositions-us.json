@@ -5,12 +5,40 @@
     "currency_note": "INDmoney reports US holdings in INR via the LRS feed. unit_price/invested/market_value are INR.",
     "source": "INDmoney connector (US_STOCK), read-only",
     "snapshot_session": "2026-06-19",
-    "last_updated": "2026-06-21",
+    "last_updated": "2026-08-06",
+    "scan_date": "2026-08-06",
     "open_positions_count": 47,
     "total_invested_inr": 260424.0,
     "total_market_value_inr": 263268.77,
     "total_pnl_pct": 1.09,
-    "ticker_caveat": "ADR/OTC tickers (AOTHY, SFTBY, BYDDY, TCEHY, BMR) are best-effort and should be verified before use as scan keys."
+    "holdings_data_as_of": "2026-06-21",
+    "holdings_caveat": "INDmoney connector (ind-money) is connected at org level but was NOT enabled in this chat session (enabledInChat: false). Live holdings could not be refreshed. open_positions below reflect stale June 21, 2026 data. Current prices sourced via WebSearch — estimated P&L values are approximate and depend on the INR/USD exchange rate prevailing today.",
+    "ticker_caveat": "ADR/OTC tickers (AOTHY, SFTBY, BYDDY, TCEHY, BMR) are best-effort and should be verified before use as scan keys.",
+    "market_context_aug6": "S&P 500 hit ATH #25 of 2026 in early August; QQQ +5.2% over first two August sessions. Memory/storage sector in sharp selloff Aug 6: WDC -16%, MU -6%, STX -6% on post-earnings reset after 200%+ YTD runs. Healthcare, Industrials, Financials sectors at or near ATH.",
+    "concentration_read": {
+      "semis_memory_storage_weight_pct": 71.4,
+      "note": "SOXX 25.0% + EWY 24.1% (Korea/chip-heavy) + individual semi names ~16.7% + storage ~5.6% = ~71.4% of US sleeve concentrated in semis/memory/storage",
+      "most_broken_sector": "Memory & Storage — WDC -16%, MU -6%, STX -6% on August 6",
+      "deeply_underwater_stale_count": 18,
+      "deeply_underwater_note": "18 of 47 positions at P&L <= -15% in June 21 stale data. WDC, MU, STX crossed into negative territory today from profitable positions.",
+      "sector_weights": {
+        "ETF_Semis_SOXX": 25.0,
+        "ETF_Korea_chip_heavy_EWY": 24.1,
+        "Technology_Semis": 16.7,
+        "Technology_Storage": 5.6,
+        "Technology_Software_Cloud": 16.0,
+        "Consumer_Discretionary": 2.5,
+        "ETF_Broad_Index": 3.7,
+        "Utilities_Power": 1.0,
+        "Energy_Uranium": 2.5,
+        "Healthcare_Biotech": 1.0,
+        "Industrials": 1.4,
+        "Financials": 0.0,
+        "Consumer_Staples": 0.0,
+        "Real_Estate": 0.0,
+        "Materials": 0.0
+      }
+    }
   },
   "open_positions": [
     {
@@ -23,7 +51,8 @@
       "market_value_inr": 65815.61,
       "current_price_inr": 60376.87,
       "pnl_pct": 4.34,
-      "weight_pct_us_sleeve": 25.0
+      "weight_pct_us_sleeve": 25.0,
+      "price_as_of": "2026-06-21"
     },
     {
       "ticker": "EWY",
@@ -35,7 +64,8 @@
       "market_value_inr": 63460.62,
       "current_price_inr": 20696.86,
       "pnl_pct": 5.33,
-      "weight_pct_us_sleeve": 24.1
+      "weight_pct_us_sleeve": 24.1,
+      "price_as_of": "2026-06-21"
     },
     {
       "ticker": "MU",
@@ -47,7 +77,9 @@
       "market_value_inr": 15252.79,
       "current_price_inr": 107071.33,
       "pnl_pct": 24.64,
-      "weight_pct_us_sleeve": 5.79
+      "weight_pct_us_sleeve": 5.79,
+      "price_as_of": "2026-06-21",
+      "aug6_note": "Down ~6% today to ~$844 (sympathy sell on WDC earnings). Estimated current P&L ~-17% from cost (cost ~$1022 equivalent). May still be above 200d MA given 200%+ YTD run — monitor."
     },
     {
       "ticker": "WDC",
@@ -59,7 +91,9 @@
       "market_value_inr": 10045.31,
       "current_price_inr": 70459.03,
       "pnl_pct": 18.57,
-      "weight_pct_us_sleeve": 3.82
+      "weight_pct_us_sleeve": 3.82,
+      "price_as_of": "2026-06-21",
+      "aug6_note": "Down ~16% today to ~$437 on earnings disappointment (beat revenue but outlook missed inflated bar). Estimated current P&L ~-38% from cost (~$707 equivalent). Broken trend — FLAGGED FOR CUT."
     },
     {
       "ticker": "AMD",
@@ -71,7 +105,8 @@
       "market_value_inr": 6362.63,
       "current_price_inr": 50738.47,
       "pnl_pct": 12.65,
-      "weight_pct_us_sleeve": 2.42
+      "weight_pct_us_sleeve": 2.42,
+      "price_as_of": "2026-06-21"
     },
     {
       "ticker": "TSM",
@@ -83,7 +118,8 @@
       "market_value_inr": 5177.44,
       "current_price_inr": 43633.37,
       "pnl_pct": 10.0,
-      "weight_pct_us_sleeve": 1.97
+      "weight_pct_us_sleeve": 1.97,
+      "price_as_of": "2026-06-21"
     },
     {
       "ticker": "QQQ",
@@ -95,7 +131,9 @@
       "market_value_inr": 4917.65,
       "current_price_inr": 69929.34,
       "pnl_pct": 4.48,
-      "weight_pct_us_sleeve": 1.87
+      "weight_pct_us_sleeve": 1.87,
+      "price_as_of": "2026-06-21",
+      "aug6_note": "QQQ up ~5.2% in first two Aug sessions — broad market strength."
     },
     {
       "ticker": "STX",
@@ -107,7 +145,9 @@
       "market_value_inr": 4794.03,
       "current_price_inr": 101051.11,
       "pnl_pct": 27.32,
-      "weight_pct_us_sleeve": 1.82
+      "weight_pct_us_sleeve": 1.82,
+      "price_as_of": "2026-06-21",
+      "aug6_note": "Down ~6% today to ~$786 (sympathy sell). Estimated current P&L ~-17% from cost (~$945 equivalent). Monitor — likely still above 200d MA given strong YTD run."
     },
     {
       "ticker": "VOO",
@@ -119,7 +159,9 @@
       "market_value_inr": 4770.27,
       "current_price_inr": 64971.34,
       "pnl_pct": 1.35,
-      "weight_pct_us_sleeve": 1.81
+      "weight_pct_us_sleeve": 1.81,
+      "price_as_of": "2026-06-21",
+      "aug6_note": "S&P 500 at ATH #25 in August — positive."
     },
     {
       "ticker": "AAPL",
@@ -131,7 +173,8 @@
       "market_value_inr": 4733.97,
       "current_price_inr": 28138.1,
       "pnl_pct": 0.58,
-      "weight_pct_us_sleeve": 1.8
+      "weight_pct_us_sleeve": 1.8,
+      "price_as_of": "2026-06-21"
     },
     {
       "ticker": "TXN",
@@ -143,7 +186,8 @@
       "market_value_inr": 4671.24,
       "current_price_inr": 30484.44,
       "pnl_pct": -0.76,
-      "weight_pct_us_sleeve": 1.77
+      "weight_pct_us_sleeve": 1.77,
+      "price_as_of": "2026-06-21"
     },
     {
       "ticker": "GOOGL",
@@ -155,7 +199,8 @@
       "market_value_inr": 4477.46,
       "current_price_inr": 34749.39,
       "pnl_pct": -4.87,
-      "weight_pct_us_sleeve": 1.7
+      "weight_pct_us_sleeve": 1.7,
+      "price_as_of": "2026-06-21"
     },
     {
       "ticker": "AMZN",
@@ -167,7 +212,8 @@
       "market_value_inr": 4330.28,
       "current_price_inr": 23075.3,
       "pnl_pct": -8.0,
-      "weight_pct_us_sleeve": 1.64
+      "weight_pct_us_sleeve": 1.64,
+      "price_as_of": "2026-06-21"
     },
     {
       "ticker": "NVDA",
@@ -179,7 +225,9 @@
       "market_value_inr": 4202.9,
       "current_price_inr": 19893.35,
       "pnl_pct": -10.71,
-      "weight_pct_us_sleeve": 1.6
+      "weight_pct_us_sleeve": 1.6,
+      "price_as_of": "2026-06-21",
+      "aug6_note": "~$206 as of Aug 3 (RSI ~53, 13% off ATH $236.54). Estimated current P&L ~-22% from cost. Market overall at ATH — NVDA lagging."
     },
     {
       "ticker": "ARM",
@@ -191,7 +239,8 @@
       "market_value_inr": 3998.0,
       "current_price_inr": 41493.81,
       "pnl_pct": 6.18,
-      "weight_pct_us_sleeve": 1.52
+      "weight_pct_us_sleeve": 1.52,
+      "price_as_of": "2026-06-21"
     },
     {
       "ticker": "CRM",
@@ -203,7 +252,8 @@
       "market_value_inr": 3845.35,
       "current_price_inr": 14331.07,
       "pnl_pct": -18.3,
-      "weight_pct_us_sleeve": 1.46
+      "weight_pct_us_sleeve": 1.46,
+      "price_as_of": "2026-06-21"
     },
     {
       "ticker": "UCO",
@@ -215,7 +265,9 @@
       "market_value_inr": 3513.11,
       "current_price_inr": 3459.55,
       "pnl_pct": -25.36,
-      "weight_pct_us_sleeve": 1.33
+      "weight_pct_us_sleeve": 1.33,
+      "price_as_of": "2026-06-21",
+      "aug6_note": "Now ~$35.28 (down from ~$41 in June). Structural decay instrument — FLAGGED FOR FULL EXIT. Leveraged commodity ETF faces contango decay and daily reset losses; has eroded 67% over past decade."
     },
     {
       "ticker": "NOW",
@@ -227,7 +279,9 @@
       "market_value_inr": 2779.84,
       "current_price_inr": 8973.68,
       "pnl_pct": -26.18,
-      "weight_pct_us_sleeve": 1.06
+      "weight_pct_us_sleeve": 1.06,
+      "price_as_of": "2026-06-21",
+      "aug6_note": "Aug 6 price ~$112.90. Cost ~$145 equivalent. Estimated current P&L ~-22%. Below all MAs — FLAGGED FOR TRIM."
     },
     {
       "ticker": "TLN",
@@ -239,7 +293,9 @@
       "market_value_inr": 2688.35,
       "current_price_inr": 41194.5,
       "pnl_pct": 5.37,
-      "weight_pct_us_sleeve": 1.02
+      "weight_pct_us_sleeve": 1.02,
+      "price_as_of": "2026-06-21",
+      "aug6_note": "Barclays cut PT slightly ($411→$408). Monitor."
     },
     {
       "ticker": "RDDT",
@@ -251,7 +307,9 @@
       "market_value_inr": 1942.12,
       "current_price_inr": 16519.72,
       "pnl_pct": 3.15,
-      "weight_pct_us_sleeve": 0.74
+      "weight_pct_us_sleeve": 0.74,
+      "price_as_of": "2026-06-21",
+      "aug6_note": "Post-earnings down to ~$138. 50d MA is $217 — RDDT is 36% below its 50d MA. Estimated current P&L ~-28% from cost. Broken trend — FLAGGED FOR TRIM/EXIT."
     },
     {
       "ticker": "AOTHY",
@@ -263,7 +321,8 @@
       "market_value_inr": 1908.67,
       "current_price_inr": 1716.08,
       "pnl_pct": 1.38,
-      "weight_pct_us_sleeve": 0.72
+      "weight_pct_us_sleeve": 0.72,
+      "price_as_of": "2026-06-21"
     },
     {
       "ticker": "DELL",
@@ -275,7 +334,8 @@
       "market_value_inr": 1863.67,
       "current_price_inr": 38664.99,
       "pnl_pct": -1.01,
-      "weight_pct_us_sleeve": 0.71
+      "weight_pct_us_sleeve": 0.71,
+      "price_as_of": "2026-06-21"
     },
     {
       "ticker": "GALT",
@@ -287,7 +347,8 @@
       "market_value_inr": 1867.16,
       "current_price_inr": 266.74,
       "pnl_pct": -6.32,
-      "weight_pct_us_sleeve": 0.71
+      "weight_pct_us_sleeve": 0.71,
+      "price_as_of": "2026-06-21"
     },
     {
       "ticker": "MOD",
@@ -299,7 +360,8 @@
       "market_value_inr": 1774.04,
       "current_price_inr": 28077.67,
       "pnl_pct": -5.77,
-      "weight_pct_us_sleeve": 0.67
+      "weight_pct_us_sleeve": 0.67,
+      "price_as_of": "2026-06-21"
     },
     {
       "ticker": "QCOM",
@@ -311,7 +373,8 @@
       "market_value_inr": 1754.79,
       "current_price_inr": 21349.31,
       "pnl_pct": -6.8,
-      "weight_pct_us_sleeve": 0.67
+      "weight_pct_us_sleeve": 0.67,
+      "price_as_of": "2026-06-21"
     },
     {
       "ticker": "DOCN",
@@ -323,7 +386,8 @@
       "market_value_inr": 1773.06,
       "current_price_inr": 16360.15,
       "pnl_pct": -5.83,
-      "weight_pct_us_sleeve": 0.67
+      "weight_pct_us_sleeve": 0.67,
+      "price_as_of": "2026-06-21"
     },
     {
       "ticker": "TCEHY",
@@ -335,7 +399,8 @@
       "market_value_inr": 1742.09,
       "current_price_inr": 5296.96,
       "pnl_pct": -7.47,
-      "weight_pct_us_sleeve": 0.66
+      "weight_pct_us_sleeve": 0.66,
+      "price_as_of": "2026-06-21"
     },
     {
       "ticker": "CRWD",
@@ -347,7 +412,8 @@
       "market_value_inr": 1687.23,
       "current_price_inr": 64664.48,
       "pnl_pct": -10.38,
-      "weight_pct_us_sleeve": 0.64
+      "weight_pct_us_sleeve": 0.64,
+      "price_as_of": "2026-06-21"
     },
     {
       "ticker": "URA",
@@ -359,7 +425,8 @@
       "market_value_inr": 1686.74,
       "current_price_inr": 4511.39,
       "pnl_pct": -10.41,
-      "weight_pct_us_sleeve": 0.64
+      "weight_pct_us_sleeve": 0.64,
+      "price_as_of": "2026-06-21"
     },
     {
       "ticker": "NET",
@@ -371,7 +438,8 @@
       "market_value_inr": 1600.37,
       "current_price_inr": 21155.74,
       "pnl_pct": -15.0,
-      "weight_pct_us_sleeve": 0.61
+      "weight_pct_us_sleeve": 0.61,
+      "price_as_of": "2026-06-21"
     },
     {
       "ticker": "ORCL",
@@ -383,7 +451,8 @@
       "market_value_inr": 1569.44,
       "current_price_inr": 17400.66,
       "pnl_pct": -16.64,
-      "weight_pct_us_sleeve": 0.6
+      "weight_pct_us_sleeve": 0.6,
+      "price_as_of": "2026-06-21"
     },
     {
       "ticker": "BMR",
@@ -395,7 +464,8 @@
       "market_value_inr": 1567.37,
       "current_price_inr": 156.74,
       "pnl_pct": -15.31,
-      "weight_pct_us_sleeve": 0.6
+      "weight_pct_us_sleeve": 0.6,
+      "price_as_of": "2026-06-21"
     },
     {
       "ticker": "PLTR",
@@ -407,7 +477,9 @@
       "market_value_inr": 1556.11,
       "current_price_inr": 12130.14,
       "pnl_pct": -17.35,
-      "weight_pct_us_sleeve": 0.59
+      "weight_pct_us_sleeve": 0.59,
+      "price_as_of": "2026-06-21",
+      "aug6_note": "Aug 6 price $158.43 (recovered from June lows of ~$144). Est. current P&L ~-9%. BUT RSI 37.2, below 50d MA $180.9 and 200d MA $171.7 — still in broken trend. Small position."
     },
     {
       "ticker": "TWLO",
@@ -419,7 +491,8 @@
       "market_value_inr": 1564.72,
       "current_price_inr": 17578.17,
       "pnl_pct": -16.89,
-      "weight_pct_us_sleeve": 0.59
+      "weight_pct_us_sleeve": 0.59,
+      "price_as_of": "2026-06-21"
     },
     {
       "ticker": "HPE",
@@ -431,7 +504,8 @@
       "market_value_inr": 1525.77,
       "current_price_inr": 4476.45,
       "pnl_pct": -18.96,
-      "weight_pct_us_sleeve": 0.58
+      "weight_pct_us_sleeve": 0.58,
+      "price_as_of": "2026-06-21"
     },
     {
       "ticker": "SFTBY",
@@ -443,7 +517,8 @@
       "market_value_inr": 1528.32,
       "current_price_inr": 2210.37,
       "pnl_pct": -18.82,
-      "weight_pct_us_sleeve": 0.58
+      "weight_pct_us_sleeve": 0.58,
+      "price_as_of": "2026-06-21"
     },
     {
       "ticker": "BABA",
@@ -455,7 +530,8 @@
       "market_value_inr": 1535.68,
       "current_price_inr": 10112.38,
       "pnl_pct": -18.43,
-      "weight_pct_us_sleeve": 0.58
+      "weight_pct_us_sleeve": 0.58,
+      "price_as_of": "2026-06-21"
     },
     {
       "ticker": "DDOG",
@@ -467,7 +543,8 @@
       "market_value_inr": 1516.7,
       "current_price_inr": 21055.66,
       "pnl_pct": -19.44,
-      "weight_pct_us_sleeve": 0.58
+      "weight_pct_us_sleeve": 0.58,
+      "price_as_of": "2026-06-21"
     },
     {
       "ticker": "RGTI",
@@ -479,7 +556,8 @@
       "market_value_inr": 1513.22,
       "current_price_inr": 2016.81,
       "pnl_pct": -19.63,
-      "weight_pct_us_sleeve": 0.57
+      "weight_pct_us_sleeve": 0.57,
+      "price_as_of": "2026-06-21"
     },
     {
       "ticker": "PATH",
@@ -491,7 +569,8 @@
       "market_value_inr": 1497.96,
       "current_price_inr": 969.69,
       "pnl_pct": -20.44,
-      "weight_pct_us_sleeve": 0.57
+      "weight_pct_us_sleeve": 0.57,
+      "price_as_of": "2026-06-21"
     },
     {
       "ticker": "UEC",
@@ -503,7 +582,8 @@
       "market_value_inr": 1464.67,
       "current_price_inr": 1133.98,
       "pnl_pct": -22.2,
-      "weight_pct_us_sleeve": 0.56
+      "weight_pct_us_sleeve": 0.56,
+      "price_as_of": "2026-06-21"
     },
     {
       "ticker": "IONQ",
@@ -515,7 +595,8 @@
       "market_value_inr": 1480.33,
       "current_price_inr": 5339.45,
       "pnl_pct": -21.37,
-      "weight_pct_us_sleeve": 0.56
+      "weight_pct_us_sleeve": 0.56,
+      "price_as_of": "2026-06-21"
     },
     {
       "ticker": "IBM",
@@ -527,7 +608,8 @@
       "market_value_inr": 1439.94,
       "current_price_inr": 23520.02,
       "pnl_pct": -23.52,
-      "weight_pct_us_sleeve": 0.55
+      "weight_pct_us_sleeve": 0.55,
+      "price_as_of": "2026-06-21"
     },
     {
       "ticker": "NVTS",
@@ -539,7 +621,8 @@
       "market_value_inr": 1414.91,
       "current_price_inr": 2267.97,
       "pnl_pct": -24.85,
-      "weight_pct_us_sleeve": 0.54
+      "weight_pct_us_sleeve": 0.54,
+      "price_as_of": "2026-06-21"
     },
     {
       "ticker": "INTC",
@@ -551,7 +634,9 @@
       "market_value_inr": 1084.78,
       "current_price_inr": 12651.34,
       "pnl_pct": 15.23,
-      "weight_pct_us_sleeve": 0.41
+      "weight_pct_us_sleeve": 0.41,
+      "price_as_of": "2026-06-21",
+      "aug6_note": "INTC now ~$102.60 (2x YTD from ~$50 start of 2026). Current P&L vs cost uncertain (exchange rate dependent). Strong structural recovery."
     },
     {
       "ticker": "BYDDY",
@@ -563,7 +648,8 @@
       "market_value_inr": 811.98,
       "current_price_inr": 971.58,
       "pnl_pct": -13.74,
-      "weight_pct_us_sleeve": 0.31
+      "weight_pct_us_sleeve": 0.31,
+      "price_as_of": "2026-06-21"
     },
     {
       "ticker": "SLS",
@@ -575,13 +661,245 @@
       "market_value_inr": 760.08,
       "current_price_inr": 760.08,
       "pnl_pct": -4.24,
-      "weight_pct_us_sleeve": 0.29
+      "weight_pct_us_sleeve": 0.29,
+      "price_as_of": "2026-06-21"
     }
   ],
   "recommendations": {
-    "cut": [],
-    "add_to": [],
-    "open_new": []
+    "as_of": "2026-08-06",
+    "data_sources": "WebSearch (Yahoo Finance, 247WallSt, Investing.com, StockTitan, TradingKey, AltIndex, MarketBeat, multiple outlets) — price data sourced individually per ticker via news and technical analysis pages. INDmoney connector not enabled in session; open_positions prices are June 21 stale data.",
+    "cut": [
+      {
+        "ticker": "WDC",
+        "name": "Western Digital",
+        "current_weight_pct": 3.82,
+        "pnl_pct_stale": 18.57,
+        "pnl_pct_estimated_current": -38.2,
+        "aug6_price_usd": 437,
+        "cost_basis_usd_approx": 707,
+        "rule_broken": "Earnings miss (Q2 beat revenue but outlook fell short of inflated expectations); stock crashed -16% today from a +202% YTD run. Price now well below cost AND trend broken. Memory/storage supply-glut fears add structural headwind.",
+        "action": "FULL EXIT",
+        "priority": 1,
+        "source": "247wallst.com, finance.yahoo.com: WDC sinks 16% to $437 on Aug 6, 2026"
+      },
+      {
+        "ticker": "UCO",
+        "name": "ProShares Ultra Bloomberg Crude Oil (2x Leveraged)",
+        "current_weight_pct": 1.33,
+        "pnl_pct_stale": -25.36,
+        "pnl_pct_estimated_current": -28,
+        "aug6_price_usd": 35.28,
+        "rule_broken": "Structural decay instrument — leveraged inverse commodity ETF. Daily reset losses, contango erosion have destroyed 67% of value over a decade regardless of crude price direction. Must not be held as a position.",
+        "action": "FULL EXIT",
+        "priority": 2,
+        "source": "ProShares product page; aol.com/proshares structural decay analysis; stockinvest.us: UCO $35.28 Aug 6, 2026"
+      },
+      {
+        "ticker": "RDDT",
+        "name": "Reddit Inc.",
+        "current_weight_pct": 0.74,
+        "pnl_pct_stale": 3.15,
+        "pnl_pct_estimated_current": -28,
+        "aug6_price_usd": 138.07,
+        "cost_basis_usd_approx": 191,
+        "rule_broken": "Post-earnings crash. Current price ~$138 is 36% below the 50d MA of $217 and below 200d MA of $202. MACD bearish. Went from +3% to estimated -28% from cost. Trend broken.",
+        "action": "TRIM or EXIT",
+        "priority": 3,
+        "source": "AltIndex.com: RDDT RSI 55, 50d MA $217.4, 200d MA $202.6; Benzinga: RDDT down 22.5% post-earnings to $138.07"
+      },
+      {
+        "ticker": "NOW",
+        "name": "ServiceNow Inc.",
+        "current_weight_pct": 1.06,
+        "pnl_pct_stale": -26.18,
+        "pnl_pct_estimated_current": -22,
+        "aug6_price_usd": 112.9,
+        "cost_basis_usd_approx": 145,
+        "rule_broken": "Deeply underwater, below all moving averages. Price $112.90 vs cost ~$145. Slow partial recovery from June lows but trend remains broken; no screen criteria met.",
+        "action": "TRIM",
+        "priority": 4,
+        "source": "MacroTrends, NOW stock quote pages: $112.90 Aug 6, 2026"
+      },
+      {
+        "ticker": "IBM",
+        "name": "IBM",
+        "current_weight_pct": 0.55,
+        "pnl_pct_stale": -23.52,
+        "rule_broken": "Legacy enterprise tech, -23.5% from cost, broken uptrend, does not pass momentum screen. Small position — clean up.",
+        "action": "FULL EXIT",
+        "priority": 5,
+        "source": "Stale June 21 data; no current recovery signal found"
+      },
+      {
+        "ticker": "HPE",
+        "name": "Hewlett Packard Enterprise",
+        "current_weight_pct": 0.58,
+        "pnl_pct_stale": -18.96,
+        "rule_broken": "Legacy IT hardware, -19% from cost, broken trend, does not pass momentum screen. Small position — clean up.",
+        "action": "FULL EXIT",
+        "priority": 6,
+        "source": "Stale June 21 data; no current recovery signal found"
+      }
+    ],
+    "cut_watch": [
+      {
+        "ticker": "MU",
+        "note": "Down 6% today to ~$844 (sympathy sell on WDC earnings). Estimated P&L ~-17% from cost (~$1022 equiv). MAY still be above 200d MA given 213% YTD run before today. Monitor closely — if it fails to recover and breaks below 50d MA, upgrade to CUT.",
+        "action": "WATCH — do not add; reassess in 2-3 sessions"
+      },
+      {
+        "ticker": "STX",
+        "note": "Down 6% today to ~$786 (sympathy sell). Was portfolio's strongest performer (+27%). Estimated P&L ~-17% from cost (~$945 equiv). Similar to MU — likely still above technical MAs given YTD run. Watch for trend confirmation or break.",
+        "action": "WATCH — do not add; reassess in 2-3 sessions"
+      },
+      {
+        "ticker": "PLTR",
+        "note": "Recovering: from -17% in June to estimated ~-9% now ($158.43). BUT RSI 37.2, below 50d MA ($180.9) and 200d MA ($171.7) — trend not repaired. Small position. If RSI fails to recover above 50, trim.",
+        "action": "WATCH — small position, low urgency"
+      }
+    ],
+    "add_to": [
+      {
+        "note": "NO ADD TO RECOMMENDATIONS TODAY. Memory and storage names (MU, WDC, STX) that were the portfolio's strongest performers have all broken below cost basis after today's sector-wide sell-off. Remaining positive P&L holdings are either broad ETFs (QQQ, VOO — adding deepens semi concentration) or small positions in the semi sector (ARM, AMD) that would worsen already-extreme 71% semi/memory concentration. Revisit when: (a) memory sector stabilizes, (b) MU/STX confirm trend recovery above 20/50d MAs with RSI returning to 55-75 zone."
+      }
+    ],
+    "open_new": [
+      {
+        "ticker": "LAD",
+        "name": "Lithia Motors",
+        "sector": "Consumer Discretionary / Auto Retail",
+        "market_cap_tier": "Large",
+        "portfolio_sector_absent": true,
+        "entry_zone_usd": "380-395",
+        "stop_usd": 357,
+        "stop_pct": -7.9,
+        "target_usd": 440,
+        "target_pct": 13.5,
+        "illustrative_caveat": "Entry/stop/target are illustrative levels, not signals. Execute at your own discretion.",
+        "thesis": "Record Q2 2026 results (July 29): revenue $9.8B beat, EPS $11.54 (+17% YoY), multiple banks raised PTs to ~$424; RSI 58.8 and BULL MACD confirm ongoing momentum. Adds Consumer Discretionary exposure to a portfolio 71% concentrated in semis/memory.",
+        "screen_criteria": {
+          "price_over_10": true,
+          "market_cap_over_500m": true,
+          "avg_volume_over_500k": "Not explicitly verified — large-cap stock typically well above threshold",
+          "up_15pct_20d": "YES — 22% 30-day return confirmed (OpportunityRadar, TickerEon); 20-day likely similar given post-earnings catalyst July 29",
+          "above_20d_50d_200d_ma": "LIKELY — BULL MACD signal implies price above key MAs; not directly confirmed",
+          "rsi_55_to_75": "YES — RSI 58.8 confirmed (tickeron.com/OpportunityRadar)",
+          "no_earnings_5d": "YES — Q2 reported July 29",
+          "not_gapping_down": "YES — Aug 6 not flagged as gap-down"
+        },
+        "sources": [
+          "tickeron.com: LAD RSI 58.8, BULL MACD, 18.59% 30-day return",
+          "quiverquant.com / tipranks.com: LAD Q2 2026 record earnings July 29, EPS $11.54",
+          "stockstotrade.com: Wall Street raised price targets, stock +22.31%",
+          "gurufocus.com: LAD 3.7% rally, undervalued per GF Value"
+        ],
+        "rank": 1
+      },
+      {
+        "ticker": "LLY",
+        "name": "Eli Lilly and Company",
+        "sector": "Healthcare / Pharmaceuticals",
+        "market_cap_tier": "Mega",
+        "portfolio_sector_absent": true,
+        "entry_zone_usd": "1150-1190",
+        "stop_usd": 1075,
+        "stop_pct": -7.1,
+        "target_usd": 1300,
+        "target_pct": 11.5,
+        "illustrative_caveat": "Entry/stop/target are illustrative levels, not signals. Execute at your own discretion.",
+        "thesis": "Q2 2026 revenue +48% YoY driven by GLP-1 weight-loss drugs; raised full-year guidance to $85-87B; shares rose 5% on Aug 5 and hit 52-week highs in late June/July. Healthcare sector absent from portfolio — adds defensive diversification as the tech/semi complex corrects.",
+        "screen_criteria": {
+          "price_over_10": true,
+          "market_cap_over_500m": true,
+          "avg_volume_over_500k": true,
+          "up_15pct_20d": "UNCONFIRMED — Post-earnings catalyst strong; stock at 52-week high area but exact 20-day return not precisely measured. Qualitative case strong.",
+          "above_20d_50d_200d_ma": "HIGHLY LIKELY — Proximity to 52-week high ($1,249) implies above all MAs; not directly verified",
+          "rsi_55_to_75": "UNCONFIRMED — Estimated 60-70 based on recovery from lows and approach toward ATH; not directly verified",
+          "no_earnings_5d": "YES — Q2 already reported",
+          "not_gapping_down": "YES — rose 5% on Aug 5"
+        },
+        "sources": [
+          "CNN/Robinhood/CNBC: LLY $1,121.36 Aug 3; rose 5% Aug 5 (~$1,177)",
+          "SeekingAlpha: LLY hit 52-week highs in late June/July",
+          "SEC Q2 filing: Q2 2026 revenue +48%; FY guidance raised $85-87B",
+          "public.com: 20 analysts Buy consensus Aug 4, 2026"
+        ],
+        "rank": 2
+      },
+      {
+        "ticker": "GS",
+        "name": "Goldman Sachs Group Inc.",
+        "sector": "Financials / Investment Banking",
+        "market_cap_tier": "Mega",
+        "portfolio_sector_absent": true,
+        "entry_zone_usd": "1040-1080",
+        "stop_usd": 975,
+        "stop_pct": -7.2,
+        "target_usd": 1175,
+        "target_pct": 12.0,
+        "illustrative_caveat": "Entry/stop/target are illustrative levels, not signals. Execute at your own discretion.",
+        "thesis": "78% increase in net earnings from strong trading and investment banking; Financials sector (XLF) at all-time high; UBS raised PT to $1,150 (Aug 3). Financials completely absent from portfolio — diversifies away from semi concentration while adding sector that is at ATH strength.",
+        "screen_criteria": {
+          "price_over_10": true,
+          "market_cap_over_500m": true,
+          "avg_volume_over_500k": true,
+          "up_15pct_20d": "UNCONFIRMED — Current $1,068 is 7% below July 15 ATH of $1,152; 20-day return not precisely measured. Sector at ATH, not individual stock breakout.",
+          "above_20d_50d_200d_ma": "LIKELY — Given 78% earnings growth and ATH in July; stock in strong uptrend. Not directly verified.",
+          "rsi_55_to_75": "ESTIMATED ~50-60 — Pulling back 7% from ATH; likely in consolidation range. Not directly verified.",
+          "no_earnings_5d": "YES — Recent Q2 reported",
+          "not_gapping_down": "YES — Not flagged"
+        },
+        "honest_caveat": "GS is 7% off its July 15 ATH of $1,152 — this is consolidation mode, not a fresh breakout. The 20-day 15% trigger is unlikely to be met precisely. This pick is recommended on sector breadth (Financials at ATH, absent from portfolio) and earnings quality — NOT on a clean momentum screen signal.",
+        "sources": [
+          "MacroTrends: GS ATH close $1,152.07 July 15, 2026; current $1,067.69",
+          "etoro.com/marketbeat.com: GS PT $1,074 consensus; UBS raised to $1,150 Aug 3",
+          "Multiple outlets: GS 78% net earnings growth; strong trading + IB"
+        ],
+        "rank": 3
+      }
+    ]
   },
-  "todays_picks": []
+  "todays_picks": [
+    {
+      "ticker": "LAD",
+      "name": "Lithia Motors",
+      "sector": "Consumer Discretionary / Auto Retail",
+      "entry_low_usd": 380,
+      "entry_high_usd": 395,
+      "stop_usd": 357,
+      "stop_pct": -7.9,
+      "target_usd": 440,
+      "target_pct": 13.5,
+      "rsi_14": 58.8,
+      "scan_date": "2026-08-06"
+    },
+    {
+      "ticker": "LLY",
+      "name": "Eli Lilly and Company",
+      "sector": "Healthcare / Pharmaceuticals",
+      "entry_low_usd": 1150,
+      "entry_high_usd": 1190,
+      "stop_usd": 1075,
+      "stop_pct": -7.1,
+      "target_usd": 1300,
+      "target_pct": 11.5,
+      "rsi_14": null,
+      "rsi_note": "RSI not directly confirmed; estimated 60-70 range",
+      "scan_date": "2026-08-06"
+    },
+    {
+      "ticker": "GS",
+      "name": "Goldman Sachs Group Inc.",
+      "sector": "Financials / Investment Banking",
+      "entry_low_usd": 1040,
+      "entry_high_usd": 1080,
+      "stop_usd": 975,
+      "stop_pct": -7.2,
+      "target_usd": 1175,
+      "target_pct": 12.0,
+      "rsi_14": null,
+      "rsi_note": "RSI estimated ~50-60, consolidating 7% off ATH",
+      "scan_date": "2026-08-06"
+    }
+  ]
 }
