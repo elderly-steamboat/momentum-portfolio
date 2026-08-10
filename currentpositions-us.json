@@ -5,12 +5,40 @@
     "currency_note": "INDmoney reports US holdings in INR via the LRS feed. unit_price/invested/market_value are INR.",
     "source": "INDmoney connector (US_STOCK), read-only",
     "snapshot_session": "2026-06-19",
-    "last_updated": "2026-06-21",
+    "last_updated": "2026-08-10",
+    "holdings_as_of": "2026-06-21",
+    "holdings_stale_warning": "INDmoney connector was UNAVAILABLE on 2026-08-10. open_positions data is from the 2026-06-21 snapshot and MUST NOT be treated as current prices or P&L. Do not place any trade or cut based on these P&L figures without verifying current prices first. Only UCO is flagged for exit on structural grounds (rule-based, price-independent).",
     "open_positions_count": 47,
     "total_invested_inr": 260424.0,
     "total_market_value_inr": 263268.77,
     "total_pnl_pct": 1.09,
-    "ticker_caveat": "ADR/OTC tickers (AOTHY, SFTBY, BYDDY, TCEHY, BMR) are best-effort and should be verified before use as scan keys."
+    "ticker_caveat": "ADR/OTC tickers (AOTHY, SFTBY, BYDDY, TCEHY, BMR) are best-effort and should be verified before use as scan keys.",
+    "concentration_read_as_of": "2026-06-21",
+    "sector_weights_pct": {
+      "ETF_Semis_SOXX": 25.0,
+      "ETF_Korea_EWY": 24.1,
+      "Tech_Semis_Memory_Storage": 14.94,
+      "Tech_Software_Cloud": 11.78,
+      "ETF_Broad_QQQ_VOO": 3.68,
+      "Comm_Services": 3.1,
+      "Consumer_Disc": 2.53,
+      "Leveraged_ETF_UCO": 1.33,
+      "Utilities_Power": 1.02,
+      "Industrials": 1.39,
+      "Healthcare_Biotech": 1.0,
+      "ETF_Uranium": 0.64,
+      "Tech_Quantum": 1.13,
+      "Tech_HoldingCo": 0.58,
+      "Energy_Uranium": 0.56,
+      "Financials": 0.0,
+      "Consumer_Staples": 0.0,
+      "Materials": 0.0,
+      "Energy_Oil_Gas": 0.0
+    },
+    "combined_semi_memory_storage_chip_pct": 71.8,
+    "deeply_underwater_count_ge_neg15pct": 18,
+    "scan_date": "2026-08-10",
+    "scan_data_limitations": "Most financial data sites (finviz.com, stockanalysis.com, yahoo finance, investing.com, chartmill.com, stocktwits.com, gurufocus.com, abg-analytics.com, 247wallst.com) returned EGRESS_BLOCKED in this remote environment. All metrics below sourced via WebSearch snippets only. Where RSI, 20-day return, or volume data is unconfirmed, this is explicitly flagged."
   },
   "open_positions": [
     {
@@ -23,7 +51,8 @@
       "market_value_inr": 65815.61,
       "current_price_inr": 60376.87,
       "pnl_pct": 4.34,
-      "weight_pct_us_sleeve": 25.0
+      "weight_pct_us_sleeve": 25.0,
+      "price_stale": true
     },
     {
       "ticker": "EWY",
@@ -35,7 +64,8 @@
       "market_value_inr": 63460.62,
       "current_price_inr": 20696.86,
       "pnl_pct": 5.33,
-      "weight_pct_us_sleeve": 24.1
+      "weight_pct_us_sleeve": 24.1,
+      "price_stale": true
     },
     {
       "ticker": "MU",
@@ -47,7 +77,8 @@
       "market_value_inr": 15252.79,
       "current_price_inr": 107071.33,
       "pnl_pct": 24.64,
-      "weight_pct_us_sleeve": 5.79
+      "weight_pct_us_sleeve": 5.79,
+      "price_stale": true
     },
     {
       "ticker": "WDC",
@@ -59,7 +90,8 @@
       "market_value_inr": 10045.31,
       "current_price_inr": 70459.03,
       "pnl_pct": 18.57,
-      "weight_pct_us_sleeve": 3.82
+      "weight_pct_us_sleeve": 3.82,
+      "price_stale": true
     },
     {
       "ticker": "AMD",
@@ -71,7 +103,8 @@
       "market_value_inr": 6362.63,
       "current_price_inr": 50738.47,
       "pnl_pct": 12.65,
-      "weight_pct_us_sleeve": 2.42
+      "weight_pct_us_sleeve": 2.42,
+      "price_stale": true
     },
     {
       "ticker": "TSM",
@@ -83,7 +116,8 @@
       "market_value_inr": 5177.44,
       "current_price_inr": 43633.37,
       "pnl_pct": 10.0,
-      "weight_pct_us_sleeve": 1.97
+      "weight_pct_us_sleeve": 1.97,
+      "price_stale": true
     },
     {
       "ticker": "QQQ",
@@ -95,7 +129,8 @@
       "market_value_inr": 4917.65,
       "current_price_inr": 69929.34,
       "pnl_pct": 4.48,
-      "weight_pct_us_sleeve": 1.87
+      "weight_pct_us_sleeve": 1.87,
+      "price_stale": true
     },
     {
       "ticker": "STX",
@@ -107,7 +142,9 @@
       "market_value_inr": 4794.03,
       "current_price_inr": 101051.11,
       "pnl_pct": 27.32,
-      "weight_pct_us_sleeve": 1.82
+      "weight_pct_us_sleeve": 1.82,
+      "price_stale": true,
+      "aug10_note": "STX current price ~$795 USD per public sources (Aug 5-7 data). Massive appreciation since June 21 snapshot. RSI ~73 (borderline overbought), 20d/50d/200d MAs all Strong Buy. ADD TO candidate flagged — see recommendations."
     },
     {
       "ticker": "VOO",
@@ -119,7 +156,8 @@
       "market_value_inr": 4770.27,
       "current_price_inr": 64971.34,
       "pnl_pct": 1.35,
-      "weight_pct_us_sleeve": 1.81
+      "weight_pct_us_sleeve": 1.81,
+      "price_stale": true
     },
     {
       "ticker": "AAPL",
@@ -131,7 +169,8 @@
       "market_value_inr": 4733.97,
       "current_price_inr": 28138.1,
       "pnl_pct": 0.58,
-      "weight_pct_us_sleeve": 1.8
+      "weight_pct_us_sleeve": 1.8,
+      "price_stale": true
     },
     {
       "ticker": "TXN",
@@ -143,7 +182,8 @@
       "market_value_inr": 4671.24,
       "current_price_inr": 30484.44,
       "pnl_pct": -0.76,
-      "weight_pct_us_sleeve": 1.77
+      "weight_pct_us_sleeve": 1.77,
+      "price_stale": true
     },
     {
       "ticker": "GOOGL",
@@ -155,7 +195,8 @@
       "market_value_inr": 4477.46,
       "current_price_inr": 34749.39,
       "pnl_pct": -4.87,
-      "weight_pct_us_sleeve": 1.7
+      "weight_pct_us_sleeve": 1.7,
+      "price_stale": true
     },
     {
       "ticker": "AMZN",
@@ -167,7 +208,8 @@
       "market_value_inr": 4330.28,
       "current_price_inr": 23075.3,
       "pnl_pct": -8.0,
-      "weight_pct_us_sleeve": 1.64
+      "weight_pct_us_sleeve": 1.64,
+      "price_stale": true
     },
     {
       "ticker": "NVDA",
@@ -179,7 +221,8 @@
       "market_value_inr": 4202.9,
       "current_price_inr": 19893.35,
       "pnl_pct": -10.71,
-      "weight_pct_us_sleeve": 1.6
+      "weight_pct_us_sleeve": 1.6,
+      "price_stale": true
     },
     {
       "ticker": "ARM",
@@ -191,7 +234,8 @@
       "market_value_inr": 3998.0,
       "current_price_inr": 41493.81,
       "pnl_pct": 6.18,
-      "weight_pct_us_sleeve": 1.52
+      "weight_pct_us_sleeve": 1.52,
+      "price_stale": true
     },
     {
       "ticker": "CRM",
@@ -203,7 +247,8 @@
       "market_value_inr": 3845.35,
       "current_price_inr": 14331.07,
       "pnl_pct": -18.3,
-      "weight_pct_us_sleeve": 1.46
+      "weight_pct_us_sleeve": 1.46,
+      "price_stale": true
     },
     {
       "ticker": "UCO",
@@ -215,7 +260,9 @@
       "market_value_inr": 3513.11,
       "current_price_inr": 3459.55,
       "pnl_pct": -25.36,
-      "weight_pct_us_sleeve": 1.33
+      "weight_pct_us_sleeve": 1.33,
+      "price_stale": true,
+      "cut_flag": "DEFINITIVE EXIT — structural rule violation. Leveraged/inverse commodity ETF held as position causes daily decay (volatility drag). Rule: 'structurally decaying instruments held as positions'. Exit regardless of current price. Verify current price before placing exit order."
     },
     {
       "ticker": "NOW",
@@ -227,7 +274,8 @@
       "market_value_inr": 2779.84,
       "current_price_inr": 8973.68,
       "pnl_pct": -26.18,
-      "weight_pct_us_sleeve": 1.06
+      "weight_pct_us_sleeve": 1.06,
+      "price_stale": true
     },
     {
       "ticker": "TLN",
@@ -239,7 +287,8 @@
       "market_value_inr": 2688.35,
       "current_price_inr": 41194.5,
       "pnl_pct": 5.37,
-      "weight_pct_us_sleeve": 1.02
+      "weight_pct_us_sleeve": 1.02,
+      "price_stale": true
     },
     {
       "ticker": "RDDT",
@@ -251,7 +300,8 @@
       "market_value_inr": 1942.12,
       "current_price_inr": 16519.72,
       "pnl_pct": 3.15,
-      "weight_pct_us_sleeve": 0.74
+      "weight_pct_us_sleeve": 0.74,
+      "price_stale": true
     },
     {
       "ticker": "AOTHY",
@@ -263,7 +313,8 @@
       "market_value_inr": 1908.67,
       "current_price_inr": 1716.08,
       "pnl_pct": 1.38,
-      "weight_pct_us_sleeve": 0.72
+      "weight_pct_us_sleeve": 0.72,
+      "price_stale": true
     },
     {
       "ticker": "DELL",
@@ -275,7 +326,8 @@
       "market_value_inr": 1863.67,
       "current_price_inr": 38664.99,
       "pnl_pct": -1.01,
-      "weight_pct_us_sleeve": 0.71
+      "weight_pct_us_sleeve": 0.71,
+      "price_stale": true
     },
     {
       "ticker": "GALT",
@@ -287,7 +339,8 @@
       "market_value_inr": 1867.16,
       "current_price_inr": 266.74,
       "pnl_pct": -6.32,
-      "weight_pct_us_sleeve": 0.71
+      "weight_pct_us_sleeve": 0.71,
+      "price_stale": true
     },
     {
       "ticker": "MOD",
@@ -299,7 +352,8 @@
       "market_value_inr": 1774.04,
       "current_price_inr": 28077.67,
       "pnl_pct": -5.77,
-      "weight_pct_us_sleeve": 0.67
+      "weight_pct_us_sleeve": 0.67,
+      "price_stale": true
     },
     {
       "ticker": "QCOM",
@@ -311,7 +365,8 @@
       "market_value_inr": 1754.79,
       "current_price_inr": 21349.31,
       "pnl_pct": -6.8,
-      "weight_pct_us_sleeve": 0.67
+      "weight_pct_us_sleeve": 0.67,
+      "price_stale": true
     },
     {
       "ticker": "DOCN",
@@ -323,7 +378,8 @@
       "market_value_inr": 1773.06,
       "current_price_inr": 16360.15,
       "pnl_pct": -5.83,
-      "weight_pct_us_sleeve": 0.67
+      "weight_pct_us_sleeve": 0.67,
+      "price_stale": true
     },
     {
       "ticker": "TCEHY",
@@ -335,7 +391,8 @@
       "market_value_inr": 1742.09,
       "current_price_inr": 5296.96,
       "pnl_pct": -7.47,
-      "weight_pct_us_sleeve": 0.66
+      "weight_pct_us_sleeve": 0.66,
+      "price_stale": true
     },
     {
       "ticker": "CRWD",
@@ -347,7 +404,8 @@
       "market_value_inr": 1687.23,
       "current_price_inr": 64664.48,
       "pnl_pct": -10.38,
-      "weight_pct_us_sleeve": 0.64
+      "weight_pct_us_sleeve": 0.64,
+      "price_stale": true
     },
     {
       "ticker": "URA",
@@ -359,7 +417,8 @@
       "market_value_inr": 1686.74,
       "current_price_inr": 4511.39,
       "pnl_pct": -10.41,
-      "weight_pct_us_sleeve": 0.64
+      "weight_pct_us_sleeve": 0.64,
+      "price_stale": true
     },
     {
       "ticker": "NET",
@@ -371,7 +430,8 @@
       "market_value_inr": 1600.37,
       "current_price_inr": 21155.74,
       "pnl_pct": -15.0,
-      "weight_pct_us_sleeve": 0.61
+      "weight_pct_us_sleeve": 0.61,
+      "price_stale": true
     },
     {
       "ticker": "ORCL",
@@ -383,7 +443,8 @@
       "market_value_inr": 1569.44,
       "current_price_inr": 17400.66,
       "pnl_pct": -16.64,
-      "weight_pct_us_sleeve": 0.6
+      "weight_pct_us_sleeve": 0.6,
+      "price_stale": true
     },
     {
       "ticker": "BMR",
@@ -395,7 +456,8 @@
       "market_value_inr": 1567.37,
       "current_price_inr": 156.74,
       "pnl_pct": -15.31,
-      "weight_pct_us_sleeve": 0.6
+      "weight_pct_us_sleeve": 0.6,
+      "price_stale": true
     },
     {
       "ticker": "PLTR",
@@ -407,7 +469,9 @@
       "market_value_inr": 1556.11,
       "current_price_inr": 12130.14,
       "pnl_pct": -17.35,
-      "weight_pct_us_sleeve": 0.59
+      "weight_pct_us_sleeve": 0.59,
+      "price_stale": true,
+      "aug10_note": "PLTR +39.94% over past 2 weeks as of Aug 7; surged to $172 on Aug 7 post Q2 earnings. June-21 P&L of -17.35% is likely fully recovered or positive now. RSI may be overbought. Verify current price before acting."
     },
     {
       "ticker": "TWLO",
@@ -419,7 +483,8 @@
       "market_value_inr": 1564.72,
       "current_price_inr": 17578.17,
       "pnl_pct": -16.89,
-      "weight_pct_us_sleeve": 0.59
+      "weight_pct_us_sleeve": 0.59,
+      "price_stale": true
     },
     {
       "ticker": "HPE",
@@ -431,7 +496,8 @@
       "market_value_inr": 1525.77,
       "current_price_inr": 4476.45,
       "pnl_pct": -18.96,
-      "weight_pct_us_sleeve": 0.58
+      "weight_pct_us_sleeve": 0.58,
+      "price_stale": true
     },
     {
       "ticker": "SFTBY",
@@ -443,7 +509,8 @@
       "market_value_inr": 1528.32,
       "current_price_inr": 2210.37,
       "pnl_pct": -18.82,
-      "weight_pct_us_sleeve": 0.58
+      "weight_pct_us_sleeve": 0.58,
+      "price_stale": true
     },
     {
       "ticker": "BABA",
@@ -455,7 +522,8 @@
       "market_value_inr": 1535.68,
       "current_price_inr": 10112.38,
       "pnl_pct": -18.43,
-      "weight_pct_us_sleeve": 0.58
+      "weight_pct_us_sleeve": 0.58,
+      "price_stale": true
     },
     {
       "ticker": "DDOG",
@@ -467,7 +535,8 @@
       "market_value_inr": 1516.7,
       "current_price_inr": 21055.66,
       "pnl_pct": -19.44,
-      "weight_pct_us_sleeve": 0.58
+      "weight_pct_us_sleeve": 0.58,
+      "price_stale": true
     },
     {
       "ticker": "RGTI",
@@ -479,7 +548,8 @@
       "market_value_inr": 1513.22,
       "current_price_inr": 2016.81,
       "pnl_pct": -19.63,
-      "weight_pct_us_sleeve": 0.57
+      "weight_pct_us_sleeve": 0.57,
+      "price_stale": true
     },
     {
       "ticker": "PATH",
@@ -491,7 +561,8 @@
       "market_value_inr": 1497.96,
       "current_price_inr": 969.69,
       "pnl_pct": -20.44,
-      "weight_pct_us_sleeve": 0.57
+      "weight_pct_us_sleeve": 0.57,
+      "price_stale": true
     },
     {
       "ticker": "UEC",
@@ -503,7 +574,8 @@
       "market_value_inr": 1464.67,
       "current_price_inr": 1133.98,
       "pnl_pct": -22.2,
-      "weight_pct_us_sleeve": 0.56
+      "weight_pct_us_sleeve": 0.56,
+      "price_stale": true
     },
     {
       "ticker": "IONQ",
@@ -515,7 +587,8 @@
       "market_value_inr": 1480.33,
       "current_price_inr": 5339.45,
       "pnl_pct": -21.37,
-      "weight_pct_us_sleeve": 0.56
+      "weight_pct_us_sleeve": 0.56,
+      "price_stale": true
     },
     {
       "ticker": "IBM",
@@ -527,7 +600,8 @@
       "market_value_inr": 1439.94,
       "current_price_inr": 23520.02,
       "pnl_pct": -23.52,
-      "weight_pct_us_sleeve": 0.55
+      "weight_pct_us_sleeve": 0.55,
+      "price_stale": true
     },
     {
       "ticker": "NVTS",
@@ -539,7 +613,8 @@
       "market_value_inr": 1414.91,
       "current_price_inr": 2267.97,
       "pnl_pct": -24.85,
-      "weight_pct_us_sleeve": 0.54
+      "weight_pct_us_sleeve": 0.54,
+      "price_stale": true
     },
     {
       "ticker": "INTC",
@@ -551,7 +626,8 @@
       "market_value_inr": 1084.78,
       "current_price_inr": 12651.34,
       "pnl_pct": 15.23,
-      "weight_pct_us_sleeve": 0.41
+      "weight_pct_us_sleeve": 0.41,
+      "price_stale": true
     },
     {
       "ticker": "BYDDY",
@@ -563,7 +639,8 @@
       "market_value_inr": 811.98,
       "current_price_inr": 971.58,
       "pnl_pct": -13.74,
-      "weight_pct_us_sleeve": 0.31
+      "weight_pct_us_sleeve": 0.31,
+      "price_stale": true
     },
     {
       "ticker": "SLS",
@@ -575,13 +652,227 @@
       "market_value_inr": 760.08,
       "current_price_inr": 760.08,
       "pnl_pct": -4.24,
-      "weight_pct_us_sleeve": 0.29
+      "weight_pct_us_sleeve": 0.29,
+      "price_stale": true
     }
   ],
   "recommendations": {
-    "cut": [],
-    "add_to": [],
-    "open_new": []
+    "cut": [
+      {
+        "ticker": "UCO",
+        "name": "ProShares Ultra Bloomberg Crude Oil",
+        "sector": "Leveraged ETF - Crude Oil (2x)",
+        "weight_pct_stale": 1.33,
+        "pnl_pct_stale": -25.36,
+        "rule_broken": "Structurally decaying instrument — 2× leveraged commodity ETF held as a position. Daily rebalancing creates compounding volatility drag regardless of oil direction. This is a rule-based exit; current price must still be verified but the instrument category is ineligible for holding.",
+        "action": "Full exit",
+        "rank": 1,
+        "price_warning": "P&L and weight are from 2026-06-21. Verify current price before placing exit order; do not use stale P&L to size the loss."
+      },
+      {
+        "ticker": "STALE_DATA_NOTICE",
+        "note": "All other CUT candidates (NOW −26%, CRM −18%, IBM −23%, NVTS −24%, HPE −19%, PATH −20%, UEC −22%, IONQ −21%, RGTI −19%, TWLO −17%, ORCL −17%, BMR −15%, DDOG −19%, BABA −18%, SFTBY −19%) are based on 2026-06-21 prices and MUST be re-verified with current prices before any exit is considered. PLTR, which showed −17% on Jun-21, has publicly surged ~+40% since then and is likely profitable now — do NOT cut without fresh verification. A fresh INDmoney data pull is required before cutting any of these names."
+      }
+    ],
+    "add_to": [
+      {
+        "ticker": "STX",
+        "name": "Seagate Technology",
+        "sector": "Technology - Storage",
+        "basis_for_add": "Confirmed momentum for August 2026. Current price ~$795 USD (Aug 5-7), up dramatically from June-21 snapshot. RSI ~73 (borderline upper bound of 55-75 range). MAs: 10 Buy / 2 Sell (Strong Buy). All key MAs bullish: 20d SMA ~$688, 50d SMA ~$532, 200d SMA ~$335. 20-day return estimated ~+15% based on MA spread. Seagate flagged by multiple Aug-2026 momentum screens (Zacks/Yahoo Finance 'Five Momentum Stocks for August').",
+        "concentration_note": "WARNING: Adding to STX deepens the already-extreme storage/semi concentration (~72% of US sleeve). Only add if you are comfortable increasing that concentration further.",
+        "rsi_caveat": "RSI ~73 is at the top of the 55-75 buy zone. One data source gave 49 (neutral) on Aug-5 vs 73 on another — confirm RSI before acting. At 73, the risk of a near-term pullback is elevated.",
+        "entry_zone_usd": "780-805",
+        "stop_usd": "710 (~10.5% below entry mid, below 50d SMA area)",
+        "target_usd": "920-960 (~18-23% upside)",
+        "data_sources": [
+          "TradingKey: STX up 3.83% on Aug 5",
+          "Zacks/Yahoo Finance: STX in 'Five Momentum Stocks for August 2026'",
+          "Multiple: RSI ~73, 20d SMA $687.95, 50d SMA $531.64, 200d SMA $334.86, 10 Buy / 2 Sell MAs"
+        ]
+      }
+    ],
+    "open_new": [
+      {
+        "ticker": "LLY",
+        "name": "Eli Lilly and Company",
+        "sector": "Healthcare - Pharma (Large-Cap)",
+        "portfolio_sector_gap": "Healthcare entirely absent from large-cap sleeve; only tiny speculative biotech (GALT, SLS < 1% combined)",
+        "screen_criteria": {
+          "price_over_10_usd": "YES — ~$1,192 USD (Aug 6)",
+          "market_cap_over_500m": "YES — largest healthcare company globally (~$1.1T)",
+          "avg_volume_over_500k": "YES — mega-cap pharma",
+          "up_15pct_20d": "UNVERIFIED — Q2 earnings Aug 5 drove +6%+ pre-market surge; stock at ~$1,192 near 52-week high of $1,249. Qualitatively likely but specific 20-day % not confirmed from available sources. Flag: most data sites blocked in this environment.",
+          "above_20d_ma": "YES — 20d SMA $1,171.30, price $1,192 above ✓",
+          "above_50d_ma": "YES — 50d SMA $1,027.29 (or $1,155 per second source), price $1,192 above ✓",
+          "above_200d_ma": "YES — 200d SMA $960.23, price $1,192 well above ✓",
+          "rsi_55_to_75": "YES — RSI 63.683 (confirmed; second source Aug 7 shows 55.0, both within range)",
+          "volume_5d_gt_1_3x_50d_avg": "UNVERIFIED — earnings week volume almost certainly elevated, but specific ratio not sourced",
+          "no_earnings_5d": "YES — Q2 reported Aug 5; next Q3 ~Nov 2026",
+          "not_gapping_down": "YES — up +5% in pre-market Aug 5 on earnings; +1.89% on Aug 7"
+        },
+        "thesis": "Eli Lilly's Q2 2026 was a landmark quarter: revenue $22.97B (+47.7% YoY), EPS $8.38 vs $6.58 estimated (+27%), driven by Mounjaro (+91% to $9.9B) and Zepbound ($4.9B); full-year guidance raised to $85-87B. RSI 63, all MAs bullish, near 52-week high — the trend reflects a structural re-rating, not a speculative spike.",
+        "entry_zone_usd": "1175-1210",
+        "stop_usd": "1075 (~10% below entry mid; below 50d SMA $1,027 with limited buffer — widen to $1,020 for more room at cost of larger position risk)",
+        "target_usd": "1285-1380 (~8-17% upside; analyst average PT $1,285, high PT $1,600)",
+        "target_note": "LLY is a steady large-cap compounder — a +30% in 4-8 weeks swing is unrealistic. Target is the analyst consensus range and a test of the 52-week high ($1,249). The long-term driver (GLP-1 global penetration) supports multi-year appreciation.",
+        "stop_pct": -10.2,
+        "target_pct_low": 7.8,
+        "target_pct_high": 16.6,
+        "data_sources": [
+          "CNBC: Eli Lilly LLY earnings Q2 2026 (Aug 5) — EPS $8.38 vs $6.58",
+          "qz.com: CVS Health profit tripled; LLY Q2 revenue $22.97B +47.7% YoY",
+          "StockInvest.us / AltIndex: LLY price $1,192, RSI 63.683, 20d SMA $1,171, 50d SMA $1,027-$1,155, 200d SMA $960, 12 Buy / 0 Sell MAs",
+          "StockInvest.us: LLY Stock Analysis — Strong Uptrend with Potential Volatility",
+          "SeekingAlpha headline: UnitedHealth, Eli Lilly lead healthcare rankings as sector gains momentum"
+        ]
+      },
+      {
+        "ticker": "TRV",
+        "name": "The Travelers Companies, Inc.",
+        "sector": "Financials - Insurance",
+        "portfolio_sector_gap": "Financials: 0% weight in US sleeve",
+        "screen_criteria": {
+          "price_over_10_usd": "YES — ~$384 USD (Aug 7)",
+          "market_cap_over_500m": "YES — large-cap S&P 500 insurance company (~$55-60B)",
+          "avg_volume_over_500k": "YES — S&P 500 component",
+          "up_15pct_20d": "UNVERIFIED — stock reached ATH $397.22 on July 28; estimated 20-day return ~13-16% from ~July 14 levels, but specific figure not confirmed. Borderline.",
+          "above_20d_ma": "UNVERIFIED — conflicting MA data from search; price near ATH implies likely above",
+          "above_50d_ma": "LIKELY — 50d cited as $267.59 in one source vs price $384; if accurate, well above ✓",
+          "above_200d_ma": "LIKELY — 200d cited as $274.47 in one source vs price $384; if accurate, well above ✓. Note: those MA values may be stale.",
+          "rsi_55_to_75": "YES — RSI 60.055 (confirmed within 55-75 range) ✓",
+          "volume_5d_gt_1_3x_50d_avg": "UNVERIFIED",
+          "no_earnings_5d": "YES — Q2 reported July 17; next Q3 ~Oct 2026",
+          "not_gapping_down": "LIKELY — near ATH on Aug 7 at $384"
+        },
+        "thesis": "Travelers is riding a hard insurance pricing cycle and AI-driven underwriting efficiency, with Q4 2025 EPS of $11.13 (+29% beat) and the stock reaching an ATH of $397.22 on July 28. RSI 60 and multiple MA Buy signals confirm the uptrend is intact. Adding TRV diversifies the US sleeve into a sector with zero current exposure.",
+        "entry_zone_usd": "378-392",
+        "stop_usd": "355 (~8% below entry mid; below recent trend support)",
+        "target_usd": "420-440 (~10-16% upside; above ATH on continuation)",
+        "target_note": "TRV is a mature large-cap insurer — modest upside vs. a growth name. The value is in sector diversification and defensive positioning during any tech rotation.",
+        "stop_pct": -8.0,
+        "target_pct_low": 9.6,
+        "target_pct_high": 16.0,
+        "data_sources": [
+          "TipRanks / WallStreetZen: TRV RSI 60.055, price $384.31 (Aug 7), ATH $397.22 (July 28)",
+          "WallStreetZen: Q2 reported July 17, 2026; Q4 2025 EPS $11.13 vs $8.61 (+29%)",
+          "Investing.com / multiple: MAs 8 Buy / 4 Sell",
+          "Yahoo Finance search snippet: Financials sector XLF at record high; TRV among strong performers"
+        ]
+      },
+      {
+        "ticker": "XOM",
+        "name": "ExxonMobil Corporation",
+        "sector": "Energy - Oil & Gas (Integrated)",
+        "portfolio_sector_gap": "Energy (direct oil & gas): 0%. UCO (leveraged crude ETF) is a CUT candidate, leaving zero clean Energy exposure.",
+        "screen_criteria": {
+          "price_over_10_usd": "YES — ~$154.84 USD (Aug 7)",
+          "market_cap_over_500m": "YES — mega-cap (~$660B)",
+          "avg_volume_over_500k": "YES — one of the most liquid US stocks",
+          "up_15pct_20d": "BORDERLINE — 30-calendar-day return cited as +14.9% (Tickeron); 20-trading-day return not confirmed at +15%. Borderline miss of the strict trigger.",
+          "above_20d_ma": "YES — 20d SMA $151.36, price $154.84 above ✓",
+          "above_50d_ma": "YES — 50d SMA $146.38, price $154.84 above ✓",
+          "above_200d_ma": "LIKELY — stock 'in classic bullish alignment above SMA20 and SMA50'; uptrend context implies above 200d",
+          "rsi_55_to_75": "YES — RSI 59.7 (confirmed, within 55-75 range) ✓",
+          "volume_5d_gt_1_3x_50d_avg": "UNVERIFIED",
+          "no_earnings_5d": "YES — next earnings Oct 23, 2026",
+          "not_gapping_down": "YES — up +2.12% on Aug 7, approaching key resistance $156.97"
+        },
+        "thesis": "XOM has surged +14.9% over the past 30 days as energy prices and demand recovery support margins; technical alignment (RSI 59.7, above 20d/50d MAs, in uptrend) is clean. A breakout above near-term resistance $156.97 would target the 52-week high at $176.41. Replacing UCO (the leveraged crude ETF being exited) with XOM gives clean Energy exposure without structural decay risk.",
+        "entry_zone_usd": "152-158",
+        "stop_usd": "143 (~8% below entry mid; below 50d SMA $146.38)",
+        "target_usd": "172-176 (~12-15% upside; 52-week high zone)",
+        "target_note": "XOM is a dividend-paying mega-cap — momentum is real but not explosive. Ex-dividend date Aug 17 ($1.03/share); buying before Aug 17 captures the dividend but also creates a dividend-capture dynamic. A breakout above $157 is the near-term trigger.",
+        "stop_pct": -8.0,
+        "target_pct_low": 12.0,
+        "target_pct_high": 14.9,
+        "upcoming_event": "Ex-dividend Aug 17, 2026 ($1.03/share — confirm this date before entry)",
+        "data_sources": [
+          "JournalArta: XOM price $154.84 Aug 7, RSI 59.7, SMA20 $151.36, SMA50 $146.38, resistance $156.97",
+          "Tickeron: XOM up +14.9% in last 30 days",
+          "StockInvest.us: XOM 'Buy Candidate', technical score +1.14",
+          "Investing.com data: next earnings Oct 23, 2026; ex-dividend Aug 17",
+          "MarketHost: XOM among energy stocks flashing Strong Buy signals"
+        ]
+      }
+    ]
   },
-  "todays_picks": []
+  "todays_picks": [
+    {
+      "ticker": "LLY",
+      "company": "Eli Lilly and Company",
+      "sector": "Healthcare - Pharma (Large-Cap)",
+      "entry_low_usd": 1175.0,
+      "entry_high_usd": 1210.0,
+      "stop_usd": 1075.0,
+      "stop_pct": -10.2,
+      "target_usd": 1285.0,
+      "target_pct": 7.8,
+      "rsi_14": 63.683,
+      "rsi_source": "AltIndex / StockInvest.us via WebSearch — LLY RSI 63.683 (Aug 6). Second source Aug 7: RSI 55.0. Both within 55-75 range.",
+      "perf_20d_pct": "UNVERIFIED — Q2 earnings Aug 5 drove +6% pre-market; stock near 52-week high $1,249. Qualitatively likely >15% but not confirmed numerically.",
+      "next_earnings": "~November 2026 (Q3 FY2026)",
+      "market_cap_approx_b": 1100.0,
+      "price_aug7": 1192.32,
+      "ma_20d": 1171.3,
+      "ma_50d": 1027.29,
+      "ma_200d": 960.23,
+      "ma_signals": "12 Buy / 0 Sell (Strong Buy)",
+      "catalyst": "Q2 2026: revenue $22.97B (+47.7% YoY, 11.4% beat); EPS $8.38 (+27.3% beat vs $6.58 est); Mounjaro +91%, Zepbound +44%; FY guidance raised to $85-87B. Healthcare sector gaining momentum vs tech rotation.",
+      "thesis": "Eli Lilly's Q2 2026 was a structural re-rating event — GLP-1 drugs Mounjaro and Zepbound hit combined quarterly revenue of $14.8B, and guidance was raised for the third consecutive quarter. RSI 63, all MAs on Strong Buy, near 52-week high — the trend is intact with a clear fundamental driver and no near-term earnings risk.",
+      "scan_date": "2026-08-10"
+    },
+    {
+      "ticker": "TRV",
+      "company": "The Travelers Companies, Inc.",
+      "sector": "Financials - Insurance",
+      "entry_low_usd": 378.0,
+      "entry_high_usd": 392.0,
+      "stop_usd": 355.0,
+      "stop_pct": -8.0,
+      "target_usd": 425.0,
+      "target_pct": 10.9,
+      "rsi_14": 60.055,
+      "rsi_source": "WallStreetZen / TipRanks via WebSearch — TRV RSI 60.055. Within 55-75 range.",
+      "perf_20d_pct": "BORDERLINE / UNVERIFIED — stock reached ATH $397.22 on July 28 from estimated $340-360 range on July 14. 20-day return likely 10-17%, not precisely confirmed.",
+      "next_earnings": "~October 2026 (Q3 FY2026)",
+      "market_cap_approx_b": 56.0,
+      "price_aug7": 384.31,
+      "all_time_high_usd": 397.22,
+      "ma_signals": "8 Buy / 4 Sell (Mostly Bullish)",
+      "catalyst": "Hard insurance pricing cycle; Q4 2025 EPS $11.13 vs $8.61 (+29% beat); Financials sector (XLF) at record high July 28; strong AI-assisted underwriting efficiency. Zero Financials exposure in portfolio makes this a pure diversifier.",
+      "thesis": "Travelers is a steady compounder at the intersection of disciplined underwriting and a pricing cycle tailwind. RSI 60, near ATH, and Financials sector strength (XLF record) back the technical case. Portfolio has no Financials exposure — this adds sector breadth with a defensive-quality bias.",
+      "scan_date": "2026-08-10"
+    },
+    {
+      "ticker": "XOM",
+      "company": "ExxonMobil Corporation",
+      "sector": "Energy - Oil & Gas (Integrated)",
+      "entry_low_usd": 152.0,
+      "entry_high_usd": 158.0,
+      "stop_usd": 143.0,
+      "stop_pct": -8.0,
+      "target_usd": 174.0,
+      "target_pct": 13.0,
+      "rsi_14": 59.7,
+      "rsi_source": "JournalArta / InvestTech via WebSearch — XOM RSI 59.7 (Aug 7). Within 55-75 range.",
+      "perf_20d_pct": "BORDERLINE — 30-calendar-day return +14.9% (Tickeron); 20-trading-day return likely similar but not confirmed at exactly +15%.",
+      "next_earnings": "October 23, 2026",
+      "upcoming_event_caution": "Ex-dividend date August 17, 2026 ($1.03/share) — confirm before entry",
+      "market_cap_approx_b": 660.0,
+      "price_aug7": 154.84,
+      "ma_20d": 151.36,
+      "ma_50d": 146.38,
+      "resistance_near_term": 156.97,
+      "ma_signals": "Strong Buy (uptrend, price above 20d and 50d SMAs)",
+      "catalyst": "Energy demand recovery driving XOM margins; stock testing key resistance $156.97 ahead of 52-week high $176.41. Portfolio exits UCO (leveraged crude ETF) → XOM provides clean oil-sector replacement without structural decay.",
+      "thesis": "XOM is the clean replacement for UCO: Energy exposure without leveraged decay risk. RSI 59.7, above 20d/50d MAs, +14.9% in 30 days — a breakout above $157 resistance targets the 52-week high at $176. Ex-dividend Aug 17 is a near-term event to track.",
+      "scan_date": "2026-08-10"
+    }
+  ],
+  "special_alerts": {
+    "HIMS_earnings_today": "HIMS (previous June-19 pick) has Q2 earnings today August 10, 2026. If you opened a position in HIMS near the June entry zone ($33.50-$36.00), be aware of earnings risk today. Consider sizing or protecting any open HIMS position before the report.",
+    "PLTR_recovery": "PLTR was -17.35% on June 21 but surged +39.94% in the past 2 weeks (to ~$172 by Aug 7) following strong Q2 results. The June-21 CUT flag for PLTR no longer applies — position is likely now profitable. RSI may be overbought post-earnings surge; verify before adding."
+  },
+  "slack_channel": "C0B6WHFJ89W"
 }
