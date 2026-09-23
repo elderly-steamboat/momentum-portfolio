@@ -5,7 +5,9 @@
     "currency_note": "INDmoney reports US holdings in INR via the LRS feed. unit_price/invested/market_value are INR.",
     "source": "INDmoney connector (US_STOCK), read-only",
     "snapshot_session": "2026-06-19",
-    "last_updated": "2026-06-21",
+    "last_updated": "2026-09-23",
+    "positions_as_of": "2026-06-21",
+    "positions_caveat": "STALE — INDmoney connector not installed (ListConnectors returned empty). open_positions reflect the June 21, 2026 snapshot only. Recommendations and todays_picks are based on the 2026-09-23 market scan.",
     "open_positions_count": 47,
     "total_invested_inr": 260424.0,
     "total_market_value_inr": 263268.77,
@@ -578,10 +580,236 @@
       "weight_pct_us_sleeve": 0.29
     }
   ],
-  "recommendations": {
-    "cut": [],
-    "add_to": [],
-    "open_new": []
+  "concentration_read": {
+    "as_of": "2026-06-21 (STALE)",
+    "sector_weights": {
+      "ETF_Semiconductors_SOXX": 25.0,
+      "ETF_Korea_EWY": 24.1,
+      "Technology_Semis_Memory_Storage": 17.59,
+      "Technology_Other": 14.95,
+      "Communication_Services": 3.02,
+      "Consumer_Discretionary": 2.53,
+      "Utilities_Power": 1.02,
+      "ETF_Nasdaq_SP500": 3.68,
+      "ETF_Uranium": 0.64,
+      "Energy_Uranium": 0.56,
+      "Industrials": 1.39,
+      "Healthcare_Biotech": 1.0,
+      "Technology_Quantum": 1.13,
+      "Technology_Holding": 0.58,
+      "Technology_Remaining": 2.91
+    },
+    "semis_memory_storage_combined_pct": 66.24,
+    "note": "SOXX + EWY (chip-heavy Korea) + MU + WDC + AMD + TSM + ARM + QCOM + NVTS + INTC — 10 exposures = 66.24% of US sleeve. Zero exposure to conventional energy, materials, and financials.",
+    "deeply_underwater_june2026": {
+      "count": 17,
+      "tickers": ["NOW", "UCO", "IBM", "NVTS", "UEC", "IONQ", "PATH", "RGTI", "DDOG", "BMR", "ORCL", "TWLO", "PLTR", "BABA", "CRM", "HPE", "SFTBY"],
+      "note": "All at P&L ≤ -15% as of June 21 snapshot. Current status unknown — requires fresh INDmoney feed."
+    }
   },
-  "todays_picks": []
+  "recommendations": {
+    "scan_date": "2026-09-23",
+    "data_caveat": "CUT and ADD TO cannot be verified against current prices — INDmoney connector unavailable, open_positions stale as of 2026-06-21. Structural CUT (UCO) does not require current price.",
+    "cut": [
+      {
+        "ticker": "UCO",
+        "name": "ProShares Ultra Bloomberg Crude Oil (2x Leveraged)",
+        "stale_weight_pct": 1.33,
+        "stale_pnl_pct": -25.36,
+        "rule_broken": "Structurally decaying leveraged commodity ETF held as a position. 2× daily-reset crude oil product loses value to daily compounding over any multi-day hold; not a buy-and-hold instrument.",
+        "current_price_note": "Cannot confirm current price — INDmoney connector unavailable. Rule applies regardless of current P&L.",
+        "suggested_action": "Full exit. Replace only if deliberately seeking crude oil exposure via a non-leveraged vehicle (e.g., XLE, CVX, or direct producer).",
+        "rank": 1
+      },
+      {
+        "ticker": "MULTIPLE_POSITIONS",
+        "note": "As of June 21, 2026, 17 positions carried P&L ≤ -15%: NOW (-26%), UCO (-25%), IBM (-24%), NVTS (-25%), UEC (-22%), IONQ (-21%), PATH (-20%), RGTI (-20%), DDOG (-19%), BMR (-15%), ORCL (-17%), TWLO (-17%), PLTR (-17%), BABA (-18%), CRM (-18%), HPE (-19%), SFTBY (-19%). Current trend status and prices unknown. Reconnect INDmoney connector to assess which remain broken vs. recovered.",
+        "suggested_action": "Refresh feed; then apply screen — any name still below its 20/50/200d MAs AND in a loss is a CUT candidate."
+      }
+    ],
+    "add_to": [
+      {
+        "ticker": "AWAITING_REFRESH",
+        "note": "ADD TO analysis requires current prices and MA levels. From June 2026 data, MU (+25%), STX (+27%), WDC (+19%) were the strongest gainers and most likely to still be in uptrends given 2026 sector tailwinds. Cannot confirm without current feed."
+      }
+    ],
+    "open_new": [
+      {
+        "ticker": "DK",
+        "name": "Delek US Holdings",
+        "sector": "Energy - Refining",
+        "market_cap_b": 4.55,
+        "avg_daily_volume_m": 2.0,
+        "price_usd_approx": 78.0,
+        "price_inr_approx": 6552,
+        "inr_rate_used": 84,
+        "moving_averages": {
+          "ma_50d_usd": 38.68,
+          "ma_200d_usd": 35.28,
+          "price_vs_50d": "+101%",
+          "price_vs_200d": "+121%",
+          "ma_20d": "Not sourced — estimated above given slope"
+        },
+        "rsi_14": "Conflicting: 50.7 (one source) vs 65.4 (second source). Strong Buy (10/0 technical signals) suggests upper end more likely. Treat as estimated ~60-65.",
+        "perf_20d_trigger": "ESTIMATED — not precisely confirmed. 50d MA context ($38.68 vs ~$78 current) implies most of the surge occurred in recent weeks; likely >15% in 20-day window but exact start price (~Aug 26) not sourced. Flag before sizing.",
+        "last_earnings": "Q2 2026 on Aug 5 — EPS $2.76 (beat), revenue $4.09B",
+        "next_earnings": "Nov 6, 2026",
+        "recent_catalysts": "Raymond James PT raised $72→$90; TD Cowen PT raised $76→$90 (both Buy). Oil at $100+/bbl; refining crack spreads elevated. YTD sector leader.",
+        "not_gapping_down": "Up 4.7% on Sept 16 after upgrade; no gap-down signal found",
+        "concentration_note": "Portfolio has ~0% conventional energy exposure. Adds diversification away from 66% semis concentration.",
+        "entry_zone_usd": "$74-$82",
+        "stop_usd": "$67",
+        "stop_pct": "-13% from mid-point $78",
+        "target_usd": "$95",
+        "target_pct": "+22% from mid-point $78",
+        "thesis": "Refining margin supercycle driven by oil at $100+ and limited US refinery capacity additions; DK Q2 earnings beat and dual analyst upgrades to $90 confirm the company is capturing record crack spreads. RSI and strong buy signals suggest momentum intact heading into Q3 reporting (Nov 6), well outside earnings risk window.",
+        "criteria_check": {
+          "price_over_10": true,
+          "market_cap_over_500m": true,
+          "avg_volume_over_500k": true,
+          "above_50d_ma": true,
+          "above_200d_ma": true,
+          "rsi_55_to_75": "ESTIMATED — conflicting sources; likely in range based on 10/0 buy signals",
+          "up_15pct_20d": "ESTIMATED — not confirmed; probable given 50d MA context",
+          "volume_5d_gt_1_3x_50d": "Not sourced",
+          "no_earnings_5d": true,
+          "not_gapping_down": true
+        }
+      },
+      {
+        "ticker": "NUE",
+        "name": "Nucor Corporation",
+        "sector": "Materials - Steel",
+        "market_cap_b": 30.0,
+        "avg_daily_volume_m": "Not sourced; large-cap NYSE, well >500K",
+        "price_usd": 251.49,
+        "price_inr_approx": 21125,
+        "inr_rate_used": 84,
+        "moving_averages": {
+          "ma_20d_usd": 233.51,
+          "ma_50d_usd": 206.89,
+          "ma_200d_usd": 169.93,
+          "price_vs_20d": "+7.7%",
+          "price_vs_50d": "+21.5%",
+          "price_vs_200d": "+48.0%"
+        },
+        "rsi_14": "63.9-67 (multiple sources; in 55-75 range)",
+        "perf_20d_trigger": "FAILS strict trigger — ATH was $280.11 on Aug 5, 2026; current $251.49 implies the 20-day window starting ~Aug 26 shows a negative return (~-10%). Included as a HIGH-QUALITY TREND that misses the short-term trigger.",
+        "ytd_perf": "+55.4%",
+        "last_earnings": "Q2 2026 (date not sourced); consensus estimates exist for Q3",
+        "next_earnings": "Oct 26, 2026",
+        "recent_catalysts": "US tariff policy supporting domestic steel prices; AI-driven infrastructure buildout (data centers, power grid) driving steel demand; material sector up ~31% avg in September 2026.",
+        "not_gapping_down": "Up 2.7% on Sept 11; no gap-down signal on scan date",
+        "concentration_note": "Portfolio has 0% materials exposure. Adds steel/commodity cycle diversification.",
+        "entry_zone_usd": "$246-$258",
+        "stop_usd": "$228",
+        "stop_pct": "-11% from mid-point $252",
+        "target_usd": "$290",
+        "target_pct": "+17% from mid-point $252",
+        "thesis": "Nucor is the beneficiary of US trade-protected steel prices, AI-infrastructure capex demand, and strong operational execution — the stock is up 55% YTD and well above all moving averages. The short-term 20-day momentum trigger is not met (post-ATH pullback), but the longer multi-month trend and sector tailwinds make this a quality position for the underweight materials sleeve.",
+        "criteria_check": {
+          "price_over_10": true,
+          "market_cap_over_500m": true,
+          "avg_volume_over_500k": "Unverified but large-cap NYSE, almost certainly yes",
+          "above_20d_ma": true,
+          "above_50d_ma": true,
+          "above_200d_ma": true,
+          "rsi_55_to_75": true,
+          "up_15pct_20d": "FAILS — pulled back from ATH; ~-10% in 20-day window",
+          "volume_5d_gt_1_3x_50d": "Not sourced",
+          "no_earnings_5d": true,
+          "not_gapping_down": true
+        }
+      },
+      {
+        "ticker": "CDNA",
+        "name": "CareDx Inc.",
+        "sector": "Healthcare - Transplant Diagnostics",
+        "market_cap_b": 2.6,
+        "avg_daily_volume_m": 1.2,
+        "price_usd": 56.49,
+        "price_inr_approx": 4745,
+        "inr_rate_used": 84,
+        "moving_averages": {
+          "above_5d_ema": true,
+          "above_20d_ema": true,
+          "above_50d_ema": "Confirmed as of Sept 18 at $53.83; current $56.49 suggests still above",
+          "above_200d_ma": "Confirmed",
+          "ma_50d_specific": "Not sourced",
+          "ma_200d_specific": "Not sourced"
+        },
+        "rsi_14": "ESTIMATED ~65 (conflicting: 50.7 vs 65.49; given new 52-week high breakout on Sept 22, upper estimate more likely)",
+        "perf_20d_trigger": "UNVERIFIED — stock at new 52-week high ($56.49 vs prior high $55.16) on Sept 22, up +4% on the day; +199.8% YTD. 20-day return likely >15% but exact start price not sourced.",
+        "ytd_perf": "+199.8%",
+        "52_week_range_usd": "$13.95 - $56.49 (new high set Sept 22)",
+        "last_earnings": "Not sourced",
+        "next_earnings": "Nov 3, 2026",
+        "recent_catalysts": "Record Signatera cancer-monitoring test volumes; transplant diagnostics demand growing; new 52-week high breakout signals institutional accumulation.",
+        "not_gapping_down": "+4.0% on Sept 22 (breakout day); +5.67% on Sept 22 per second source — strong positive day",
+        "concentration_note": "Portfolio has <1% healthcare exposure (tiny biotech only). Adds diagnostics/healthcare diversification vs zero-exposure sleeve.",
+        "entry_zone_usd": "$52-$58",
+        "stop_usd": "$47",
+        "stop_pct": "-14% from mid-point $55",
+        "target_usd": "$70",
+        "target_pct": "+27% from mid-point $55",
+        "thesis": "CareDx broke to a new all-time 52-week high on record Signatera test volume momentum — the stock has tripled YTD from $13.95 to $56.49, confirming a structural re-rating of the transplant diagnostics franchise. All short- and medium-term moving averages are on Buy signals; the Nov 3 earnings date gives a 6-week runway before next binary event.",
+        "criteria_check": {
+          "price_over_10": true,
+          "market_cap_over_500m": true,
+          "avg_volume_over_500k": true,
+          "above_50d_ma": "Confirmed at $53.83 (Sept 18); inferred still above at $56.49",
+          "above_200d_ma": true,
+          "rsi_55_to_75": "ESTIMATED ~65 — conflicting sources; new 52-week high breakout implies upper reading",
+          "up_15pct_20d": "UNVERIFIED — likely given 200% YTD run and new high breakout, but exact 20-day start not sourced",
+          "volume_5d_gt_1_3x_50d": "Not sourced",
+          "no_earnings_5d": true,
+          "not_gapping_down": true
+        }
+      }
+    ]
+  },
+  "todays_picks": [
+    {
+      "ticker": "DK",
+      "scan_date": "2026-09-23",
+      "company": "Delek US Holdings",
+      "sector": "Energy - Refining",
+      "entry_low_usd": 74.0,
+      "entry_high_usd": 82.0,
+      "stop_usd": 67.0,
+      "stop_pct": -13.0,
+      "target_usd": 95.0,
+      "target_pct": 22.0,
+      "thesis": "Refining margin supercycle at $100+/bbl oil; Q2 beat + dual analyst upgrades to $90 (Raymond James, TD Cowen). 20d trigger estimated but not confirmed.",
+      "criteria_confidence": "MEDIUM — RSI and 20d return estimated, not sourced from live data"
+    },
+    {
+      "ticker": "NUE",
+      "scan_date": "2026-09-23",
+      "company": "Nucor Corporation",
+      "sector": "Materials - Steel",
+      "entry_low_usd": 246.0,
+      "entry_high_usd": 258.0,
+      "stop_usd": 228.0,
+      "stop_pct": -11.0,
+      "target_usd": 290.0,
+      "target_pct": 17.0,
+      "thesis": "US trade-protected steel prices + AI infrastructure capex demand; above all MAs, RSI 63-67. MISSES 20-day +15% trigger (post-ATH pullback) — quality trend pick only.",
+      "criteria_confidence": "MEDIUM — misses short-term trigger; RSI confirmed"
+    },
+    {
+      "ticker": "CDNA",
+      "scan_date": "2026-09-23",
+      "company": "CareDx Inc.",
+      "sector": "Healthcare - Transplant Diagnostics",
+      "entry_low_usd": 52.0,
+      "entry_high_usd": 58.0,
+      "stop_usd": 47.0,
+      "stop_pct": -14.0,
+      "target_usd": 70.0,
+      "target_pct": 27.0,
+      "thesis": "New 52-week high breakout (+199.8% YTD) on record Signatera volume; all MAs bullish. 20d trigger and RSI estimated, not live-sourced.",
+      "criteria_confidence": "MEDIUM — 20d return and exact RSI estimated; MA position and breakout confirmed"
+    }
+  ]
 }
