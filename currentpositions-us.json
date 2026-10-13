@@ -579,9 +579,122 @@
     }
   ],
   "recommendations": {
-    "cut": [],
-    "add_to": [],
-    "open_new": []
+    "_run_date": "2026-10-13",
+    "_holdings_data_caveat": "INDmoney connector was enabledInChat:false in this session — holdings are from stale snapshot 2026-06-21 (4 months old). CUT/ADD TO recommendations are provisional; verify current prices before acting. Only UCO is a structural CUT that does not depend on current price.",
+    "cut": [
+      {
+        "ticker": "UCO",
+        "weight_pct": 1.33,
+        "pnl_pct_stale": -25.36,
+        "rule_broken": "Structurally decaying leveraged instrument: ProShares Ultra 2x Bloomberg Crude Oil ETF decays via daily reset compounding over any multi-week holding period. Explicitly flagged category in strategy rules.",
+        "action": "FULL EXIT",
+        "priority": "HIGH — does not require current price confirmation",
+        "rank": 1
+      },
+      {
+        "ticker": "NOW",
+        "weight_pct": 1.06,
+        "pnl_pct_stale": -26.18,
+        "rule_broken": "Price well below cost at last read AND circumstantial evidence of continued weakness (Aug 2026 data shows ~$138-141 vs stale cost ~$145/unit). Verify current price vs 20/50/200-day MAs before executing.",
+        "action": "TRIM or EXIT — confirm current trend first",
+        "priority": "MEDIUM — needs current price verification",
+        "rank": 2
+      },
+      {
+        "ticker": "IBM",
+        "weight_pct": 0.55,
+        "pnl_pct_stale": -23.52,
+        "rule_broken": "Price well below cost at last read; no clear recovery catalyst found; incumbent legacy tech with limited momentum characteristics.",
+        "action": "EXIT — confirm vs MAs",
+        "priority": "MEDIUM — needs current price verification",
+        "rank": 3
+      },
+      {
+        "ticker": "HPE",
+        "weight_pct": 0.58,
+        "pnl_pct_stale": -18.96,
+        "rule_broken": "Price well below cost at last read; commodity server hardware with margin pressure; no momentum catalyst found.",
+        "action": "EXIT — confirm vs MAs",
+        "priority": "MEDIUM — needs current price verification",
+        "rank": 4
+      },
+      {
+        "ticker": "PATH",
+        "weight_pct": 0.57,
+        "pnl_pct_stale": -20.44,
+        "rule_broken": "Price well below cost at last read; RPA sector losing momentum to broader AI agents; no screen pass found.",
+        "action": "EXIT — confirm vs MAs",
+        "priority": "MEDIUM — needs current price verification",
+        "rank": 5
+      }
+    ],
+    "add_to": [
+      {
+        "_note": "Cannot reliably identify ADD TO positions without current INDmoney holdings data. Last INDmoney snapshot is 4 months stale (2026-06-21). On that stale data, STX (+27.32%) and MU (+24.64%) had the strongest P&L. Once the connector is re-enabled, verify both against current 20/50/200-day MAs, RSI, and concentration limits (combined semis ~71% is already extreme — adding to any semi/storage name would deepen concentration further).",
+        "provisional_candidates": ["STX", "MU"],
+        "concentration_warning": "Combined semis/memory/storage/chip-heavy weight ~71.4% on stale data. Adding to ANY semi-adjacent name deepens an already extreme concentration."
+      }
+    ],
+    "open_new": [
+      {
+        "ticker": "HUM",
+        "company": "Humana Inc.",
+        "sector": "Healthcare — Managed Care",
+        "why_new": "Not in portfolio; adds Healthcare exposure (currently ~1% of sleeve, all tiny biotech)",
+        "entry_zone_usd": "425-445",
+        "stop_usd": "~380",
+        "stop_pct_risk": "~13-14%",
+        "target_usd": "~520",
+        "target_pct_upside": "~17-22%",
+        "thesis": "Humana hit a 52-week high of $456.50 on Oct 9 (up ~69% YTD per Seeking Alpha quant data) after CMS confirmed 95% of its Medicare Advantage members will be in 4.0+ star plans for 2027, unlocking quality bonus payments. The move ends a multi-year downtrend and represents a high-conviction fundamental catalyst with earnings still ~3 weeks away (projected Nov 4).",
+        "verified_criteria": {
+          "price_above_10": true,
+          "market_cap_500M_plus": true,
+          "not_in_portfolio": true,
+          "earnings_outside_5_trading_days": true,
+          "52_week_high_breakout": "CONFIRMED — hit $456.50 Oct 9",
+          "ytd_performance": "~+69% YTD",
+          "rsi_14_in_55_75": "NOT INDEPENDENTLY VERIFIED — unable to access live screener",
+          "above_200_day_ma": "LIKELY (hitting 52-week highs implies recovery above key MAs) — not independently confirmed",
+          "20_day_plus_15pct": "LIKELY given YTD run and recent breakout — not independently confirmed",
+          "volume_5day_vs_50day": "NOT INDEPENDENTLY VERIFIED"
+        },
+        "data_sources": ["heygotrade.com Oct 9 quote", "Seeking Alpha quant data Oct 13", "Morningstar Oct 12 close"]
+      },
+      {
+        "ticker": "GEV",
+        "company": "GE Vernova Inc.",
+        "sector": "Industrials / Power Infrastructure",
+        "why_new": "Not in portfolio; adds industrial/energy infrastructure exposure (currently ~1.4% industrials, all small-cap ADRs)",
+        "entry_zone_usd": "975-1010",
+        "stop_usd": "~880",
+        "stop_pct_risk": "~10-12%",
+        "target_usd": "~1150",
+        "target_pct_upside": "~14-18%",
+        "thesis": "GE Vernova has returned ~60% over the trailing year vs S&P 500 +16.3%, driven by surging demand for gas turbines and electrification infrastructure from AI data-center buildout. Guggenheim reiterated Buy on Oct 13; earnings Oct 28 provide the next catalyst. Portfolio adds diversification away from the 71% semi concentration.",
+        "verified_criteria": {
+          "price_above_10": true,
+          "market_cap_500M_plus": true,
+          "not_in_portfolio": true,
+          "earnings_outside_5_trading_days": true,
+          "1_year_return": "~+60% confirmed",
+          "rsi_14_in_55_75": "UNCERTAIN — was 53.7 in July 2026 (just below 55 threshold); may have moved; NOT confirmed for Oct 13",
+          "above_200_day_ma": "LIKELY based on 1-year return magnitude — not independently confirmed for Oct 13",
+          "20_day_plus_15pct": "NOT INDEPENDENTLY VERIFIED",
+          "volume_5day_vs_50day": "NOT INDEPENDENTLY VERIFIED"
+        },
+        "data_sources": ["247wallst.com Oct 5", "MarketBeat Guggenheim rating Oct 13", "FXEmpire technical Jul 10"]
+      },
+      {
+        "_note": "Third OPEN NEW slot: Could not identify a qualifying third candidate in a distinct sector from available sources. Financials (JPM, GS, WFC) are excluded this week — earnings today/tomorrow. CEG (Constellation Energy) had a strong single-day catalyst but multi-day trend data was unavailable. Recommend re-running screen with live finviz access once connector or network restrictions are resolved."
+      }
+    ]
   },
-  "todays_picks": []
+  "todays_picks": [
+    {
+      "date": "2026-10-13",
+      "picks": ["HUM", "GEV"],
+      "note": "Only 2 of 3 OPEN NEW slots filled — third slot held pending verified candidate. See open_new[2] note."
+    }
+  ]
 }
